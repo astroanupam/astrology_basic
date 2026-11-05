@@ -1,0 +1,2471 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basics of Vedic Astrology | ASTROSUTRAS by Anoopam Shukla</title>
+<meta name="description" content="Basics of Vedic Astrology: A Complete Beginner's Course. 14 modules, a final assessment and a student workbook. ASTROSUTRAS by Anoopam Shukla.">
+<link rel="manifest" href="manifest.json" id="mfLink">
+<script>/* a browser refuses to read a manifest from a file:// address (console error); the installable copy is the https one, so drop the link there */
+if (location.protocol === 'file:') { var mf = document.getElementById('mfLink'); if (mf) mf.parentNode.removeChild(mf); }</script>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#2e2a6e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Vedic Basics">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>
+/* Theme and text size before the first paint (no flash). The app repeats this in core.js. */
+(function () {
+  try {
+    var s = JSON.parse(localStorage.getItem('astrosutras.basics.v1') || '{}'), r = document.documentElement;
+    var dark = s.theme === 'dark' || (s.theme !== 'light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+    r.setAttribute('data-theme', dark ? 'dark' : 'light');
+    var f = Math.round(+s.fs); if (f >= 13 && f <= 24) r.style.setProperty('--fs', f + 'px');
+  } catch (e) { /* storage blocked: defaults */ }
+})();
+</script>
+<style>
+/* ASTROSUTRAS course app: engine CSS (theme tokens, layout, chrome). Blocks and charts: render.css. See docs/ENGINE-API.md section 7. */
+:root { --bg:#f6f6fb; --card:#ffffff; --ink:#1f1f2e; --muted:#5f5f76; --accent:#2e2a6e; --onaccent:#ffffff; --saffron:#d9730d; --onsaffron:#1b1208; --gold:#9a4d07; --line:#e1e1ec; --tint:#eeedf8; --good:#237a4d; --bad:#c0392b; --focus:#b45309; --hdr:#2e2a6e; --onhdr:#ffffff; --shadow:0 1px 3px rgba(30,30,60,.12); --fs:16px; --hh:54px; color-scheme:light; }
+:root[data-theme="dark"] { --bg:#14141c; --card:#1d1d29; --ink:#ececf5; --muted:#a4a4ba; --accent:#a9a7ff; --onaccent:#14141c; --saffron:#e8893a; --onsaffron:#1b1208; --gold:#f0a45a; --line:#34344a; --tint:#26263a; --good:#4cc38a; --bad:#ff7b6b; --focus:#f0a45a; --hdr:#23205a; --shadow:0 1px 3px rgba(0,0,0,.5); color-scheme:dark; }
+* { box-sizing:border-box; }
+html { font-size:var(--fs); -webkit-text-size-adjust:100%; scroll-padding-top:calc(var(--hh) + 14px); }
+body { margin:0; font-family:system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; min-height:100vh; min-height:100dvh; overflow-wrap:break-word; }
+img, svg { max-width:100%; }
+a { color:var(--accent); }
+button { font-family:inherit; }
+:focus-visible { outline:3px solid var(--focus); outline-offset:2px; border-radius:4px; }
+.app-hdr .ib:focus-visible, .app-hdr .app-brand:focus-visible, .app-hdr .app-pill:focus-visible, .hero :focus-visible { outline-color:#fff; }   /* the brown ring is only 2.5:1 on the indigo header and the hero gradient; white is 12:1 */
+h1:focus, main:focus { outline:none; }
+[hidden] { display:none !important; }
+.app-skip { position:absolute; left:8px; top:-60px; z-index:100; background:var(--saffron); color:var(--onsaffron); padding:10px 14px; border-radius:8px; font-weight:700; }
+.app-skip:focus { top:8px; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* ----- header ----- */
+.app-hdr { position:sticky; top:0; z-index:30; height:var(--hh); background:var(--hdr); color:var(--onhdr); display:flex; align-items:center; gap:6px; padding:0 max(10px,env(safe-area-inset-right)) 0 max(10px,env(safe-area-inset-left)); }
+.app-brand { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:center; color:var(--onhdr); text-decoration:none; line-height:1.15; padding:4px 2px; }
+.app-brand .b1 { font-size:.62rem; letter-spacing:.18em; opacity:.8; font-weight:700; }
+.app-brand .b2 { font-size:1.05rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ib { appearance:none; border:0; background:rgba(255,255,255,.14); color:var(--onhdr); min-width:42px; height:42px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding:0 8px; font-size:.9rem; font-weight:600; flex:none; }
+.ib:hover { background:rgba(255,255,255,.26); }
+.ib.txt { padding:0 12px; white-space:nowrap; }
+.ib svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.app-pill { background:var(--saffron); color:var(--onsaffron); border-radius:14px; padding:3px 11px; font-size:.82rem; font-weight:700; text-decoration:none; white-space:nowrap; flex:none; }
+.app-langwrap { position:relative; flex:none; }
+.app-menu { position:absolute; right:0; top:48px; min-width:170px; background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,.3); padding:4px; z-index:40; }
+.app-menu button { display:block; width:100%; text-align:left; border:0; background:none; color:var(--ink); padding:10px 12px; border-radius:8px; font-size:1rem; cursor:pointer; }
+.app-menu button:hover, .app-menu button[aria-checked="true"] { background:var(--tint); }
+.app-readbar { position:fixed; left:0; right:0; top:var(--hh); height:3px; z-index:29; background:transparent; pointer-events:none; opacity:0; transition:opacity .2s; }
+.app-readbar.on { opacity:1; }
+.app-readbar i { display:block; height:100%; width:0; background:var(--saffron); }
+
+/* ----- layout: sidebar + view ----- */
+.app-wrap { display:flex; align-items:flex-start; max-width:1400px; margin:0 auto; }
+.app-side { width:300px; flex:none; position:sticky; top:var(--hh); height:calc(100vh - var(--hh)); height:calc(100dvh - var(--hh)); overflow-y:auto; background:var(--card); border-right:1px solid var(--line); padding:8px 0 24px; }
+#main { flex:1; min-width:0; padding:18px 18px 40px; }
+.app-view { max-width:56rem; margin:0 auto; }
+.app-scrim { display:none; }
+.app-loading, .app-empty { color:var(--muted); padding:30px 8px; text-align:center; }
+@media (max-width:959px) {
+  .app-side { position:fixed; top:var(--hh); bottom:0; left:0; height:auto; z-index:35; width:min(86%,340px); transform:translateX(-102%); visibility:hidden; transition:transform .2s, visibility 0s .2s; box-shadow:none; }
+  .app-side.open { transform:none; visibility:visible; transition:transform .2s; box-shadow:0 0 30px rgba(0,0,0,.45); }
+  .app-scrim.open { display:block; position:fixed; inset:var(--hh) 0 0 0; background:rgba(0,0,0,.45); z-index:34; }
+  #main { padding:12px 12px 36px; }
+}
+@media (max-width:420px) { .app-pill { display:none; } .app-brand .b1 { display:none; } #themeBtn { display:none; } }   /* the theme button is also in the reading toolbar and under More */
+@media (min-width:960px) { #menuBtn { display:none; } }
+
+/* ----- sidebar navigation ----- */
+.nav-grp { padding:14px 16px 4px; font-size:.72rem; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+.nav-it { display:flex; align-items:center; gap:8px; padding:9px 16px; color:var(--ink); text-decoration:none; border-left:4px solid transparent; font-size:.95rem; }
+.nav-it:hover { background:var(--tint); }
+.nav-it[aria-current="page"], .nav-it.cur { background:var(--tint); border-left-color:var(--saffron); font-weight:700; }
+.nav-it .nm { flex:1; min-width:0; }
+.nav-it .pc { color:var(--muted); font-size:.78rem; white-space:nowrap; }
+.nav-it .tk { width:18px; text-align:center; color:var(--good); font-weight:800; flex:none; }
+.nav-sub { margin:2px 0 6px; }
+.nav-sub .nav-it { padding:6px 16px 6px 38px; font-size:.86rem; }
+.nav-sub .nav-it .nm { line-height:1.3; }
+.nav-sub .nav-it .dot { width:9px; height:9px; border-radius:50%; border:2px solid var(--muted); flex:none; }
+.nav-sub .nav-it .dot.on { background:var(--good); border-color:var(--good); }
+
+/* ----- generic components ----- */
+.btn { appearance:none; display:inline-flex; align-items:center; justify-content:center; gap:6px; border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:10px; padding:9px 14px; font-size:.95rem; font-weight:600; cursor:pointer; text-decoration:none; line-height:1.3; min-height:42px; text-align:center; }
+.btn:hover { border-color:var(--accent); }
+.btn svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.btn.primary { background:var(--accent); color:var(--onaccent); border-color:var(--accent); }
+.btn.saffron { background:var(--saffron); color:var(--onsaffron); border-color:var(--saffron); }
+.btn.danger { color:var(--bad); }
+.btn.small { padding:5px 10px; min-height:34px; font-size:.88rem; }
+.btn[aria-pressed="true"] { background:var(--tint); border-color:var(--saffron); color:var(--ink); }   /* also for .primary and .saffron: their own text colours are not readable on the tint */
+.btn:disabled, .btn[aria-disabled="true"] { opacity:.45; cursor:default; pointer-events:none; }
+.bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; }
+.bar .sp { flex:1; }
+.seg { display:inline-flex; flex-wrap:wrap; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--card); }
+.seg button { border:0; border-right:1px solid var(--line); background:var(--card); color:var(--ink); padding:9px 14px; font-size:.95rem; cursor:pointer; min-height:42px; }
+.seg button:last-child { border-right:0; }
+.seg button[aria-pressed="true"] { background:var(--accent); color:var(--onaccent); font-weight:700; }
+.panel { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:0 0 16px; box-shadow:var(--shadow); }
+.panel > h2:first-child, .panel > h3:first-child { margin-top:0; }
+h1, h2, h3 { line-height:1.25; color:var(--accent); }
+h1 { font-size:1.65rem; margin:.2em 0 .35em; }
+h2 { font-size:1.3rem; margin:1.4em 0 .5em; }
+h3 { font-size:1.08rem; margin:1.2em 0 .4em; }
+.muted, .note { color:var(--muted); font-size:.9rem; }
+.crumb { font-size:.85rem; color:var(--muted); margin:0 0 6px; }
+.crumb a { color:var(--accent); }
+.badge { display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase; padding:2px 9px; border-radius:11px; border:1px solid var(--line); background:var(--tint); color:var(--accent); white-space:nowrap; }
+.badge.k-lesson, .badge.k-chapter { background:var(--accent); color:var(--onaccent); border-color:var(--accent); }
+.badge.k-quiz, .badge.k-assessment { background:var(--saffron); color:var(--onsaffron); border-color:var(--saffron); }
+.badge.k-practical, .badge.k-workbook, .badge.k-case { border-color:var(--saffron); color:var(--gold); }
+.badge.k-key { border-color:var(--good); color:var(--good); }
+.prog { height:9px; background:var(--line); border-radius:6px; overflow:hidden; margin:8px 0 4px; }
+.prog i { display:block; height:100%; background:var(--saffron); border-radius:6px; min-width:0; }
+.app-toast { position:fixed; left:50%; bottom:22px; transform:translate(-50%,20px); background:var(--ink); color:var(--bg); padding:9px 16px; border-radius:22px; font-size:.9rem; opacity:0; pointer-events:none; transition:.25s; z-index:60; max-width:90vw; text-align:center; }
+.app-toast.on { opacity:1; transform:translate(-50%,0); }
+.app-notice { border-left:5px solid var(--saffron); background:var(--tint); border-radius:8px; padding:10px 14px; margin:12px 0; font-size:.95rem; }
+.app-notice.bad { border-left-color:var(--bad); }
+.app-notice.good { border-left-color:var(--good); }
+.app-notice strong { display:block; font-size:.78rem; letter-spacing:.07em; text-transform:uppercase; color:var(--gold); }
+.app-notice.bad strong { color:var(--bad); }
+mark.hit { background:#ffe08a; color:#1b1208; border-radius:3px; padding:0 1px; }
+textarea.app-ta, input.app-in, select.app-in { width:100%; border:1px solid var(--line); border-radius:10px; padding:10px 12px; background:var(--card); color:var(--ink); font-size:1rem; font-family:inherit; }
+textarea.app-ta { min-height:110px; resize:vertical; line-height:1.5; }
+
+/* ----- home ----- */
+.hero { background:linear-gradient(135deg,var(--hdr),#4a2d7a); color:#fff; border-radius:16px; padding:24px 22px; margin-bottom:18px; box-shadow:var(--shadow); }
+.hero .kick { font-size:.72rem; letter-spacing:.16em; font-weight:800; opacity:.85; text-transform:uppercase; }
+.hero h1 { color:#fff; font-size:1.9rem; margin:.25em 0 .2em; }
+.hero p { margin:.3em 0; opacity:.93; }
+.hero .tag { font-style:italic; }
+.hero .prog { background:rgba(255,255,255,.25); height:10px; }
+.hero .btn { background:rgba(255,255,255,.16); color:#fff; border-color:rgba(255,255,255,.3); }
+.hero .btn.saffron { background:var(--saffron); color:var(--onsaffron); border-color:var(--saffron); }
+.team { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+.team .role { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:800; margin:0 0 6px; }
+.person { display:flex; align-items:center; gap:10px; margin:6px 0; }
+.person img, .person .ini { width:52px; height:65px; object-fit:cover; border-radius:8px; background:var(--tint); flex:none; border:1px solid var(--line); }
+.person .ini { display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--accent); }
+.person b { font-size:.98rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin:12px 0; }
+.card { display:block; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:13px 15px; color:var(--ink); text-decoration:none; box-shadow:var(--shadow); position:relative; }
+.card:hover { border-color:var(--accent); }
+.card .kc { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--gold); }
+.card h3 { margin:.15em 0 .3em; font-size:1rem; color:var(--accent); }
+.card .meta { font-size:.82rem; color:var(--muted); display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap; }
+.card.done { border-left:5px solid var(--good); }
+.card .tick { position:absolute; right:12px; top:10px; color:var(--good); font-weight:800; }
+.plist { list-style:none; margin:10px 0; padding:0; }
+.plist li { margin:6px 0; }
+.plist a { display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; text-decoration:none; color:var(--ink); }
+.plist a:hover { border-color:var(--accent); }
+.plist .n { width:30px; height:30px; border-radius:50%; background:var(--tint); color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:800; flex:none; }
+.plist .done .n { background:var(--good); color:var(--onaccent); }   /* white on the light green of the dark theme was 2.2:1 */
+.plist .t { flex:1; min-width:0; }
+.plist .t small { display:block; color:var(--muted); font-size:.78rem; }
+.plist .mk { color:var(--gold); }
+
+/* ----- reading view ----- */
+.page { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 24px; box-shadow:var(--shadow); }
+.page .ptop { display:flex; flex-wrap:wrap; gap:8px; align-items:center; font-size:.85rem; color:var(--muted); }
+.page h1 { margin-top:.3em; }
+.tools { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 4px; padding:8px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); align-items:center; }
+.tools .sp { flex:1; }
+.toc { margin:10px 0; border:1px solid var(--line); border-radius:10px; background:var(--bg); }
+.toc summary { padding:9px 14px; cursor:pointer; font-weight:700; color:var(--accent); }
+.toc ol { margin:0; padding:0 14px 10px 36px; font-size:.92rem; }
+.toc li.l3 { margin-left:16px; list-style:circle; }
+.toc a { text-decoration:none; }
+.rbody { max-width:46rem; margin:14px auto 0; line-height:1.6; color:var(--ink); }
+.pnav { display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+.pnav .btn { flex:1 1 200px; }
+.pnav .btn small { display:block; font-weight:400; font-size:.76rem; color:inherit; opacity:.85; }
+.notes { margin:16px 0 0; border:1px solid var(--line); border-radius:10px; background:var(--bg); }
+.notes summary { padding:10px 14px; cursor:pointer; font-weight:700; color:var(--accent); }
+.notes > div { padding:0 14px 14px; }
+.donechip { color:var(--good); font-weight:800; }
+
+/* ----- search ----- */
+.res { display:block; background:var(--card); border:1px solid var(--line); border-left:5px solid var(--saffron); border-radius:10px; padding:10px 14px; margin:9px 0; text-decoration:none; color:var(--ink); }
+.res:hover { border-color:var(--accent); border-left-color:var(--saffron); }
+.res b.t { color:var(--accent); }
+.res .where { font-size:.78rem; color:var(--muted); margin:2px 0; }
+.res .snip { font-size:.9rem; color:var(--ink); }
+
+/* ----- flashcards ----- */
+.fc { max-width:560px; margin:14px auto; background:var(--card); border:2px solid var(--accent); border-radius:18px; padding:26px 22px; min-height:230px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; box-shadow:var(--shadow); }
+.fc .term { font-size:1.7rem; font-weight:800; color:var(--accent); line-height:1.2; }
+.fc .en { font-size:1.08rem; font-weight:700; color:var(--gold); }
+.fc .def { font-size:1rem; text-align:left; }
+.fc .where { font-size:.82rem; color:var(--muted); }
+.fc .chips a { display:inline-block; margin:2px; padding:2px 10px; border-radius:12px; background:var(--tint); font-size:.82rem; text-decoration:none; }
+.fc.known { border-color:var(--good); }
+.fcbar { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:8px 0; }
+
+/* ----- more / settings ----- */
+.set h2 { font-size:1.08rem; margin-top:1.6em; border-top:1px solid var(--line); padding-top:1em; }
+.set h2:first-child { border-top:0; margin-top:.2em; padding-top:0; }
+.dlprog { height:12px; border-radius:8px; background:var(--line); overflow:hidden; margin:8px 0; }
+.dlprog i { display:block; height:100%; width:0; background:var(--saffron); transition:width .15s; }
+kbd { background:var(--tint); border:1px solid var(--line); border-radius:4px; padding:0 5px; font-size:.85em; }
+
+/* ----- Devanagari and other scripts: set by the engine through <html lang> ----- */
+html[lang="hi"] body, html[lang="hi"] button, html[lang="hi"] input, html[lang="hi"] textarea, html[lang="hi"] select { font-family:"Noto Sans Devanagari","Nirmala UI","Mangal",system-ui,"Segoe UI",Roboto,sans-serif; }
+html[lang="hi"] body { line-height:1.75; }
+html[lang="hi"] .nav-grp, html[lang="hi"] .card .kc, html[lang="hi"] .badge, html[lang="hi"] .hero .kick, html[lang="hi"] .team .role, html[lang="hi"] .app-brand .b1 { letter-spacing:0; text-transform:none; }
+html[lang="hi"] .btn, html[lang="hi"] .seg button { white-space:normal; }
+html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3 { line-height:1.5; }
+
+@media (max-width:600px) {
+  .page { padding:15px 14px; border-radius:12px; }
+  .hero { padding:18px 16px; } .hero h1 { font-size:1.55rem; }
+  .app-hdr { gap:4px; }
+  .grid { grid-template-columns:1fr; }
+  .pnav .btn { flex-basis:100%; }
+}
+@media print {
+  .app-hdr, .app-side, .app-readbar, .tools, .pnav, .notes, .app-toast, .toc, .app-scrim, .no-print { display:none !important; }
+  body { background:#fff; color:#000; }
+  .page { border:0; box-shadow:none; padding:0; }
+  #main { padding:0; }
+}
+@media (prefers-reduced-motion:reduce) { * { transition:none !important; scroll-behavior:auto !important; } }
+
+/* render.css: the blocks of a page and the charts. Written by app-render; read ENGINE-API.md section 7 first.
+   Everything is scoped under .rbody, classes are prefixed r-, sizes are em/rem (the A- and A+ buttons change html font-size), colours come from the
+   engine tokens (--card --ink --muted --accent --onaccent --saffron --onsaffron --gold --line --tint --good --bad) and follow html[data-theme="dark"]. */
+
+/* ---------- text ---------- */
+.rbody [id] { scroll-margin-top: 4.5rem; }
+.rbody > :first-child { margin-top: 0; }
+.rbody p { margin: .75em 0; }
+.rbody .r-h { color: var(--accent); line-height: 1.25; font-weight: 700; }
+/* the look follows the level in the data (class r-h2 / r-h3 / r-h4); the tag may be one level higher when the data skips a level (see heading() in render.js) */
+.rbody .r-h2 { font-size: 1.4em; margin: 1.9em 0 .55em; padding-bottom: .25em; border-bottom: .13em solid var(--saffron); }
+.rbody .r-h3 { font-size: 1.15em; margin: 1.6em 0 .4em; color: var(--gold); }
+.rbody .r-h4 { font-size: .88em; margin: 1.4em 0 .3em; color: var(--ink); text-transform: uppercase; letter-spacing: .07em; }
+.rbody .r-h:focus { outline: none; }
+.rbody ul, .rbody ol { margin: .65em 0; padding-left: 1.45em; }
+.rbody li { margin: .32em 0; }
+.rbody li > ul, .rbody li > ol { margin: .25em 0; }
+.rbody a { color: var(--accent); text-decoration: underline; text-underline-offset: .16em; }
+.rbody a.r-ext::after { content: "\00a0\2197"; font-size: .8em; text-decoration: none; display: inline-block; }
+.rbody code { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: .9em; background: var(--tint); border-radius: .25em; padding: .05em .3em; }
+.rbody em { font-style: italic; }
+.rbody strong { font-weight: 700; }
+.rbody .r-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap; }
+.rbody .r-blank { display: inline-block; min-width: 5em; height: 1em; margin: 0 .25em; border-bottom: .12em solid var(--ink); vertical-align: baseline; }
+.rbody mark.r-hit { background: #ffe08a; color: #000; border-radius: .2em; padding: 0 .1em; }
+
+/* ---------- quiz questions and answers ---------- */
+.rbody p.r-q { margin: 1.7em 0 .6em; padding: .75em 1em; background: var(--tint); border-left: .3em solid var(--accent); border-radius: 0 .55em .55em 0; line-height: 1.55; }
+.rbody p.r-q > strong:first-child { color: var(--accent); display: block; font-size: .86em; letter-spacing: .02em; margin-bottom: .15em; }
+.rbody p.r-ans { margin: 1.3em 0 .5em; padding: .65em 1em; background: var(--tint); border-left: .3em solid var(--good); border-radius: 0 .55em .55em 0; }
+.rbody p.r-ans > strong:first-child { color: var(--good); }
+.rbody ul.r-opts { list-style: none; padding: 0; margin: .4em 0 1em; }
+.rbody .r-opts li { margin: .4em 0; padding: .55em .85em; border: 1px solid var(--line); border-radius: .55em; background: var(--card); }
+
+/* ---------- checklists ---------- */
+.rbody ul.r-check { list-style: none; padding: 0; margin: .7em 0 .2em; }
+.rbody .r-check-item { margin: .15em 0; }
+.rbody ul.r-check > li:not(.r-check-item) { padding: .4em .55em .4em 2.35em; }
+.rbody .r-check-item label { display: flex; gap: .65em; align-items: flex-start; padding: .4em .55em; border-radius: .45em; cursor: pointer; }
+.rbody .r-check-item label:hover { background: var(--tint); }
+.rbody .r-check-item input { flex: none; width: 1.3em; height: 1.3em; margin: .15em 0 0; accent-color: var(--accent); cursor: pointer; }
+.rbody .r-check-item input:checked + .r-check-text { color: var(--muted); }
+.rbody .r-check-count { margin: .2em 0 .8em; font-size: .82em; color: var(--muted); }
+.rbody .r-checklist { margin: 1em 0; padding: .4em .7em; border: 1px solid var(--line); border-radius: .7em; background: var(--card); }
+.rbody .r-callout .r-check-item label:hover { background: rgba(127, 127, 160, .16); }
+
+/* ---------- tables ---------- */
+.rbody .r-scroll { position: relative; }    /* contains the visually hidden texts of cells that are scrolled out of view (they must not widen the page) */
+.rbody .r-table-box { margin: 1.2em 0; }
+.rbody .r-table-cap { margin: 0 0 .4em; font-weight: 700; color: var(--accent); font-size: .95em; line-height: 1.35; }
+.rbody .r-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: .65em; background: var(--card); -webkit-overflow-scrolling: touch; }
+.rbody .r-table { border-collapse: collapse; width: 100%; font-size: .93em; line-height: 1.45; }
+.rbody .r-table th { background: var(--accent); color: var(--onaccent); text-align: left; padding: .6em .75em; font-weight: 600; vertical-align: bottom; }
+.rbody .r-table td { padding: .55em .75em; border-top: 1px solid var(--line); vertical-align: top; min-width: 5.5em; }
+.rbody .r-table tbody tr:nth-child(even) td { background: var(--tint); }
+.rbody .r-table td.r-space { height: 3.6em; }
+.rbody .r-table td.r-empty { height: 2.6em; }
+.rbody .r-table.r-cols-3 { min-width: 26em; }
+.rbody .r-table.r-cols-4 { min-width: 36em; }
+.rbody .r-table.r-cols-5 { min-width: 44em; }
+.rbody .r-table.r-cols-6 { min-width: 52em; }
+.rbody .r-hint { margin: .35em 0 0; font-size: .78em; color: var(--muted); text-align: right; }
+.rbody .r-scroll.is-scroll:focus-visible { outline-offset: 2px; }
+@media (max-width: 760px) {      /* a wide table scrolls sideways; its first column stays in view */
+  .rbody .r-table.r-cols-4 td:first-child, .rbody .r-table.r-cols-5 td:first-child, .rbody .r-table.r-cols-6 td:first-child,
+  .rbody .r-table.r-cols-4 th:first-child, .rbody .r-table.r-cols-5 th:first-child, .rbody .r-table.r-cols-6 th:first-child { position: sticky; left: 0; z-index: 1; max-width: 8.5em; min-width: 5em; }
+  .rbody .r-table.r-cols-4 td:first-child, .rbody .r-table.r-cols-5 td:first-child, .rbody .r-table.r-cols-6 td:first-child { background: var(--card); box-shadow: 1px 0 0 var(--line); }
+  .rbody .r-table.r-cols-4 tbody tr:nth-child(even) td:first-child, .rbody .r-table.r-cols-5 tbody tr:nth-child(even) td:first-child, .rbody .r-table.r-cols-6 tbody tr:nth-child(even) td:first-child { background: var(--tint); }
+}
+
+/* ---------- callouts (the palette of the Word manual) ---------- */
+.rbody .r-callout { --rc: #4a6fa5; --rb: #eaf0f8; --rl: #35567f; margin: 1.15em 0; padding: .75em 1em .65em; background: var(--rb); border-left: .36em solid var(--rc); border-radius: .45em; color: var(--ink); }
+.rbody .r-callout > :last-child { margin-bottom: 0; }
+.rbody .r-callout-label { margin: 0 0 .35em; display: flex; align-items: center; gap: .45em; font-size: .78em; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--rl); line-height: 1.2; }
+.rbody .r-callout p { margin: .45em 0; }
+.rbody .r-callout .r-ico { width: 1.35em; height: 1.35em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.rbody .r-callout ul, .rbody .r-callout ol { margin: .45em 0; }
+.rbody .r-callout strong.r-textalt { font-weight: 800; }
+.rbody .r-co-TIP { --rc: #2e8b57; --rb: #e7f5ec; --rl: #1f6b40; }
+.rbody .r-co-RULE { --rc: #d9730d; --rb: #2e2a6e; --rl: #f2a65a; color: #fff; }
+.rbody .r-co-RULE a { color: #ffd9a8; }
+.rbody .r-co-RULE code { background: rgba(255, 255, 255, .16); color: #fff; }
+.rbody .r-co-RULE .r-check-item input { accent-color: #f2a65a; }
+.rbody .r-co-WARNING { --rc: #c0392b; --rb: #fdecea; --rl: #a32a1e; }
+.rbody .r-co-EXAMPLE { --rc: #d9730d; --rb: #fff4e0; --rl: #9a5200; }
+.rbody .r-co-REMEMBER { --rc: #6b4fb8; --rb: #eee9fa; --rl: #55399c; }
+.rbody .r-co-SCHOOLS { --rc: #14807e; --rb: #e2f3f2; --rl: #0f6664; }
+.rbody .r-co-ACTIVITY { --rc: #1e6fd9; --rb: #e3efff; --rl: #1558b0; }
+html[data-theme="dark"] .rbody .r-co-NOTE { --rc: #7fb0e8; --rb: #1f2a3d; --rl: #9cc3f0; }
+html[data-theme="dark"] .rbody .r-co-TIP { --rc: #4cc38a; --rb: #1d2f27; --rl: #6fd6a2; }
+html[data-theme="dark"] .rbody .r-co-RULE { --rc: #e8893a; --rb: #2b2780; --rl: #f0a45a; color: #f4f3ff; }
+html[data-theme="dark"] .rbody .r-co-WARNING { --rc: #ff7b6b; --rb: #3a2323; --rl: #ff9a8d; }
+html[data-theme="dark"] .rbody .r-co-EXAMPLE { --rc: #e8893a; --rb: #3a2e1a; --rl: #f0a45a; }
+html[data-theme="dark"] .rbody .r-co-REMEMBER { --rc: #a9a7ff; --rb: #2b2744; --rl: #bdbbff; }
+html[data-theme="dark"] .rbody .r-co-SCHOOLS { --rc: #46b8b5; --rb: #1c3231; --rl: #6fd0cd; }
+html[data-theme="dark"] .rbody .r-co-ACTIVITY { --rc: #6aa7ff; --rb: #1c2b45; --rl: #8dbcff; }
+/* Devanagari has no true italic: a slanted letter breaks the headline stroke, so emphasis becomes a dotted underline (as in the Hindi editions of the other apps) */
+.rbody[lang="hi"] em, .rbody[lang="hi"] .r-chart-note, .rbody[lang="hi"] .r-flow-back { font-style: normal; text-decoration: underline dotted; text-decoration-thickness: .06em; text-underline-offset: .22em; }
+.rbody[lang="hi"] .r-chart-note, .rbody[lang="hi"] .r-flow-back { text-decoration: none; }
+html[lang="hi"] .rbody .r-callout-label, html[lang="hi"] .rbody .r-h4, html[lang="hi"] .rbody .r-chart-style, html[lang="hi"] .rbody .r-lines-label { text-transform: none; letter-spacing: 0; }
+
+/* ---------- text diagrams ---------- */
+.rbody .r-text { margin: 1.2em 0; }
+.rbody .r-text-title { font-weight: 700; color: var(--accent); margin-bottom: .4em; }
+.rbody .r-pre-wrap { overflow-x: auto; background: var(--tint); border: 1px solid var(--line); border-radius: .55em; }
+.rbody .r-pre-wrap pre { margin: 0; padding: .85em 1em; font: .82em/1.4 ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; white-space: pre; color: var(--ink); tab-size: 4; }
+
+/* ---------- writing boxes ---------- */
+.rbody .r-lines { margin: 1.1em 0 1.5em; }
+.rbody .r-lines-label { display: block; margin-bottom: .3em; font-size: .78em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.rbody .r-lines textarea { display: block; width: 100%; box-sizing: border-box; font: inherit; color: var(--ink); line-height: 2.2; padding: 0 .85em; margin: 0; border: 1px solid var(--line); border-radius: .55em; background-color: var(--card);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(2.2em - 1px), var(--line) calc(2.2em - 1px), var(--line) 2.2em); background-attachment: local; resize: vertical; }
+
+/* ---------- people cards ---------- */
+.rbody .r-people { margin: 1.3em 0; }
+.rbody .r-people-title { font-weight: 700; color: var(--accent); margin: 0 0 .6em; font-size: 1.05em; }
+.rbody ul.r-people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--r-cols, 2), minmax(0, 1fr)); gap: 1rem; }
+.rbody .r-person { margin: 0; display: flex; flex-direction: row; align-items: stretch; background: var(--card); border: 1px solid var(--line); border-radius: .7em; overflow: hidden; }
+.rbody .r-person-photo { width: 7.5em; flex: none; aspect-ratio: 4 / 5; background: var(--tint); overflow: hidden; }
+.rbody .r-person-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rbody .r-person-ph { display: flex; align-items: center; justify-content: center; background: var(--accent); color: var(--onaccent); font-weight: 700; letter-spacing: .04em; }
+.rbody .r-person-ph span { font-size: 1.9em; }
+.rbody .r-person-text { padding: .7em .85em; display: flex; flex-direction: column; justify-content: center; gap: .15em; min-width: 0; }
+.rbody .r-person-name { color: var(--accent); font-size: 1.02em; line-height: 1.3; overflow-wrap: anywhere; }
+.rbody .r-person-role { color: var(--muted); font-size: .88em; line-height: 1.35; }
+.rbody ul.r-people-grid[data-cols="3"] .r-person, .rbody ul.r-people-grid[data-cols="4"] .r-person { flex-direction: column; }
+.rbody ul.r-people-grid[data-cols="3"] .r-person-photo, .rbody ul.r-people-grid[data-cols="4"] .r-person-photo { width: 100%; }
+@media (max-width: 560px) {      /* one column on a phone: the photo stays small beside the text */
+  .rbody ul.r-people-grid { grid-template-columns: minmax(0, 1fr); gap: .7rem; }
+  .rbody ul.r-people-grid .r-person { flex-direction: row; }
+  .rbody ul.r-people-grid .r-person-photo { width: 6.5em; }
+}
+
+/* ---------- flow diagrams ---------- */
+.rbody .r-flow { margin: 1.3em 0; padding: .85em 1em 1em; background: var(--card); border: 1px solid var(--line); border-radius: .7em; }
+.rbody .r-flow-title { font-weight: 700; color: var(--accent); margin: 0 0 .75em; line-height: 1.35; }
+.rbody ol.r-flow-chain { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .55em .3em; }
+.rbody .r-flow-chain li { margin: 0; display: flex; align-items: center; gap: .3em; }
+.rbody .r-flow-node { display: block; padding: .42em .8em; border: .12em solid var(--accent); border-radius: .6em; background: var(--tint); color: var(--ink); font-weight: 600; font-size: .92em; line-height: 1.3; text-align: center; }
+.rbody .r-flow-chain li:not(:last-child)::after { content: "\2192"; content: "\2192" / ""; color: var(--gold); font-size: 1.25em; font-weight: 700; line-height: 1; }
+.rbody .r-flow-chain li.r-flow-return { margin-left: .2em; }
+.rbody .r-flow-back { display: block; padding: .38em .75em; border: .12em dashed var(--gold); border-radius: .6em; color: var(--ink); font-size: .88em; font-style: italic; }
+.rbody .r-flow-td ol.r-flow-chain { flex-direction: column; align-items: center; gap: .3em; }
+.rbody .r-flow-td .r-flow-chain li { flex-direction: column; }
+.rbody .r-flow-td .r-flow-chain li:not(:last-child)::after { content: "\2193"; content: "\2193" / ""; }
+.rbody .r-flow-td .r-flow-node { min-width: 12em; max-width: 100%; }
+@media (max-width: 640px) {
+  .rbody ol.r-flow-chain { flex-direction: column; align-items: center; gap: .3em; }
+  .rbody .r-flow-chain li { flex-direction: column; max-width: 100%; }
+  .rbody .r-flow-chain li:not(:last-child)::after { content: "\2193"; content: "\2193" / ""; }
+  .rbody .r-flow-node { min-width: 12em; max-width: 100%; }
+}
+.rbody .r-fl-wrap { overflow-x: auto; }
+.rbody .r-fl-svg { display: block; width: 100%; height: auto; margin: 0 auto; }
+.rbody .r-fl-box { fill: var(--tint); stroke: var(--accent); stroke-width: 1.8; }
+.rbody .r-fl-text { fill: var(--ink); font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif; font-weight: 600; }
+.rbody .r-fl-edge { fill: none; stroke: var(--accent); stroke-width: 1.7; }
+.rbody .r-fl-back.r-fl-edge { stroke-dasharray: 6 4; }
+.rbody .r-fl-head { fill: var(--accent); }
+.rbody .r-flow-text { margin-top: .7em; }
+.rbody .r-flow-text summary, .rbody .r-chart-data summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: .92em; }
+.rbody .r-flow-tv { margin: .5em 0 0; font-size: .92em; color: var(--ink); }
+
+/* ---------- charts ---------- */
+.rbody .r-chart { --c-line: var(--accent); --c-code: var(--accent); --c-deg: #4a4780; --c-name: #55528a; --c-house: #625f96; --c-sign: #a85200; --c-asc: #b85c00; --c-onasc: #ffffff; --c-tint: #fdefdd;
+  margin: 1.4em 0; padding: .85em .9em 1em; background: var(--card); border: 1px solid var(--line); border-radius: .75em; }
+html[data-theme="dark"] .rbody .r-chart { --c-code: var(--ink); --c-deg: #cfcdf2; --c-name: #c3c1ea; --c-house: #b0aedd; --c-sign: #f0a45a; --c-asc: var(--saffron); --c-onasc: var(--onsaffron); --c-tint: #3b2e1d; }
+.rbody .r-chart-title { margin: 0 0 .7em; text-align: center; font-weight: 700; color: var(--accent); line-height: 1.35; font-size: 1.02em; }
+.rbody .r-chart-grid { display: grid; grid-template-columns: minmax(0, 30rem); justify-content: center; gap: 1.1rem; }
+.rbody .r-chart-two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 19.5rem), 1fr)); }
+.rbody .r-chart-box { width: 100%; max-width: 30rem; margin: 0 auto; position: relative; }
+.rbody .r-chart-style { margin: 0 0 .3em; text-align: center; font-size: .74em; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.rbody .r-chart-pan { overflow: hidden; }
+.rbody .r-chart-box.is-big .r-chart-pan { overflow-x: auto; }
+.rbody .r-chart-box.is-big .r-cs-svg { width: 42rem; max-width: none; }
+.rbody .r-chart-zoom { display: none; margin: .4em auto 0; padding: .35em .8em; font: inherit; font-size: .82em; color: var(--accent); background: var(--card); border: 1px solid var(--line); border-radius: 2em; cursor: pointer; }
+.rbody .r-chart-zoom[aria-pressed="true"] { background: var(--tint); }
+@media (max-width: 760px) { .rbody .r-chart-zoom { display: block; } .rbody .r-chart { padding: .7em .6em .9em; } }
+.rbody .r-chart-note { margin: .8em 0 0; text-align: center; font-size: .86em; font-style: italic; color: var(--muted); line-height: 1.45; }
+.rbody .r-chart-data { margin-top: .8em; border-top: 1px solid var(--line); padding-top: .55em; }
+.rbody .r-chart-data .r-table-wrap { margin: .6em 0 .2em; }
+.rbody .r-chart-data .r-table { font-size: .88em; min-width: 0; }
+.rbody .r-cs-svg { display: block; width: 100%; height: auto; }
+.rbody .r-cs-svg text { font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif; }
+.rbody .r-cs-line { fill: none; stroke: var(--c-line); stroke-width: 3.1; stroke-linejoin: round; stroke-linecap: round; }
+.rbody .r-cs-outer { stroke-width: 4.8; stroke-linejoin: miter; }
+.rbody .r-cs-thin { stroke-width: 1.8; }
+.rbody .r-cs-square { stroke-linecap: square; }
+.rbody .r-cs-tint { fill: var(--c-tint); stroke: none; }
+.rbody .r-cs-code { fill: var(--c-code); font-weight: 600; }
+.rbody .r-cs-name-asc { font-weight: 700; }
+.rbody .r-cs-deg { fill: var(--c-deg); }
+.rbody .r-cs-r { fill: var(--c-sign); font-weight: 600; }
+.rbody .r-cs-asc { fill: var(--c-asc); }
+.rbody .r-cs-asc-t { fill: var(--c-onasc); font-weight: 600; }
+.rbody .r-cs-sign { fill: var(--c-sign); font-weight: 600; }
+.rbody .r-cs-hl { fill: var(--c-house); }
+.rbody .r-cs-name { fill: var(--c-name); }
+.rbody .r-cs-note { fill: var(--c-deg); }
+
+/* ---------- print ---------- */
+@media print {
+  .rbody .r-table-wrap, .rbody .r-pre-wrap, .rbody .r-fl-wrap, .rbody .r-chart-pan { overflow: visible !important; }
+  .rbody .r-table.r-cols-3, .rbody .r-table.r-cols-4, .rbody .r-table.r-cols-5, .rbody .r-table.r-cols-6 { min-width: 0; }
+  .rbody .r-callout, .rbody .r-chart, .rbody .r-flow, .rbody .r-person, .rbody .r-table tr, .rbody p.r-q { break-inside: avoid; }
+  .rbody .r-h { break-after: avoid; }
+  .rbody .r-chart-zoom, .rbody .r-hint { display: none !important; }
+  .rbody .r-table td:first-child, .rbody .r-table th:first-child { position: static !important; }
+  .rbody a { color: inherit; }
+  .rbody .r-lines textarea { border-color: #888; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(2.2em - 1px), #aaa calc(2.2em - 1px), #aaa 2.2em); }
+}
+
+</style>
+</head>
+<body>
+<!-- The visible words in this shell are set by app.js through t() (see shellText); the English below is only the fallback. -->
+<a class="app-skip" href="#main" id="skipLink">Skip to content</a>
+<header class="app-hdr" id="hdr">
+  <button id="menuBtn" class="ib" type="button" aria-label="Menu" aria-controls="side" aria-expanded="false"></button>
+  <a id="brand" class="app-brand" href="#/"><span class="b1" id="brand1">ASTROSUTRAS</span><span class="b2" id="brand2">Basics of Vedic Astrology</span></a>
+  <button id="srchBtn" class="ib" type="button" aria-label="Search"></button>
+  <a id="pill" class="app-pill" href="#/" title="Course progress"></a>
+  <span class="app-langwrap" id="langWrap" hidden>
+    <button id="langBtn" class="ib txt" type="button" aria-haspopup="false" aria-label="Language"></button>
+    <div id="langMenu" class="app-menu" role="menu" hidden></div>
+  </span>
+  <button id="themeBtn" class="ib" type="button" aria-label="Switch colour theme"></button>
+  <button id="moreBtn" class="ib" type="button" aria-label="More"></button>
+</header>
+<div class="app-readbar" id="readbar" aria-hidden="true"><i id="readfill"></i></div>
+<div class="app-wrap">
+  <nav id="side" class="app-side" aria-label="Course navigation"></nav>
+  <div id="scrim" class="app-scrim"></div>
+  <main id="main" tabindex="-1">
+    <div id="view" class="app-view"><p class="app-loading">Loading the course...</p></div>
+  </main>
+</div>
+<div id="toast" class="app-toast" role="status" aria-live="polite"></div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+<noscript><p style="padding:1rem">This course app needs JavaScript. Please enable it and reload.</p></noscript>
+<script src="data/langs.js" charset="utf-8"></script>
+<script>
+/* ===== i18n-hi.js ===== */
+// Interface dictionary for Hindi (language code "hi"). EMPTY for now: the Hindi edition is added later without code changes.
+//
+// Format: window.I18N_<CODE> = { "English template": "translated text", ... };
+//   <CODE> is the language code in capitals, a hyphen becoming an underscore (hi -> I18N_HI, pt-br -> I18N_PT_BR).
+//   The KEY is the exact English string passed to t() in src\*.js (it is also the fallback when a key is missing).
+//   The VALUE keeps the same {placeholders}: "Module {n}" -> "<translation with {n}>". Do not translate the names inside braces.
+//   A key with an empty value, or a key that is absent, shows the English text.
+// To make the worksheet of all strings:  & '..\_build\list-strings.ps1'   (writes docs\i18n-strings.txt and a ready skeleton docs\i18n-template.js)
+// To see what the running app still asks for in a language:  open the page with ?lang=hi, then in the console:  Engine.missingStrings()
+// After editing this file run _build\build-app.ps1 -SkipData to rebuild index.html.
+// Another language: copy this file to i18n-<code>.js and rename the global. Nothing else changes.
+window.I18N_HI = window.I18N_HI || {
+};
+</script>
+<script>
+/* ===== core.js ===== */
+// ================= core.js: state, storage, i18n, data loader, course model, search, inline text =================
+// Part of the app engine (see docs/ENGINE-API.md). No DOM views here; app.js draws.
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+const isObj = v => v !== null && typeof v === 'object' && !Array.isArray(v);
+const nint = (v, a, b, d) => { v = Math.round(+v); return isFinite(v) ? Math.max(a, Math.min(b, v)) : d; };
+const SKEY = 'astrosutras.basics.v1';
+const SLUG_RE = /^[a-z0-9][a-z0-9_-]{0,127}$/;       // page ids
+const ID_RE = /^[A-Za-z][A-Za-z0-9._-]{0,23}$/;      // ck1.2, w1, q3 ...
+const LANG_RE = /^[a-z]{2,3}(-[a-z0-9]{2,8})?$/;
+const MAX_TEXT = 20000;
+
+// ---------- storage: every access in try/catch ----------
+function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function lsSet(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+
+// Make any stored or imported state safe: right shapes, bounded text, no prototype keys.
+function normState(d) {
+  const src = isObj(d) ? d : {};
+  const o = { v: 1, lang: (typeof src.lang === 'string' && LANG_RE.test(src.lang)) ? src.lang : '', theme: ['auto', 'light', 'dark'].includes(src.theme) ? src.theme : 'auto',
+    fs: nint(src.fs, 13, 24, 16), done: {}, seen: {}, marks: {}, notes: {}, ck: {}, ans: {}, x: {}, last: null, known: {}, flash: { scope: 'all' } };
+  const stamps = (from, to) => { if (isObj(from)) Object.keys(from).forEach(k => { if (SLUG_RE.test(k) && from[k]) to[k] = nint(from[k], 1, 9e15, 1); }); };
+  stamps(src.done, o.done); stamps(src.seen, o.seen); stamps(src.marks, o.marks);
+  if (isObj(src.notes)) Object.keys(src.notes).forEach(k => { if (SLUG_RE.test(k) && typeof src.notes[k] === 'string' && src.notes[k].trim()) o.notes[k] = src.notes[k].slice(0, MAX_TEXT); });
+  if (isObj(src.ck)) Object.keys(src.ck).forEach(k => { if (SLUG_RE.test(k) && isObj(src.ck[k])) { const m = {}; Object.keys(src.ck[k]).forEach(i => { if (ID_RE.test(i) && typeof src.ck[k][i] === 'boolean') m[i] = src.ck[k][i]; }); if (Object.keys(m).length) o.ck[k] = m; } });
+  if (isObj(src.ans)) Object.keys(src.ans).forEach(k => { if (SLUG_RE.test(k) && isObj(src.ans[k])) { const m = {}; Object.keys(src.ans[k]).forEach(i => { if (ID_RE.test(i) && typeof src.ans[k][i] === 'string' && src.ans[k][i]) m[i] = src.ans[k][i].slice(0, MAX_TEXT); }); if (Object.keys(m).length) o.ans[k] = m; } });
+  if (isObj(src.x)) Object.keys(src.x).forEach(k => { if (SLUG_RE.test(k) && isObj(src.x[k])) { const m = {}; Object.keys(src.x[k]).forEach(i => { const v = src.x[k][i]; if (ID_RE.test(i) && (typeof v === 'number' || typeof v === 'boolean' || (typeof v === 'string' && v.length <= 400))) m[i] = v; }); if (Object.keys(m).length) o.x[k] = m; } });
+  if (isObj(src.last) && SLUG_RE.test(src.last.slug || '')) o.last = { slug: src.last.slug, anchor: /^[A-Za-z0-9.]{1,16}$/.test(src.last.anchor || '') ? src.last.anchor : '', ts: nint(src.last.ts, 0, 9e15, 0), p: nint(src.last.p, 0, 100, 0) };
+  if (isObj(src.known)) Object.keys(src.known).forEach(l => { if (LANG_RE.test(l) && isObj(src.known[l])) { const m = {}; Object.keys(src.known[l]).forEach(c => { if (c !== '__proto__' && c.length <= 100 && src.known[l][c]) m[c] = 1; }); o.known[l] = m; } });
+  if (isObj(src.flash) && typeof src.flash.scope === 'string' && /^(all|unknown|m\d{1,2})$/.test(src.flash.scope)) o.flash.scope = src.flash.scope;
+  return o;
+}
+function parseJson(s) { try { return JSON.parse(s); } catch (e) { return null; } }
+let S = normState(parseJson(lsGet(SKEY)));
+let SAVE_FAILED = false, SAVE_WARNED = false, dirty = false, saveTimer = 0;
+function flush() {
+  clearTimeout(saveTimer); if (!dirty) return; dirty = false;
+  try { localStorage.setItem(SKEY, JSON.stringify(S)); SAVE_FAILED = false; }
+  catch (e) {   // private mode or storage full or blocked: say so once (More shows the notice for good), instead of losing the work silently
+    SAVE_FAILED = true;
+    if (!SAVE_WARNED && typeof toast === 'function') { SAVE_WARNED = true; toast(t('Your progress could not be saved on this device. Open More for details.')); }
+  }
+}
+function save() { dirty = true; clearTimeout(saveTimer); saveTimer = setTimeout(flush, 350); }
+window.addEventListener('pagehide', () => { if (typeof beforeLeave === 'function') beforeLeave(); flush(); });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') { if (typeof beforeLeave === 'function') beforeLeave(); flush(); } });
+// another tab of the same app saved: take its state (and tell the views)
+window.addEventListener('storage', e => { if (e.key === SKEY && e.newValue) { S = normState(parseJson(e.newValue)); if (typeof onExternalState === 'function') onExternalState(); } });
+// first write test, so More can warn when storage is blocked
+(function () { try { localStorage.setItem(SKEY + '.t', '1'); localStorage.removeItem(SKEY + '.t'); } catch (e) { SAVE_FAILED = true; } })();
+
+// ---------- theme and text size ----------
+const mqDark = (window.matchMedia ? matchMedia('(prefers-color-scheme: dark)') : null);
+const effTheme = () => (S.theme === 'dark' || S.theme === 'light') ? S.theme : (mqDark && mqDark.matches ? 'dark' : 'light');
+function applyTheme() {
+  const th = effTheme(), root = document.documentElement;
+  root.setAttribute('data-theme', th); root.style.setProperty('--fs', S.fs + 'px');
+  const m = document.querySelector('meta[name="theme-color"]'); if (m) m.setAttribute('content', th === 'dark' ? '#23205a' : '#2e2a6e');
+}
+if (mqDark) { const f = () => { if (S.theme === 'auto') { applyTheme(); if (typeof C !== 'undefined' && C && typeof updateHeader === 'function') updateHeader(); } }; if (mqDark.addEventListener) mqDark.addEventListener('change', f); else if (mqDark.addListener) mqDark.addListener(f); }
+
+// ---------- languages and the interface translator ----------
+let LANG = 'en', DICT = null, LANG_LIST = ['en'], LANG_LABELS = { en: 'English' }, LANG_DEFAULT = 'en';
+const I18N_MISS = new Set();   // English templates asked for and not found in the dictionary (see Engine.missingStrings)
+const gid = code => String(code).replace(/-/g, '_');
+const dictFor = code => window['I18N_' + gid(code).toUpperCase()] || null;
+function readLangs() {
+  const ok = a => Array.isArray(a) ? a.filter(c => typeof c === 'string' && LANG_RE.test(c)) : [];
+  const l = ok(window.LANGS); LANG_LIST = l.length ? l : ['en'];
+  if (!LANG_LIST.includes('en')) LANG_LIST.unshift('en');
+  LANG_LABELS = Object.assign({ en: 'English' }, isObj(window.LANG_NAMES) ? window.LANG_NAMES : {});
+  LANG_DEFAULT = (typeof window.LANG_DEFAULT === 'string' && LANG_LIST.includes(window.LANG_DEFAULT)) ? window.LANG_DEFAULT : 'en';
+}
+function t(s, v) {
+  let r = s;
+  if (DICT) { const h = DICT[s]; if (typeof h === 'string' && h) r = h; else I18N_MISS.add(s); }
+  return v ? r.replace(/\{(\w+)\}/g, (m, k) => (k in v ? v[k] : m)) : r;
+}
+// ?lang=xx in the address overrides and is saved (also works from file://)
+function langFromAddress() {
+  let m = null; try { m = /[?&]lang=([a-z]{2,3}(?:-[a-z0-9]{2,8})?)(?:&|#|$)/.exec(location.search); } catch (e) { /* no address */ }
+  if (!m || !LANG_LIST.includes(m[1])) return '';
+  try { const u = new URL(location.href); u.searchParams.delete('lang'); history.replaceState(null, '', u.href); } catch (e) { /* harmless */ }
+  return m[1];
+}
+function pickLang() {
+  const a = langFromAddress(); if (a) { S.lang = a; save(); return a; }
+  return LANG_LIST.includes(S.lang) ? S.lang : LANG_DEFAULT;
+}
+
+// ---------- data loader ----------
+const SCRIPTS = Object.create(null), VER = Object.create(null);
+function loadScript(url) {
+  if (SCRIPTS[url]) return SCRIPTS[url];
+  const p = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = url; s.async = true; s.charset = 'utf-8';
+    s.onload = () => { s.remove(); resolve(); };
+    s.onerror = () => { s.remove(); delete SCRIPTS[url]; reject(new Error('Could not load ' + url)); };
+    document.head.appendChild(s);
+  });
+  SCRIPTS[url] = p; return p;
+}
+const dataUrl = (code, name, ver) => 'data/' + code + '/' + name + '.js' + (ver ? '?v=' + ver : '');
+async function loadIndex(code) {
+  const g = 'COURSE_INDEX_' + gid(code);
+  if (!window[g]) await loadScript(dataUrl(code, 'index'));
+  if (!window[g]) throw new Error('The course index for "' + code + '" is missing.');
+  VER[code] = window[g].dataVersion; return window[g];
+}
+// name: a chunk name (home, m01 ... admin), 'search' or 'flashcards'
+async function loadPart(code, name) {
+  const g = name === 'search' ? 'COURSE_SEARCH_' + gid(code) : name === 'flashcards' ? 'COURSE_FLASH_' + gid(code) : 'COURSE_CHUNK_' + gid(code) + '_' + name;
+  if (!window[g]) await loadScript(dataUrl(code, name, VER[code]));
+  if (!window[g]) throw new Error('The file ' + dataUrl(code, name) + ' did not define its data.');
+  return window[g];
+}
+const partLoaded = (code, name) => !!window[name === 'search' ? 'COURSE_SEARCH_' + gid(code) : name === 'flashcards' ? 'COURSE_FLASH_' + gid(code) : 'COURSE_CHUNK_' + gid(code) + '_' + name];
+
+// ---------- the course model: English index is the master list, the chosen language overlays titles ----------
+let C = null;
+function buildCourse(lang, ix, en) {
+  const L = (lang !== 'en' && ix) ? ix : null;
+  const lBy = Object.create(null); if (L) L.pages.forEach(p => { lBy[p.id] = p; });
+  const pages = en.pages.map(p => {
+    const q = lBy[p.id], m = Object.assign({}, p);
+    if (q) { m.title = q.title || p.title; m.description = q.description || p.description; m.words = q.words || p.words; m.readMinutes = q.readMinutes || p.readMinutes; }
+    m.dl = q ? lang : 'en';   // language of the chunk that holds this page
+    return m;
+  });
+  const by = Object.create(null); pages.forEach(p => { by[p.id] = p; });
+  const lPart = Object.create(null); if (L) L.parts.forEach(p => { lPart[p.id] = p; });
+  const parts = en.parts.map(p => ({ id: p.id, title: (lPart[p.id] && lPart[p.id].title) || p.title, chunks: p.chunks, pages: p.pages, more: !!p.more }));
+  const lMod = Object.create(null); if (L) L.modules.forEach(m => { lMod[m.n] = m; });
+  const modules = en.modules.map(m => { const q = lMod[m.n]; return Object.assign({}, m, q ? { title: q.title || m.title, subtitle: q.subtitle || m.subtitle } : {}); });
+  const modBy = Object.create(null); modules.forEach(m => { modBy[m.n] = m; });
+  const seq = pages.filter(p => p.n >= 1).sort((a, b) => a.n - b.n);
+  const partOf = Object.create(null); parts.forEach(p => p.pages.forEach(s => { partOf[s] = p; }));
+  return { lang, course: (L && L.course) || en.course, parts, partBy: Object.assign(Object.create(null), Object.fromEntries(parts.map(p => [p.id, p]))), modules, modBy, pages, by, seq, seqIds: seq.map(p => p.id), partOf, stats: en.stats, translated: L ? L.pages.length : en.pages.length };
+}
+async function activateLang(lang) {
+  LANG = lang; DICT = dictFor(lang); document.documentElement.lang = lang;
+  const [en, ix] = await Promise.all([loadIndex('en'), lang === 'en' ? Promise.resolve(null) : loadIndex(lang).catch(e => { console.warn(e.message + ' English is shown.'); return null; })]);
+  C = buildCourse(lang, ix, en);
+  document.documentElement.dir = 'ltr';
+  return C;
+}
+// the page object of a chunk, with the language it really came from (falls back to English)
+async function getPage(slug) {
+  const m = C.by[slug]; if (!m) return null;
+  let dl = m.dl, ch = null;
+  try { ch = await loadPart(dl, m.chunk); } catch (e) { if (dl === 'en') throw e; dl = 'en'; ch = await loadPart('en', m.chunk); }
+  let page = ch.pages && ch.pages[slug];
+  if (!page && dl !== 'en') { dl = 'en'; ch = await loadPart('en', m.chunk); page = ch.pages && ch.pages[slug]; }
+  if (!page) throw new Error('The page "' + slug + '" is not in the data file ' + m.chunk + '.');
+  return { meta: m, page, dl };
+}
+
+// ---------- progress ----------
+function progressOf(slugs) { let d = 0; slugs.forEach(s => { if (S.done[s]) d++; }); return { done: d, total: slugs.length, pct: slugs.length ? Math.round(100 * d / slugs.length) : 0 }; }
+const overall = () => progressOf(C.seqIds);
+const moduleProgress = n => progressOf(C.modBy[n].pages);
+const partProgress = p => progressOf(p.pages.filter(s => C.by[s] && C.by[s].n >= 1));
+const moduleDone = n => { const p = moduleProgress(n); return p.total > 0 && p.done === p.total; };
+
+// ---------- inline values (DATA-FORMAT section 5) ----------
+function inlineTo(v, parent) {
+  const txt = s => parent.appendChild(document.createTextNode(s));
+  if (v == null) return parent;
+  if (typeof v === 'string') { txt(v); return parent; }
+  if (!Array.isArray(v)) { txt(String(v)); return parent; }
+  for (const n of v) {
+    if (typeof n === 'string') { txt(n); continue; }
+    if (!n || typeof n !== 'object') continue;
+    switch (n.t) {
+      case 'b': { const e = document.createElement('strong'); inlineTo(n.x, e); parent.appendChild(e); break; }
+      case 'i': { const e = document.createElement('em'); inlineTo(n.x, e); parent.appendChild(e); break; }
+      case 'c': { const e = document.createElement('code'); e.textContent = String(n.x); parent.appendChild(e); break; }
+      case 'br': parent.appendChild(document.createElement('br')); break;
+      case 'a': {
+        const e = document.createElement('a'); inlineTo(n.x, e);
+        if (n.s && SLUG_RE.test(n.s)) { e.href = '#/page/' + n.s; const tt = C && C.by[n.s]; if (tt) e.title = tt.title; }
+        else if (typeof n.u === 'string' && /^https:\/\//i.test(n.u)) { e.href = n.u; e.target = '_blank'; e.rel = 'noopener noreferrer'; }
+        parent.appendChild(e); break;
+      }
+      default: throw new Error('Unknown inline node type "' + n.t + '"');
+    }
+  }
+  return parent;
+}
+function plainOf(v) {
+  if (v == null) return '';
+  if (typeof v === 'string') return v;
+  if (!Array.isArray(v)) return String(v);
+  return v.map(n => typeof n === 'string' ? n : (!n ? '' : n.t === 'br' ? ' ' : plainOf(n.x))).join('').replace(/\s+/g, ' ').trim();
+}
+
+// ---------- full-text search (DATA-FORMAT section 9) ----------
+const SEARCH = { loaded: {} };
+async function ensureSearch() {
+  const langs = LANG === 'en' ? ['en'] : [LANG, 'en'];
+  const out = [];
+  for (const l of langs) {
+    try { const d = await loadPart(l, 'search'); out.push({ lang: l, pages: d.pages }); } catch (e) { if (l === 'en') throw e; }
+  }
+  return out;
+}
+const tokenize = q => Array.from(new Set(String(q).toLowerCase().split(/[^\p{L}\p{N}\p{M}]+/u).filter(x => x.length >= 2)));
+function runSearch(sets, q) {
+  const toks = tokenize(q); if (!toks.length) return { toks, hits: [] };
+  const seen = new Set(), hits = [];
+  sets.forEach(set => {
+    set.pages.forEach(p => {
+      if (seen.has(p.s)) return;                         // the chosen language wins over the English copy
+      if (!C.by[p.s]) return;
+      if (set.lang !== C.by[p.s].dl) return;             // a page not translated yet is searched in English only
+      const x = p.x; let ok = true, first = -1;
+      for (const tk of toks) { const i = x.indexOf(tk); if (i < 0) { ok = false; break; } if (first < 0 || i < first) first = i; }
+      if (!ok) return;
+      seen.add(p.s);
+      const tl = p.t.toLowerCase(), hl = p.h.map(e => e[2].toLowerCase());
+      let sc = 0, cnt = 0;
+      toks.forEach(tk => {
+        if (tl.includes(tk)) sc += 50;
+        if (hl.some(h => h.includes(tk))) sc += 20;
+        let i = -1, c = 0; while (c < 40 && (i = x.indexOf(tk, i + 1)) >= 0) c++; cnt += c;
+      });
+      sc += Math.min(cnt, 40) + (p.k === 'lesson' || p.k === 'chapter' ? 4 : p.k === 'intro' || p.k === 'summary' ? 2 : 0);
+      // the hit shown: the first one in body text (not in a heading line) when there is one; the heading before it gives the link target
+      let pos = first;
+      { let i = -1, tries = 0; while (tries++ < 60 && (i = x.indexOf(toks[0], i + 1)) >= 0) { const ls = x.lastIndexOf('\n', i) + 1; if (x.charCodeAt(ls) !== 1) { pos = i; break; } } }
+      let hid = '';
+      for (let k = p.h.length - 1; k >= 0; k--) if (p.h[k][0] <= pos) { hid = p.h[k][1]; break; }
+      // snippet around the hit, trimmed to word boundaries
+      let a = Math.max(0, pos - 60), b = Math.min(x.length, pos + toks[0].length + 70);
+      if (a > 0) { const sp = x.indexOf(' ', a); if (sp >= 0 && sp < pos) a = sp + 1; }
+      if (b < x.length) { const sp = x.lastIndexOf(' ', b); if (sp > pos) b = sp; }
+      const snip = x.slice(a, b).replace(/[\u0001\n]+/g, ' / ').replace(/\s+/g, ' ').replace(/^[\s\/]+|[\s\/]+$/g, '');
+      hits.push({ s: p.s, t: p.t, k: p.k, sc, hid: hid === 'h0' ? '' : hid, snip: (a > 0 ? '… ' : '') + snip + (b < x.length ? ' …' : ''), dl: set.lang });
+    });
+  });
+  hits.sort((m, n) => n.sc - m.sc || C.by[m.s].n - C.by[n.s].n);
+  return { toks, hits };
+}
+// text with the search words wrapped in <mark class="hit"> (everything escaped)
+function highlightHtml(text, toks) {
+  if (!toks.length) return esc(text);
+  const re = new RegExp('(' + toks.slice().sort((a, b) => b.length - a.length).map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+  return text.split(re).map((s, i) => i % 2 ? '<mark class="hit">' + esc(s) + '</mark>' : esc(s)).join('');
+}
+
+// ---------- debugging helpers (console) ----------
+window.Engine = {
+  version: 1,
+  state: () => S, course: () => C, lang: () => LANG,
+  t, inline: inlineTo, plain: plainOf,
+  missingStrings: () => Array.from(I18N_MISS).sort(),
+  loadPart, loadIndex, getPage, search: async q => runSearch(await ensureSearch(), q)
+};
+</script>
+<script>
+/* ===== charts.js ===== */
+// ================= charts.js: North and South Indian chart drawing (SVG) =================
+// A faithful port of the layout code of basics-course-source\build\chartlib.ps1 (Get-ChartNorthGeometry, Find-ChartBlock, Invoke-ChartDrawNorth,
+// Invoke-ChartDrawSouth), so that the charts of the app look like the charts of the Word manual. The chart MODEL is produced at build time
+// (data\<lang>\<chunk>.js, DATA-FORMAT.md section 6.7); this file never parses the dialect.
+//
+// Public API (used by render.js only):
+//   Charts.render(block, ctx)  -> HTMLElement  (<figure class="r-chart">: title, one or two drawings, note, data table in <details>)
+//   Charts.svg(block, style, ctx) -> SVGElement  (one drawing; style 'north' | 'south'; null for a North chart that has no Asc and is not blank)
+//   Charts.version
+// ctx needs: t(template, vars?), inline(value, parent), plain(value). Colours come from CSS variables (render.css), so a theme change needs no redraw.
+// Answer-safe charts (block.answerSafe) never contain a house number, a house label or the word "house" in any element or attribute made here.
+(function () {
+  'use strict';
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var S = 1000;                                   // side of the chart square in user units; every other measure is a fraction of S (as in chartlib)
+  var VIEWBOX = '-8 -8 1016 1016';
+  var FAMILY = '"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif';
+  var SIGN_NAMES = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
+  var SOUTH_POS = { Pisces: [0, 0], Aries: [0, 1], Taurus: [0, 2], Gemini: [0, 3], Cancer: [1, 3], Leo: [2, 3], Virgo: [3, 3], Libra: [3, 2], Scorpio: [3, 1], Sagittarius: [3, 0], Capricorn: [2, 0], Aquarius: [1, 0] };
+  var DEG_RATIO = { north: 0.78, south: 0.95 };   // degree text size / planet code size (chartlib CL_DegRatioNorth / South)
+  var uid = 0;
+
+  // ---------- text measuring (chartlib uses GDI+; the browser uses a canvas with the same font stack as the drawing) ----------
+  var cv2d, measureCache = {};
+  function canvas2d() {
+    if (cv2d !== undefined) return cv2d;
+    try { cv2d = document.createElement('canvas').getContext('2d'); } catch (e) { cv2d = null; }
+    return cv2d;
+  }
+  // width of text at font size 1 (measured at 100 px so that hinting does not distort the small sizes); weight 400 or 600
+  function unitWidth(text, weight) {
+    var key = weight + '|' + text, v = measureCache[key];
+    if (v !== undefined) return v;
+    var c = canvas2d();
+    if (c) { c.font = weight + ' 100px ' + FAMILY; v = c.measureText(text).width / 100; }
+    else {                                                 // no canvas (not a browser): a rough estimate, good enough for a test run
+      v = 0; for (var i = 0; i < text.length; i++) { var ch = text.charAt(i); v += ch === ' ' ? 0.28 : ch === "'" ? 0.26 : ch === '°' ? 0.4 : /[0-9]/.test(ch) ? 0.56 : /[A-Z]/.test(ch) ? 0.64 : 0.52; }
+      if (weight >= 600) v *= 1.05;
+    }
+    measureCache[key] = v;
+    return v;
+  }
+  function textWidth(text, size, weight) { return text ? unitWidth(text, weight || 400) * size : 0; }
+
+  // ---------- SVG helpers ----------
+  function svgEl(parent, name, attrs) {
+    var e = document.createElementNS(NS, name);
+    if (attrs) for (var k in attrs) if (attrs[k] !== null && attrs[k] !== undefined) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function num(v) { return Math.round(v * 100) / 100; }
+  function svgText(parent, cls, x, y, size, text, anchor) {
+    var e = svgEl(parent, 'text', { 'class': cls, x: num(x), y: num(y), 'font-size': num(size) });
+    if (anchor) e.setAttribute('text-anchor', anchor);
+    e.textContent = text;
+    return e;
+  }
+
+  // ---------- the model (what chartlib's New-ChartModel gives, rebuilt from the data block) ----------
+  function modelOf(block) {
+    var signs = [], i, k;
+    for (i = 0; i < 12; i++) {
+      var sd = (block.signs && block.signs[i]) || { no: i + 1, name: SIGN_NAMES[i], items: [] };
+      var items = [];
+      (sd.items || []).forEach(function (it) { items.push({ Planet: it.p, Deg: it.deg || null, Retro: !!it.r }); });
+      signs.push({ no: i + 1, name: SIGN_NAMES[i], house: sd.house || 0, items: block.blank ? [] : items });
+    }
+    var houses = [null];
+    for (k = 1; k <= 12; k++) {
+      var no = block.compartments ? block.compartments[k - 1] : 0;
+      houses.push({ no: no || 0, items: no ? signs[no - 1].items : [] });
+    }
+    return { blank: !!block.blank, answerSafe: !!block.answerSafe, ascNo: block.ascNo || 0, ascSign: block.asc || null, signs: signs, houses: houses, hasCompartments: !!block.compartments };
+  }
+
+  // ---------- planet block layout (Get-ChartMetrics, Get-ChartColumns, Find-ChartBlock) ----------
+  function metrics(c, items, scale, showDeg) {
+    var n = items.length, cs = c.base * scale, i;
+    var m = { cs: cs, fC: cs, fD: cs * c.degRatio, fR: cs * 0.70, codeWs: [], degWs: [], rWs: [], gap: 0.42 * cs, rGap: 0.26 * cs, pitch: 1.32 * cs, colGap: 0.95 * cs, showDeg: showDeg, n: n };
+    var rWidth = textWidth('R', m.fR, 600);
+    for (i = 0; i < n; i++) {
+      var it = items[i], w = textWidth(it.Planet, m.fC, 600);
+      if (it.Planet === 'Asc') w += 0.56 * cs;
+      m.codeWs.push(w);
+      m.degWs.push(showDeg && it.Deg ? textWidth(it.Deg, m.fD, 400) : 0);
+      m.rWs.push(it.Retro ? rWidth : 0);
+    }
+    return m;
+  }
+  function columns(m, cols) {
+    var infos = [], x = 0, j, i;
+    for (j = 0; j < cols; j++) {
+      var codeW = 0, degW = 0, rW = 0;
+      for (i = j; i < m.n; i += cols) {
+        if (m.codeWs[i] > codeW) codeW = m.codeWs[i];
+        if (m.degWs[i] > degW) degW = m.degWs[i];
+        if (m.rWs[i] > rW) rW = m.rWs[i];
+      }
+      var w = codeW;
+      if (degW > 0) w += m.gap + degW;
+      if (rW > 0) w += m.rGap + rW;
+      infos.push({ x: x, codeW: codeW, degW: degW, rW: rW, w: w });
+      x += w + m.colGap;
+    }
+    return { cols: infos, width: x - m.colGap };
+  }
+  // half-plane edges of a convex polygon (New-ChartEdges): a*x + b*y + c >= 0 inside
+  function polyEdges(pts) {
+    var n = pts.length / 2, gx = 0, gy = 0, i, edges = [];
+    for (i = 0; i < n; i++) { gx += pts[2 * i]; gy += pts[2 * i + 1]; }
+    gx /= n; gy /= n;
+    for (i = 0; i < n; i++) {
+      var j = (i + 1) % n, px = pts[2 * i], py = pts[2 * i + 1], qx = pts[2 * j], qy = pts[2 * j + 1];
+      var dx = qx - px, dy = qy - py, len = Math.sqrt(dx * dx + dy * dy);
+      var a = dy / len, b = -dx / len, cc = -(a * px + b * py);
+      if (a * gx + b * gy + cc < 0) { a = -a; b = -b; cc = -cc; }
+      edges.push([a, b, cc]);
+    }
+    return edges;
+  }
+  function rectFits(x, y, w, h, edges, pad, obstacles, gap) {
+    var i;
+    for (i = 0; i < edges.length; i++) {
+      var e = edges[i], px = e[0] < 0 ? x + w : x, py = e[1] < 0 ? y + h : y;
+      if (e[0] * px + e[1] * py + e[2] < pad) return false;
+    }
+    for (i = 0; i < obstacles.length; i++) {
+      var o = obstacles[i];
+      if (x < o[0] + o[2] + gap && x + w + gap > o[0] && y < o[1] + o[3] + gap && y + h + gap > o[1]) return false;
+    }
+    return true;
+  }
+  // the largest font scale at which all entries fit in the polygon and clear of the obstacles; degrees first (1.0 .. 0.66), then codes only (1.0 .. 0.50)
+  function findBlock(c, items, edges, axisA, axisB, tPref, obstacles, pad, obGap) {
+    var n = items.length, i, hasDeg = false;
+    if (!n) return null;
+    items.forEach(function (it) { if (c.showDeg && it.Deg) hasDeg = true; });
+    var modes = [];
+    if (hasDeg) modes.push([true, 1.0, 0.66]);
+    modes.push([false, 1.0, 0.50]);
+    var ts = [];
+    for (i = 0; i <= 48; i++) ts.push(0.02 + 0.02 * i);
+    ts.sort(function (a, b) { return Math.abs(a - tPref) - Math.abs(b - tPref); });
+    var prefCols = Math.ceil(n / 3.0), colOpts = [], maxCols = Math.min(n, 5);
+    for (i = 1; i <= maxCols; i++) colOpts.push(i);
+    colOpts.sort(function (a, b) { return (Math.abs(a - prefCols) * 10 + a) - (Math.abs(b - prefCols) * 10 + b); });
+    var dx = axisB[0] - axisA[0], dy = axisB[1] - axisA[1];
+    for (var mi = 0; mi < modes.length; mi++) {
+      var showDeg = modes[mi][0], hi = modes[mi][1], lo = modes[mi][2];
+      for (var s = hi; s >= lo - 0.0001; s -= 0.04) {
+        var m = metrics(c, items, s, showDeg);
+        for (var ci = 0; ci < colOpts.length; ci++) {
+          var cols = colOpts[ci], rows = Math.ceil(n / cols), info = columns(m, cols);
+          var bw = info.width, bh = (rows - 1) * m.pitch + 1.15 * m.cs;
+          for (var ti = 0; ti < ts.length; ti++) {
+            var t = ts[ti], cx = axisA[0] + t * dx, cy = axisA[1] + t * dy, x = cx - bw / 2, y = cy - bh / 2;
+            if (rectFits(x, y, bw, bh, edges, pad, obstacles, obGap)) {
+              var q = s; if (hasDeg && !showDeg) q = s - 0.35;
+              return { scale: s, quality: q, showDeg: showDeg, cols: cols, colInfo: info.cols, rows: rows, x: x, y: y, w: bw, h: bh, m: m, overflow: false };
+            }
+          }
+        }
+      }
+    }
+    // last resort: the smallest scale at the preferred position (reported as an overflow)
+    var m2 = metrics(c, items, 0.50, false), cols2 = Math.min(n, 3), rows2 = Math.ceil(n / cols2), info2 = columns(m2, cols2);
+    var bw2 = info2.width, bh2 = (rows2 - 1) * m2.pitch + 1.15 * m2.cs;
+    var cx2 = axisA[0] + tPref * dx, cy2 = axisA[1] + tPref * dy;
+    return { scale: 0.50, quality: -1.0, showDeg: false, cols: cols2, colInfo: info2.cols, rows: rows2, x: cx2 - bw2 / 2, y: cy2 - bh2 / 2, w: bw2, h: bh2, m: m2, overflow: true };
+  }
+  // draw one block of planets (Invoke-ChartDrawBlock)
+  function drawBlock(c, g, items, lay) {
+    var m = lay.m, cs = m.cs;
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i], col = i % lay.cols, row = Math.floor(i / lay.cols), ci = lay.colInfo[col];
+      var x0 = lay.x + ci.x, base = lay.y + 0.9 * cs + row * m.pitch, tx = x0, cls = 'r-cs-code';
+      if (it.Planet === 'Asc') {
+        svgEl(g, 'rect', { 'class': 'r-cs-asc', x: num(x0), y: num(base - 0.86 * cs), width: num(m.codeWs[i]), height: num(1.12 * cs), rx: num(0.3 * cs) });
+        cls = 'r-cs-asc-t'; tx = x0 + 0.28 * cs;
+      }
+      svgText(g, cls, tx, base, m.fC, it.Planet);
+      var endX = x0 + ci.codeW;
+      if (lay.showDeg && it.Deg) svgText(g, 'r-cs-deg', x0 + ci.codeW + m.gap, base, m.fD, it.Deg);
+      if (ci.degW > 0) endX = x0 + ci.codeW + m.gap + ci.degW;
+      if (it.Retro) svgText(g, 'r-cs-r', endX + m.rGap, base, m.fR, 'R');
+    }
+  }
+
+  // ---------- North Indian geometry (Get-ChartNorthGeometry) ----------
+  var NORTH_DEFS = [null,
+    { v: ['T', 'PTL', 'C', 'PTR'], o: ['T'], i: 'C', kind: 'diamond' },
+    { v: ['TL', 'T', 'PTL'], o: ['TL', 'T'], i: 'PTL', kind: 'triangle' },
+    { v: ['TL', 'PTL', 'L'], o: ['TL', 'L'], i: 'PTL', kind: 'triangle' },
+    { v: ['L', 'PTL', 'C', 'PBL'], o: ['L'], i: 'C', kind: 'diamond' },
+    { v: ['L', 'PBL', 'BL'], o: ['L', 'BL'], i: 'PBL', kind: 'triangle' },
+    { v: ['BL', 'PBL', 'B'], o: ['BL', 'B'], i: 'PBL', kind: 'triangle' },
+    { v: ['B', 'PBL', 'C', 'PBR'], o: ['B'], i: 'C', kind: 'diamond' },
+    { v: ['B', 'PBR', 'BR'], o: ['B', 'BR'], i: 'PBR', kind: 'triangle' },
+    { v: ['BR', 'PBR', 'R'], o: ['BR', 'R'], i: 'PBR', kind: 'triangle' },
+    { v: ['R', 'PBR', 'C', 'PTR'], o: ['R'], i: 'C', kind: 'diamond' },
+    { v: ['R', 'PTR', 'TR'], o: ['R', 'TR'], i: 'PTR', kind: 'triangle' },
+    { v: ['TR', 'PTR', 'T'], o: ['TR', 'T'], i: 'PTR', kind: 'triangle' }];
+  function northGeometry(side) {
+    var q = side / 4, h = side / 2;
+    var P = { TL: [0, 0], T: [h, 0], TR: [side, 0], R: [side, h], BR: [side, side], B: [h, side], BL: [0, side], L: [0, h], C: [h, h], PTL: [q, q], PTR: [3 * q, q], PBR: [3 * q, 3 * q], PBL: [q, 3 * q] };
+    var houses = [null];
+    for (var k = 1; k <= 12; k++) {
+      var d = NORTH_DEFS[k], poly = [], axo = 0, ayo = 0, edge = null;
+      d.v.forEach(function (nm) { poly.push(P[nm][0], P[nm][1]); });
+      d.o.forEach(function (nm) { axo += P[nm][0]; ayo += P[nm][1]; });
+      axo /= d.o.length; ayo /= d.o.length;
+      if (d.o.length === 2) edge = [P[d.o[0]][0], P[d.o[0]][1], P[d.o[1]][0], P[d.o[1]][1]];
+      houses.push({ no: k, poly: poly, outer: [axo, ayo], inner: [P[d.i][0], P[d.i][1]], kind: d.kind, edge: edge });
+    }
+    return { P: P, houses: houses };
+  }
+
+  var LINE_W = 3.1, LINE_WO = 4.8;     // 0.0028 W and 0.0044 W of chartlib at W = 1100
+
+  // ---------- North Indian drawing (Invoke-ChartDrawNorth) ----------
+  function drawNorth(model, svg, c, stats) {
+    var geo = northGeometry(S), P = geo.P, blank = model.blank, showHouse = c.showHouse, k, i;
+    var g = svgEl(svg, 'g', {});
+    if (model.ascNo > 0) {
+      var h1 = geo.houses[1].poly;
+      svgEl(g, 'polygon', { 'class': 'r-cs-tint', points: h1.join(' ') });
+      // a second, thinner outline inside the Lagna compartment (tint + double border + the word Asc: never colour alone)
+      var gx = (h1[0] + h1[2] + h1[4] + h1[6]) / 4, gy = (h1[1] + h1[3] + h1[5] + h1[7]) / 4, ins = [];
+      for (i = 0; i < 4; i++) ins.push(num(gx + (h1[2 * i] - gx) * 0.93), num(gy + (h1[2 * i + 1] - gy) * 0.93));
+      svgEl(g, 'polygon', { 'class': 'r-cs-line r-cs-thin', points: ins.join(' ') });
+    }
+    svgEl(g, 'line', { 'class': 'r-cs-line', x1: P.TL[0], y1: P.TL[1], x2: P.BR[0], y2: P.BR[1] });
+    svgEl(g, 'line', { 'class': 'r-cs-line', x1: P.TR[0], y1: P.TR[1], x2: P.BL[0], y2: P.BL[1] });
+    svgEl(g, 'polygon', { 'class': 'r-cs-line', points: [P.T, P.R, P.B, P.L].map(function (p) { return p.join(','); }).join(' ') });
+    svgEl(g, 'rect', { 'class': 'r-cs-line r-cs-outer', x: 0, y: 0, width: S, height: S });
+    var fSN = S * 0.029, fH = blank ? S * 0.030 : S * 0.023, g1 = 0.012 * S, pad = 0.0125 * S;
+    for (k = 1; k <= 12; k++) {
+      var hg = geo.houses[k], hm = model.houses[k];
+      var axo = hg.outer[0], ayo = hg.outer[1], ix = hg.inner[0], iy = hg.inner[1];
+      var ux = axo - ix, uy = ayo - iy, ul = Math.sqrt(ux * ux + uy * uy);
+      ux /= ul; uy /= ul;
+      var obst = [], cx, cy;
+      if (hm.no > 0) {                                   // the sign number near the inner vertex (kept in answer-safe mode: a traditional chart prints it)
+        var txt = String(hm.no), tw = textWidth(txt, fSN, 600), th = 0.74 * fSN;
+        var dGap = hg.kind === 'diamond' ? 0.034 * S : 0.011 * S;
+        var d = tw / 2 + th / 2 + dGap;
+        cx = ix + ux * d; cy = iy + uy * d;
+        svgText(g, 'r-cs-sign', cx, cy + th / 2, fSN, txt, 'middle');
+        obst.push([cx - tw / 2, cy - th / 2, tw, th]);
+      }
+      var edges = polyEdges(hg.poly), cands = [], htxt = 'H' + k;
+      if (showHouse) {                                   // full mode only
+        var hw = textWidth(htxt, fH, 400), hh = 0.74 * fH, d2;
+        if (hg.kind === 'diamond') d2 = hw / 2 + hh / 2 + 0.024 * S;
+        else d2 = Math.abs(ux) * hw / 2 + Math.abs(uy) * hh / 2 + g1;
+        cx = axo - ux * d2; cy = ayo - uy * d2;
+        cands.push([cx - hw / 2, cy - hh / 2, hw, hh]);
+        if (hg.kind === 'triangle' && !blank && hm.items.length >= 4) {      // a crowded triangle may also try two more places along its outer edge
+          var ea = hg.edge;
+          [-0.30, 0.30].forEach(function (sh) {
+            var sx = axo + sh * (ea[2] - ea[0]), sy = ayo + sh * (ea[3] - ea[1]);
+            var rc = [sx - ux * d2 - hw / 2, sy - uy * d2 - hh / 2, hw, hh];
+            if (rectFits(rc[0], rc[1], rc[2], rc[3], edges, 0.006 * S, obst, 0)) cands.push(rc);
+          });
+        }
+      }
+      var lay = null, bestRect = null;
+      if (blank || hm.items.length === 0) {
+        if (cands.length) bestRect = cands[0];
+      } else {
+        var tPref = hg.kind === 'diamond' ? 0.5 : 0.42, tryList = cands.length ? cands : [null], bestQ = -100;
+        for (i = 0; i < tryList.length; i++) {
+          var rc2 = tryList[i], ob = obst.slice();
+          if (rc2) ob.push(rc2);
+          var cand = findBlock(c, hm.items, edges, hg.outer, hg.inner, tPref, ob, pad, 0.02 * S);
+          if (cand.quality > bestQ + 0.0001) { lay = cand; bestQ = cand.quality; bestRect = rc2; }
+        }
+      }
+      if (bestRect) svgText(g, blank ? 'r-cs-name' : 'r-cs-hl', bestRect[0] + bestRect[2] / 2, bestRect[1] + bestRect[3], fH, htxt, 'middle');
+      if (lay) { drawBlock(c, g, hm.items, lay); if (lay.overflow) stats.overflow++; }
+    }
+  }
+
+  // ---------- South Indian drawing (Invoke-ChartDrawSouth) ----------
+  function wrapText(text, size, weight, maxW) {
+    var words = String(text).split(/\s+/).filter(function (w) { return w !== ''; }), lines = [], cur = '';
+    words.forEach(function (w) {
+      if (cur === '') { cur = w; return; }
+      var cand = cur + ' ' + w;
+      if (textWidth(cand, size, weight) <= maxW) cur = cand; else { lines.push(cur); cur = w; }
+    });
+    if (cur !== '') lines.push(cur);
+    return lines;
+  }
+  function drawSouth(model, svg, c, stats, ctx, signLabels) {
+    var cs = S / 4, blank = model.blank, hasAsc = model.ascNo > 0, g = svgEl(svg, 'g', {}), i, r = null;
+    if (hasAsc) {
+      var pos = SOUTH_POS[model.ascSign];
+      r = [pos[1] * cs, pos[0] * cs, cs, cs];
+      svgEl(g, 'rect', { 'class': 'r-cs-tint', x: r[0], y: r[1], width: cs, height: cs });
+    }
+    function ln(x1, y1, x2, y2) { svgEl(g, 'line', { 'class': 'r-cs-line r-cs-square', x1: x1, y1: y1, x2: x2, y2: y2 }); }
+    [1, 3].forEach(function (j) { ln(j * cs, 0, j * cs, S); });
+    [1, 3].forEach(function (j) { ln(0, j * cs, S, j * cs); });
+    ln(2 * cs, 0, 2 * cs, cs); ln(2 * cs, 3 * cs, 2 * cs, S); ln(0, 2 * cs, cs, 2 * cs); ln(3 * cs, 2 * cs, S, 2 * cs);
+    svgEl(g, 'rect', { 'class': 'r-cs-line r-cs-outer', x: 0, y: 0, width: S, height: S });
+    if (hasAsc) {                                         // double border of the Lagna cell
+      var inset = 0.012 * S;
+      svgEl(g, 'rect', { 'class': 'r-cs-line r-cs-thin', x: num(r[0] + inset), y: num(r[1] + inset), width: num(cs - 2 * inset), height: num(cs - 2 * inset) });
+    }
+    var fN = blank ? S * 0.034 : S * 0.0265, fH = S * 0.0245, lab = 0.028 * S;
+    model.signs.forEach(function (sg) {
+      var pos = SOUTH_POS[sg.name], cx0 = pos[1] * cs, cy0 = pos[0] * cs, isAsc = hasAsc && sg.name === model.ascSign, obst = [];
+      var label = signLabels[sg.no - 1], th = 0.74 * fN, nx = cx0 + lab * 0.75, ny = cy0 + lab * 0.72;
+      var tw = textWidth(label, fN, isAsc ? 600 : 400);
+      svgText(g, isAsc ? 'r-cs-code r-cs-name-asc' : 'r-cs-name', nx, ny + th, fN, label);
+      obst.push([nx, ny, tw, th]);
+      if (c.showHouse && sg.house > 0) {                  // full mode only: H1..H12, bottom right
+        var htxt = 'H' + sg.house, hw = textWidth(htxt, fH, 400), hh = 0.74 * fH;
+        var hx = cx0 + cs - lab * 0.75 - hw, hy = cy0 + cs - lab * 0.72 - hh;
+        svgText(g, 'r-cs-hl', cx0 + cs - lab * 0.75, hy + hh, fH, htxt, 'end');
+        obst.push([hx, hy, hw, hh]);
+      }
+      if (blank || sg.items.length === 0) return;
+      var ins = isAsc ? 0.026 * S : 0.016 * S, poly = [cx0, cy0, cx0 + cs, cy0, cx0 + cs, cy0 + cs, cx0, cy0 + cs];
+      var lay = findBlock(c, sg.items, polyEdges(poly), [cx0 + cs / 2, cy0], [cx0 + cs / 2, cy0 + cs], 0.56, obst, ins, 0.014 * S);
+      drawBlock(c, g, sg.items, lay);
+      if (lay.overflow) stats.overflow++;
+    });
+    // centre block: what the reader needs to know about the cells (the title and the note are printed by the page, not inside the drawing)
+    var info = [];
+    if (model.answerSafe) {                               // sign-only: no house is mentioned
+      if (blank && !hasAsc) info.push(ctx.t('Write Asc in the Lagna sign'));
+      else info.push(ctx.t('Signs are fixed in their cells and run clockwise from Aries'));
+    } else {
+      if (hasAsc) info.push(ctx.t('Lagna (Asc): {sign}', { sign: signLabels[model.ascNo - 1] }));
+      if (blank && !hasAsc) info.push(ctx.t('Write Asc in the Lagna sign; count houses clockwise from it'));
+      else if (hasAsc) info.push(ctx.t('Signs are fixed; houses count clockwise from Asc'));
+      else info.push(ctx.t('Signs are fixed in their cells and run clockwise from Aries'));
+    }
+    var cx = S / 2, areaW = 2 * cs * 0.86, areaH = 2 * cs * 0.84, sc, il = [], tot = 0;
+    for (sc = 1.0; sc >= 0.45; sc -= 0.05) {
+      il = [];
+      info.forEach(function (tx) { il = il.concat(wrapText(tx, S * 0.028 * sc, 400, areaW)); });
+      tot = il.length * 1.30 * S * 0.028 * sc;
+      if (tot <= areaH) break;
+    }
+    var y = cs + cs - tot / 2;
+    il.forEach(function (tx) {
+      svgText(g, 'r-cs-note', cx, y + 0.95 * S * 0.028 * sc, S * 0.028 * sc, tx, 'middle');
+      y += 1.30 * S * 0.028 * sc;
+    });
+  }
+
+  // ---------- one drawing ----------
+  function signLabelsOf(ctx) {
+    return [ctx.t('Aries'), ctx.t('Taurus'), ctx.t('Gemini'), ctx.t('Cancer'), ctx.t('Leo'), ctx.t('Virgo'), ctx.t('Libra'), ctx.t('Scorpio'), ctx.t('Sagittarius'), ctx.t('Capricorn'), ctx.t('Aquarius'), ctx.t('Pisces')];
+  }
+  function drawing(block, style, ctx) {
+    var model = modelOf(block);
+    if (style === 'north' && !model.blank && !model.hasCompartments) return null;       // a North chart needs an Asc (the dialect guarantees it)
+    var c = { base: 0.0295 * S, showDeg: true, degRatio: DEG_RATIO[style], showHouse: !model.answerSafe };
+    var stats = { overflow: 0 };
+    var svg = svgEl(null, 'svg', { xmlns: NS, viewBox: VIEWBOX, 'class': 'r-cs-svg r-cs-' + style, focusable: 'false', preserveAspectRatio: 'xMidYMid meet' });
+    if (style === 'north') drawNorth(model, svg, c, stats);
+    else drawSouth(model, svg, c, stats, ctx, signLabelsOf(ctx));
+    svg.setAttribute('data-overflow', String(stats.overflow));
+    return svg;
+  }
+
+  // ---------- the figure ----------
+  function h(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function render(block, ctx) {
+    var id = 'rc' + (++uid), styles = block.style === 'both' ? ['north', 'south'] : [block.style];
+    var fig = h('figure', 'r-chart' + (block.answerSafe ? ' r-chart-safe' : '') + (block.blank ? ' r-chart-blank' : ''));
+    fig.setAttribute('data-style', block.style);
+    var titlePlain = block.title ? ctx.plain(block.title) : '';
+    if (block.title) {
+      var cap = h('figcaption', 'r-chart-title'); cap.id = id + 't';
+      ctx.inline(block.title, cap); fig.appendChild(cap);
+    }
+    var grid = h('div', 'r-chart-grid' + (styles.length > 1 ? ' r-chart-two' : ''));
+    var drawn = 0;
+    styles.forEach(function (st) {
+      var svg = drawing(block, st, ctx);
+      if (!svg) { if (window.console) console.warn('Charts: a North Indian chart without an Asc was skipped'); return; }
+      drawn++;
+      var styleName = st === 'north' ? ctx.t('North Indian style') : ctx.t('South Indian style');
+      var box = h('div', 'r-chart-box'), lab = h('div', 'r-chart-style', styleName);
+      var label = titlePlain ? ctx.t('{style} chart: {title}', { style: styleName, title: titlePlain }) : ctx.t('{style} chart', { style: styleName });
+      svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', label);
+      var ttl = svgEl(null, 'title'); ttl.textContent = label; svg.insertBefore(ttl, svg.firstChild);      // the drawing's own title (also a tooltip); the text alternative follows as a hidden paragraph
+      box.appendChild(lab);
+      var scroll = h('div', 'r-chart-pan'); scroll.appendChild(svg); box.appendChild(scroll);
+      var zoom = h('button', 'r-chart-zoom', ctx.t('Larger view'));
+      zoom.type = 'button'; zoom.setAttribute('aria-pressed', 'false');
+      zoom.addEventListener('click', function () {        // phones: the drawing grows to a fixed width and is panned inside its own box (the page never scrolls sideways)
+        var big = box.classList.toggle('is-big');
+        zoom.setAttribute('aria-pressed', big ? 'true' : 'false');
+        zoom.textContent = big ? ctx.t('Normal size') : ctx.t('Larger view');
+        if (big) { scroll.tabIndex = 0; scroll.setAttribute('role', 'region'); scroll.setAttribute('aria-label', label); }
+        else { scroll.removeAttribute('tabindex'); scroll.removeAttribute('role'); scroll.removeAttribute('aria-label'); scroll.scrollLeft = 0; }
+      });
+      box.appendChild(zoom);
+      var alt = block.alt && block.alt[st];
+      if (alt) { var sr = h('p', 'r-sr', alt); sr.lang = 'en'; box.appendChild(sr); }      // the text alternative (English in every language build)
+      grid.appendChild(box);
+    });
+    fig.appendChild(grid);
+    if (block.note) { var note = h('p', 'r-chart-note'); ctx.inline(block.note, note); fig.appendChild(note); }
+    if (block.data && block.data.rows && block.data.rows.length && drawn) {
+      var det = h('details', 'r-chart-data'), sum = h('summary', '', ctx.t('Chart data'));
+      det.appendChild(sum);
+      var wrap = h('div', 'r-table-wrap r-scroll'), tb = h('table', 'r-table r-chart-table r-cols-' + block.data.cols.length), th = h('thead'), trh = h('tr'), tbd = h('tbody');
+      block.data.cols.forEach(function (cn) {        // column names are interface words; 'House' only exists in a full-mode chart
+        var e = h('th', '', cn === 'House' ? ctx.t('House') : cn === 'Sign' ? ctx.t('Sign') : cn === 'Occupants' ? ctx.t('Occupants') : cn);
+        e.scope = 'col'; trh.appendChild(e);
+      });
+      th.appendChild(trh); tb.appendChild(th);
+      block.data.rows.forEach(function (row) {
+        var tr = h('tr');
+        row.forEach(function (cell) { var td = h('td', '', cell); td.lang = 'en'; tr.appendChild(td); });
+        tbd.appendChild(tr);
+      });
+      tb.appendChild(tbd); wrap.appendChild(tb); wrap.setAttribute('data-label', ctx.t('Chart data')); det.appendChild(wrap); fig.appendChild(det);
+    }
+    return fig;
+  }
+
+  window.Charts = { version: 1, render: render, svg: drawing, model: modelOf };
+})();
+</script>
+<script>
+/* ===== render.js ===== */
+// ================= render.js: the blocks of one page -> accessible HTML =================
+// Contract: docs\ENGINE-API.md (Render.page(pageObj, ctx), Render.afterInsert(container, ctx), Render.inline(value, parent, ctx)); data: docs\DATA-FORMAT.md.
+// Draws only the blocks (never the page title, badge, reading time or previous/next: the engine does). Block types: heading, para, list (also checklists),
+// table, callout, chart (charts.js), flow, text, lines, people. An unknown block type throws. Every word that is not course data goes through the interface translator ctx.t (the key is the English text).
+// Styles: render.css (classes r-*, scoped under .rbody, theme through html[data-theme] and the engine's tokens).
+(function () {
+  'use strict';
+
+  var uid = 0;
+
+  // ---------- small helpers ----------
+  function h(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined && text !== null) e.textContent = text;
+    return e;
+  }
+  function svgNode(parent, name, attrs) {
+    var e = document.createElementNS('http://www.w3.org/2000/svg', name);
+    if (attrs) for (var k in attrs) if (attrs[k] !== null && attrs[k] !== undefined) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function fillT(s, v) { return v ? String(s).replace(/\{(\w+)\}/g, function (m, k) { return v[k] !== undefined ? v[k] : m; }) : s; }
+
+  // A ctx with every field the renderer uses, so that the renderer also runs with a partial ctx (tests, tools).
+  function fill(ctx) {
+    ctx = ctx || {};
+    var mem = { ck: {}, ans: {} };
+    var c = {
+      slug: ctx.slug || '', kind: ctx.kind || (ctx.meta && ctx.meta.kind) || '', lang: ctx.lang || 'en', dataLang: ctx.dataLang || ctx.lang || 'en',
+      mobile: ctx.mobile !== undefined ? ctx.mobile : (window.innerWidth <= 760),
+      t: ctx.t || fillT,
+      href: ctx.href || function (slug, anchor) { return '#/page/' + slug + (anchor ? '/' + anchor : ''); },
+      pageTitle: ctx.pageTitle || function () { return ''; },
+      onLinkClick: ctx.onLinkClick || null,
+      assetUrl: ctx.assetUrl || function (p) { return p; },
+      getCheck: ctx.getCheck || function (id) { return mem.ck[id]; },
+      setCheck: ctx.setCheck || function (id, v) { mem.ck[id] = !!v; },
+      getAnswer: ctx.getAnswer || function (id) { return mem.ans[id] || ''; },
+      setAnswer: ctx.setAnswer || function (id, v) { mem.ans[id] = v; }
+    };
+    c.inline = function (v, parent) { return inline(v, parent || document.createDocumentFragment(), c); };
+    c.plain = plain;
+    return c;
+  }
+
+  // ---------- inline values (DATA-FORMAT section 5) ----------
+  function plain(v) {
+    if (v === null || v === undefined) return '';
+    if (typeof v === 'string') return v;
+    var out = '';
+    v.forEach(function (n) {
+      if (typeof n === 'string') out += n;
+      else if (n.t === 'br') out += ' ';
+      else out += plain(n.x);
+    });
+    return out;
+  }
+  // a run of six or more underscores is a writing blank: a ruled gap that screen readers announce as "blank"
+  function addText(parent, s, ctx) {
+    if (s.indexOf('______') < 0) { parent.appendChild(document.createTextNode(s)); return; }
+    var parts = s.split(/_{6,}/);
+    parts.forEach(function (p, i) {
+      if (p) parent.appendChild(document.createTextNode(p));
+      if (i < parts.length - 1) {
+        var b = h('span', 'r-blank'); b.setAttribute('role', 'img'); b.setAttribute('aria-label', ctx.t('blank'));
+        parent.appendChild(b);
+      }
+    });
+  }
+  function inline(v, parent, ctx) {
+    if (v === null || v === undefined) return parent;
+    if (typeof v === 'string') { addText(parent, v, ctx); return parent; }
+    if (!Array.isArray(v)) throw new Error('inline value is neither a string nor an array');
+    v.forEach(function (n) {
+      if (typeof n === 'string') { addText(parent, n, ctx); return; }
+      var e;
+      switch (n.t) {
+        case 'b': e = h('strong'); inline(n.x, e, ctx); break;
+        case 'i': e = h('em'); inline(n.x, e, ctx); break;
+        case 'c': e = h('code'); e.textContent = n.x; break;
+        case 'br': e = h('br'); break;
+        case 'a':
+          e = h('a', 'r-link');
+          if (n.s) {
+            e.href = ctx.href(n.s); e.setAttribute('data-slug', n.s);       // a real anchor: the engine routes on hashchange, so middle click and copy link work
+            var ttl = ctx.pageTitle(n.s); if (ttl) e.title = ttl;
+            inline(n.x, e, ctx);
+          } else {
+            e.href = n.u; e.target = '_blank'; e.rel = 'noopener noreferrer'; e.className += ' r-ext';
+            inline(n.x, e, ctx);
+            e.appendChild(h('span', 'r-sr', ' ' + ctx.t('(opens in a new tab)')));
+          }
+          break;
+        default: throw new Error('unknown inline node ' + n.t);
+      }
+      parent.appendChild(e);
+    });
+    return parent;
+  }
+  function inl(ctx, v, parent) { return inline(v, parent, ctx); }
+
+  // ---------- headings ----------
+  function heading(b, st) {
+    var lvl = Math.max(2, Math.min(6, b.level || 2));
+    // the document outline never skips a level (an h4 straight after an h2 is drawn as an h3 tag); the look still follows the data level (class r-h<level>)
+    var tag = Math.min(lvl, ((st && st.tag) || 1) + 1);
+    if (st) st.tag = tag;
+    var e = h('h' + tag, 'r-h r-h' + lvl, b.text);
+    e.id = b.id; e.tabIndex = -1;
+    return e;
+  }
+
+  // ---------- paragraphs, quiz questions ----------
+  function questionKind(text) {            // **Q3. (Multiple choice, 1 mark)** ...  or  **Q3. Answer: B.** ...
+    if (!Array.isArray(text) || !text.length) return '';
+    var f = text[0];
+    if (!f || typeof f !== 'object' || f.t !== 'b') return '';
+    var s = plain(f.x);
+    if (!/^Q\d+\./.test(s)) return '';
+    return /Answer:/.test(s) ? 'ans' : 'q';
+  }
+  function para(b, ctx, st) {
+    var qk = questionKind(b.text), e = h('p', qk === 'q' ? 'r-q' : qk === 'ans' ? 'r-ans' : '');
+    inl(ctx, b.text, e);
+    st.lastQuestion = qk === 'q';
+    return e;
+  }
+
+  // ---------- lists and checklists ----------
+  function checkItem(it, ctx, li, onToggle) {
+    li.className = 'r-check-item';
+    var lab = h('label'), cb = h('input'), sp = h('span', 'r-check-text');
+    cb.type = 'checkbox'; cb.setAttribute('data-ck', it.id);
+    var saved = ctx.getCheck(it.id);
+    cb.checked = saved !== undefined && saved !== null ? !!saved : !!it.checked;
+    cb.addEventListener('change', function () { ctx.setCheck(it.id, cb.checked); if (onToggle) onToggle(); });
+    inl(ctx, it.text, sp);
+    lab.appendChild(cb); lab.appendChild(sp); li.appendChild(lab);
+    return cb;
+  }
+  // items: the flat array of DATA-FORMAT 6.3 (level 0 or 1). Returns the top ul or ol.
+  function buildList(items, ctx, boxes, onToggle) {
+    var first = items[0], top = h(first && first.ordered ? 'ol' : 'ul'), lastLi = null, sub = null;
+    items.forEach(function (it) {
+      var li = h('li');
+      if (it.checked !== undefined) boxes.push(checkItem(it, ctx, li, onToggle)); else inl(ctx, it.text, li);
+      if (it.ordered && it.n !== undefined) li.value = it.n;
+      if ((it.level || 0) >= 1 && lastLi) {
+        if (!sub) { sub = h(it.ordered ? 'ol' : 'ul'); lastLi.appendChild(sub); }
+        sub.appendChild(li);
+      } else { top.appendChild(li); lastLi = li; sub = null; }
+    });
+    return top;
+  }
+  function checkCounter(boxes, ctx, counter) {
+    return function () {
+      var done = 0; boxes.forEach(function (c) { if (c.checked) done++; });
+      counter.textContent = ctx.t('{done} of {total} ticked', { done: done, total: boxes.length });
+    };
+  }
+  function list(b, ctx, st) {
+    var wasQuestion = st.lastQuestion; st.lastQuestion = false;
+    var qOpts = !b.checklist && wasQuestion && b.items.length > 1 && b.items.every(function (it) { return !it.level && /^[A-H]\.\s/.test(plain(it.text)); });
+    if (!b.checklist) { var l = buildList(b.items, ctx, []); if (qOpts) l.className = 'r-opts'; return l; }
+    var wrap = h('div', 'r-checklist'), boxes = [], counter = h('p', 'r-check-count');
+    wrap.id = b.id; wrap.tabIndex = -1;
+    counter.setAttribute('aria-live', 'polite');
+    var upd = checkCounter(boxes, ctx, counter);
+    var ul = buildList(b.items, ctx, boxes, upd);
+    ul.className = 'r-check';
+    wrap.appendChild(ul); wrap.appendChild(counter);
+    upd();
+    return wrap;
+  }
+
+  // ---------- tables ----------
+  function onlyBreaks(v) { return Array.isArray(v) && v.length > 0 && v.every(function (n) { return typeof n === 'object' && n.t === 'br'; }); }
+  function table(b, ctx) {
+    // the caption sits above the scrolling area (so it does not scroll away with a wide table) and names the table through aria-labelledby
+    var box = h('div', 'r-table-box'), wrap = h('div', 'r-table-wrap r-scroll'), t = h('table', 'r-table r-cols-' + b.cols);
+    if (b.caption) {
+      var cap = h('p', 'r-table-cap'); cap.id = 'rtc' + (++uid); inl(ctx, b.caption, cap); box.appendChild(cap);
+      t.setAttribute('aria-labelledby', cap.id); wrap.setAttribute('data-label', plain(b.caption));
+    }
+    var thead = h('thead'), trh = h('tr'), tbody = h('tbody');
+    b.header.forEach(function (c) { var th = h('th'); th.scope = 'col'; inl(ctx, c, th); trh.appendChild(th); });
+    thead.appendChild(trh); t.appendChild(thead);
+    b.rows.forEach(function (row) {
+      var tr = h('tr');
+      row.forEach(function (c) {
+        var td = h('td');
+        if (c === '' || (Array.isArray(c) && c.length === 0)) { td.className = 'r-empty'; td.appendChild(h('span', 'r-sr', ctx.t('blank'))); }
+        else { if (onlyBreaks(c)) td.className = 'r-space'; inl(ctx, c, td); if (onlyBreaks(c)) td.appendChild(h('span', 'r-sr', ctx.t('blank'))); }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    t.appendChild(tbody); wrap.appendChild(t); box.appendChild(wrap);
+    return box;
+  }
+
+  // ---------- callouts ----------
+  var ICONS = {
+    NOTE: '<circle cx="8" cy="8" r="6.2"/><path d="M8 7.2v4M8 4.7v.1"/>',
+    TIP: '<path d="M5.6 11.6h4.8M6.4 13.7h3.2"/><path d="M8 1.9a4.1 4.1 0 0 0-2.5 7.4c.5.4.8.9.9 1.5h3.2c.1-.6.4-1.1.9-1.5A4.1 4.1 0 0 0 8 1.9z"/>',
+    RULE: '<path d="M4 14.2V2.2"/><path d="M4 2.8h8.2l-2 3 2 3H4"/>',
+    WARNING: '<path d="M8 2.2l6.3 11.2H1.7z"/><path d="M8 6.4v3.2M8 11.5v.1"/>',
+    EXAMPLE: '<path d="M2.5 3.5h11M2.5 7.5h11M2.5 11.5h6.5"/>',
+    REMEMBER: '<path d="M4 2.2h8v11.8l-4-3-4 3z"/>',
+    SCHOOLS: '<path d="M8 14V8.2M8 8.2L4 4.6M8 8.2l4-3.6"/><circle cx="4" cy="3.6" r="1.5"/><circle cx="12" cy="3.6" r="1.5"/>',
+    ACTIVITY: '<path d="M5 2.8l8 5.2-8 5.2z"/>'
+  };
+  function calloutLabel(v, ctx) {
+    switch (v) {
+      case 'NOTE': return ctx.t('Note');
+      case 'TIP': return ctx.t('Tip');
+      case 'RULE': return ctx.t('Rule');
+      case 'WARNING': return ctx.t('Warning');
+      case 'EXAMPLE': return ctx.t('Example');
+      case 'REMEMBER': return ctx.t('Remember');
+      case 'SCHOOLS': return ctx.t('Schools differ');
+      case 'ACTIVITY': return ctx.t('Activity');
+    }
+    throw new Error('unknown callout variant ' + v);
+  }
+  // the phrase that introduces the words-only version of an ACTIVITY is set in bold (it is course data: the same phrase in every language build)
+  function boldPhrase(el, phrase) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), hits = [], n;
+    while ((n = w.nextNode())) if (n.nodeValue.indexOf(phrase) >= 0) hits.push(n);
+    hits.forEach(function (tn) {
+      var i = tn.nodeValue.indexOf(phrase), rest = tn.splitText(i), after = rest.splitText(phrase.length), s = h('strong', 'r-textalt', phrase);
+      rest.parentNode.replaceChild(s, rest);
+      void after;
+    });
+  }
+  function callout(b, ctx) {
+    var v = b.variant, label = calloutLabel(v, ctx), id = 'rco' + (++uid);
+    var box = h('div', 'r-callout r-co-' + v); box.setAttribute('role', 'note'); box.setAttribute('aria-labelledby', id);
+    if (b.id) { box.id = b.id; box.tabIndex = -1; }
+    var lab = h('p', 'r-callout-label'); lab.id = id;
+    var ic = svgNode(null, 'svg', { viewBox: '0 0 16 16', 'class': 'r-ico', 'aria-hidden': 'true', focusable: 'false' });
+    ic.innerHTML = ICONS[v];
+    lab.appendChild(ic); lab.appendChild(h('span', '', label)); box.appendChild(lab);
+    var boxes = [], counter = null, upd = null, i = 0, lines = b.lines;
+    if (b.checklist) { counter = h('p', 'r-check-count'); counter.setAttribute('aria-live', 'polite'); upd = checkCounter(boxes, ctx, counter); }
+    while (i < lines.length) {
+      var ln = lines[i];
+      if (ln.k === 'b') {
+        var j = i, grp = [];
+        while (j < lines.length && lines[j].k === 'b') { grp.push(lines[j]); j++; }
+        var ul = buildList(grp, ctx, boxes, upd);
+        if (b.checklist) ul.className = 'r-check';
+        box.appendChild(ul); i = j;
+      } else {
+        var p = h('p'); inl(ctx, ln.text, p); box.appendChild(p); i++;
+      }
+    }
+    if (counter) { box.appendChild(counter); upd(); }
+    if (v === 'ACTIVITY') boldPhrase(box, 'Text alternative:');
+    return box;
+  }
+
+  // ---------- text diagrams ----------
+  function textBlock(b, ctx) {
+    var fig = h('figure', 'r-text');
+    if (b.title) { var cap = h('figcaption', 'r-text-title'); inl(ctx, b.title, cap); fig.appendChild(cap); }
+    var wrap = h('div', 'r-scroll r-pre-wrap'), pre = h('pre');
+    wrap.setAttribute('data-label', b.title ? plain(b.title) : ctx.t('Text diagram'));
+    pre.textContent = b.lines.join('\n');
+    wrap.appendChild(pre); fig.appendChild(wrap);
+    return fig;
+  }
+
+  // ---------- writing boxes ----------
+  function linesBlock(b, ctx, st) {
+    var wrap = h('div', 'r-lines'), n = parseInt(String(b.id).replace(/\D/g, ''), 10) || 1, ta = h('textarea'), did = 'r-ans-' + b.id + '-' + (++uid);
+    wrap.id = b.id; wrap.tabIndex = -1;
+    var lab = h('label', 'r-lines-label'); lab.htmlFor = did;
+    lab.appendChild(document.createTextNode(ctx.t('Your answer')));
+    if (st.linesTotal > 1) lab.appendChild(h('span', 'r-sr', ' ' + ctx.t('(writing box {n} of {total})', { n: n, total: st.linesTotal })));
+    ta.id = did; ta.rows = Math.max(1, b.count); ta.setAttribute('data-ans', b.id); ta.maxLength = 20000;   // the engine stores at most 20000 characters per box: stop typing there instead of cutting the end off silently
+    ta.spellcheck = true; ta.value = ctx.getAnswer(b.id) || '';
+    var timer = null;
+    ta.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(function () { ctx.setAnswer(b.id, ta.value); }, 400); });
+    ta.addEventListener('blur', function () { clearTimeout(timer); ctx.setAnswer(b.id, ta.value); });
+    wrap.appendChild(lab); wrap.appendChild(ta);
+    return wrap;
+  }
+
+  // ---------- people cards ----------
+  function initials(name) {
+    var w = name.replace(/[^\w\s]/g, ' ').split(/\s+/).filter(Boolean);
+    if (!w.length) return '?';
+    return (w[0].charAt(0) + (w.length > 1 ? w[w.length - 1].charAt(0) : '')).toUpperCase();
+  }
+  function people(b, ctx) {
+    var box = h('div', 'r-people');
+    if (b.title) { var t = h('p', 'r-people-title'); inl(ctx, b.title, t); box.appendChild(t); }
+    var cols = Math.max(1, Math.min(4, b.columns || 2)), ul = h('ul', 'r-people-grid');
+    ul.style.setProperty('--r-cols', String(cols)); ul.setAttribute('data-cols', String(cols));
+    b.people.forEach(function (p) {
+      var li = h('li', 'r-person'), ph = h('div', 'r-person-photo'), nm = plain(p.name);
+      function placeholder() { ph.className = 'r-person-photo r-person-ph'; ph.setAttribute('aria-hidden', 'true'); ph.innerHTML = ''; ph.appendChild(h('span', '', initials(nm))); }
+      if (p.photo) {
+        var img = h('img'); img.src = ctx.assetUrl(p.photo); img.alt = p.alt || ctx.t('Photograph of {name}', { name: nm });
+        img.width = 400; img.height = 500; img.loading = 'lazy'; img.decoding = 'async';
+        img.addEventListener('error', function () { placeholder(); });           // a missing file: the card falls back to initials
+        ph.appendChild(img);
+      } else placeholder();
+      var tx = h('div', 'r-person-text'), n = h('strong', 'r-person-name'), r = h('span', 'r-person-role');
+      inl(ctx, p.name, n); inl(ctx, p.role, r); tx.appendChild(n); tx.appendChild(r);
+      li.appendChild(ph); li.appendChild(tx); ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    return box;
+  }
+
+  // ---------- flow diagrams ----------
+  var FONT_FAMILY = '"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif';
+  var flowCv;
+  function flowTextW(text, size) {
+    try { if (!flowCv) flowCv = document.createElement('canvas').getContext('2d'); flowCv.font = '400 100px ' + FONT_FAMILY; return flowCv.measureText(text).width / 100 * size; }
+    catch (e) { return text.length * size * 0.54; }
+  }
+  function wrapLabel(text, size, maxW) {
+    var words = String(text).split(/\s+/), lines = [], cur = '';
+    words.forEach(function (w) {
+      if (!cur) { cur = w; return; }
+      if (flowTextW(cur + ' ' + w, size) <= maxW) cur += ' ' + w; else { lines.push(cur); cur = w; }
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  // 'chain': one path, a numbered row of boxes. 'cycle': one path that returns to its first node. 'graph': branches or merges, drawn as a layered SVG.
+  function flowKind(b) {
+    var n = b.nodes.length, e = b.edges.length;
+    if (b.chains.length === 1) {
+      var ch = b.chains[0];
+      if (e === n - 1 && ch.length === n) return 'chain';
+      if (e === n && ch.length === n + 1 && ch[0] === ch[n]) return 'cycle';
+    }
+    return 'graph';
+  }
+  function remFactor() { return parseFloat(getComputedStyle(document.documentElement).fontSize) || 16; }
+  // Layered layout (longest-path layers, dummy nodes for long edges, barycentre ordering, isotonic placement). Returns the SVG and its natural size.
+  function graphLayout(b, horizontal, availUnits, ctx) {
+    var FS = 15, LH = 19, PADX = 12, PADY = 8, GAP_MAIN = horizontal ? 54 : 40, GAP_CROSS = 22, margin = 8, i, l;
+    var nodes = b.nodes.map(function (nd, k) { return { id: nd.id, label: nd.label, idx: k, layer: 0, dummy: false, up: [], down: [], pos: 0 }; });
+    var byId = {}; nodes.forEach(function (n) { byId[n.id] = n; });
+    var edges = b.edges.map(function (e) { return { from: byId[e[0]], to: byId[e[1]], rev: false }; }).filter(function (e) { return e.from !== e.to; });
+    // 1. back edges (a cycle is broken by reversing the edge that closes it)
+    var out = nodes.map(function () { return []; }), indeg = nodes.map(function () { return 0; }), state = nodes.map(function () { return 0; });
+    edges.forEach(function (e) { out[e.from.idx].push(e); indeg[e.to.idx]++; });
+    function dfs(u) { state[u] = 1; out[u].forEach(function (e) { var v = e.to.idx; if (state[v] === 1) e.rev = true; else if (state[v] === 0) dfs(v); }); state[u] = 2; }
+    nodes.forEach(function (n) { if (indeg[n.idx] === 0 && state[n.idx] === 0) dfs(n.idx); });
+    nodes.forEach(function (n) { if (state[n.idx] === 0) dfs(n.idx); });
+    var eff = edges.map(function (e) { return { u: e.rev ? e.to : e.from, v: e.rev ? e.from : e.to, rev: e.rev, path: null }; });
+    // 2. layers (longest path)
+    for (i = 0; i <= nodes.length; i++) {
+      var changed = false;
+      eff.forEach(function (e) { if (e.v.layer < e.u.layer + 1) { e.v.layer = e.u.layer + 1; changed = true; } });
+      if (!changed) break;
+    }
+    // 3. dummy nodes for edges that span more than one layer
+    var all = nodes.slice();
+    eff.forEach(function (e) {
+      var d = e.v.layer - e.u.layer, prev = e.u;
+      e.path = [e.u];
+      for (var k = 1; k < d; k++) { var dn = { dummy: true, layer: e.u.layer + k, up: [], down: [], pos: 0, idx: -1 }; all.push(dn); e.path.push(dn); }
+      e.path.push(e.v);
+      for (var q = 0; q + 1 < e.path.length; q++) { e.path[q].down.push(e.path[q + 1]); e.path[q + 1].up.push(e.path[q]); }
+      void prev;
+    });
+    var nL = 0; all.forEach(function (n) { if (n.layer + 1 > nL) nL = n.layer + 1; });
+    var layers = []; for (l = 0; l < nL; l++) layers.push([]);
+    all.forEach(function (n) { layers[n.layer].push(n); });
+    layers.forEach(function (La) { La.forEach(function (n, k) { n.pos = k; }); });
+    // 4. barycentre ordering
+    function sweep(La, key) {
+      var bary = La.map(function (n) { var nb = n[key]; if (!nb.length) return n.pos; var s = 0; nb.forEach(function (m) { s += m.pos; }); return s / nb.length; });
+      var order = La.map(function (n, k) { return { n: n, b: bary[k], k: k }; });
+      order.sort(function (a, c) { return a.b - c.b || a.k - c.k; });
+      order.forEach(function (o, k) { o.n.pos = k; La[k] = o.n; });
+    }
+    for (i = 0; i < 8; i++) {
+      if (i % 2 === 0) for (l = 1; l < nL; l++) sweep(layers[l], 'up'); else for (l = nL - 2; l >= 0; l--) sweep(layers[l], 'down');
+    }
+    // 5. sizes
+    var maxPer = 1; layers.forEach(function (La) { var c = 0; La.forEach(function (n) { if (!n.dummy) c++; }); if (c > maxPer) maxPer = c; });
+    var maxText;
+    if (horizontal) maxText = 150;
+    else maxText = Math.max(78, Math.min(200, (availUnits - GAP_CROSS * (maxPer - 1)) / maxPer - 2 * PADX));
+    all.forEach(function (n) {
+      if (n.dummy) { n.w = horizontal ? 0 : 12; n.h = horizontal ? 12 : 0; return; }
+      n.lines = wrapLabel(n.label, FS, maxText);
+      var tw = 0; n.lines.forEach(function (s) { var w = flowTextW(s, FS); if (w > tw) tw = w; });
+      n.w = Math.max(56, Math.ceil(tw + 2 * PADX)); n.h = n.lines.length * LH + 2 * PADY;
+    });
+    function cross(n) { return horizontal ? n.h : n.w; }
+    function mainSz(n) { return horizontal ? n.w : n.h; }
+    // 6. coordinates: main axis by layer, cross axis by isotonic regression towards the neighbours' centres
+    var mainPos = [], m = 0;
+    layers.forEach(function (La, k) { var mx = 0; La.forEach(function (n) { if (mainSz(n) > mx) mx = mainSz(n); }); mainPos.push(m + mx / 2); m += mx + GAP_MAIN; });
+    all.forEach(function (n) { n.m = mainPos[n.layer]; });
+    function sepOf(a, c) { return (cross(a) + cross(c)) / 2 + ((a.dummy || c.dummy) ? 10 : GAP_CROSS); }
+    function place(La, desired) {
+      var o = [0], k;
+      for (k = 1; k < La.length; k++) o.push(o[k - 1] + sepOf(La[k - 1], La[k]));
+      var blocks = [];                                       // pool adjacent violators on y = desired - offset
+      for (k = 0; k < La.length; k++) {
+        blocks.push({ sum: desired[k] - o[k], cnt: 1, from: k, to: k });
+        while (blocks.length > 1 && blocks[blocks.length - 2].sum / blocks[blocks.length - 2].cnt > blocks[blocks.length - 1].sum / blocks[blocks.length - 1].cnt) {
+          var b2 = blocks.pop(), b1 = blocks.pop();
+          blocks.push({ sum: b1.sum + b2.sum, cnt: b1.cnt + b2.cnt, from: b1.from, to: b2.to });
+        }
+      }
+      blocks.forEach(function (bk) { var v = bk.sum / bk.cnt; for (var q = bk.from; q <= bk.to; q++) La[q].c = v + o[q]; });
+    }
+    layers.forEach(function (La) { var d = [], x = 0; La.forEach(function (n, k) { if (k) x += sepOf(La[k - 1], n); d.push(x); }); place(La, d); });
+    function mean(nb, cur) { if (!nb.length) return cur; var s = 0; nb.forEach(function (n) { s += n.c; }); return s / nb.length; }
+    for (i = 0; i < 6; i++) {
+      for (l = 1; l < nL; l++) place(layers[l], layers[l].map(function (n) { return mean(n.up, n.c); }));
+      for (l = nL - 2; l >= 0; l--) place(layers[l], layers[l].map(function (n) { return mean(n.down, n.c); }));
+    }
+    // 7. extents
+    var lo = Infinity, hi = -Infinity;
+    all.forEach(function (n) { if (n.dummy) return; lo = Math.min(lo, n.c - cross(n) / 2); hi = Math.max(hi, n.c + cross(n) / 2); });
+    var crossLen = hi - lo, mainLen = m - GAP_MAIN;
+    function px(n) { return horizontal ? n.m + margin : n.c - lo + margin; }
+    function py(n) { return horizontal ? n.c - lo + margin : n.m + margin; }
+    var W = (horizontal ? mainLen : crossLen) + 2 * margin, H = (horizontal ? crossLen : mainLen) + 2 * margin;
+    var svg = svgNode(null, 'svg', { viewBox: '0 0 ' + Math.ceil(W) + ' ' + Math.ceil(H), 'class': 'r-fl-svg', focusable: 'false' });
+    var mid = 'rfa' + (++uid), defs = svgNode(svg, 'defs'), mk = svgNode(defs, 'marker', { id: mid, viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 6.5, markerHeight: 6.5, orient: 'auto' });
+    svgNode(mk, 'path', { d: 'M0 0L10 5L0 10z', 'class': 'r-fl-head' });
+    // ports on the sides of each node, ordered by the cross position of the other end
+    function xy(c, mm) { return horizontal ? [mm + margin, c - lo + margin] : [c - lo + margin, mm + margin]; }
+    all.forEach(function (n) { n.pOut = []; n.pIn = []; });
+    eff.forEach(function (e) { e.u.pOut.push(e); e.v.pIn.push(e); });
+    function spread(n, list, side) {
+      list.sort(function (a, c) { var oa = side === 'out' ? a.path[a.path.indexOf(n) + 1] : a.path[a.path.indexOf(n) - 1], oc = side === 'out' ? c.path[c.path.indexOf(n) + 1] : c.path[c.path.indexOf(n) - 1]; return oa.c - oc.c; });
+      var k = list.length, step = Math.min(16, Math.max(6, (cross(n) - 24) / Math.max(k, 1)));
+      list.forEach(function (e, q) { e['o' + side] = (q - (k - 1) / 2) * step; });
+    }
+    nodes.forEach(function (n) { spread(n, n.pOut, 'out'); spread(n, n.pIn, 'in'); });
+    var gE = svgNode(svg, 'g', { 'class': 'r-fl-edges' });
+    eff.forEach(function (e) {
+      var pts = [];
+      e.path.forEach(function (n, k) {
+        if (n.dummy) { pts.push(xy(n.c, n.m)); return; }
+        if (k === 0) pts.push(xy(n.c + e.oout, n.m + mainSz(n) / 2));
+        else pts.push(xy(n.c + e.oin, n.m - mainSz(n) / 2));
+      });
+      if (e.rev) pts.reverse();
+      var d = 'M' + pts[0][0].toFixed(1) + ' ' + pts[0][1].toFixed(1);
+      for (var k = 0; k + 1 < pts.length; k++) {
+        var a = pts[k], c2 = pts[k + 1];
+        if (horizontal) { var dx = (c2[0] - a[0]) / 2; d += 'C' + (a[0] + dx).toFixed(1) + ' ' + a[1].toFixed(1) + ' ' + (c2[0] - dx).toFixed(1) + ' ' + c2[1].toFixed(1) + ' ' + c2[0].toFixed(1) + ' ' + c2[1].toFixed(1); }
+        else { var dy = (c2[1] - a[1]) / 2; d += 'C' + a[0].toFixed(1) + ' ' + (a[1] + dy).toFixed(1) + ' ' + c2[0].toFixed(1) + ' ' + (c2[1] - dy).toFixed(1) + ' ' + c2[0].toFixed(1) + ' ' + c2[1].toFixed(1); }
+      }
+      svgNode(gE, 'path', { d: d, 'class': 'r-fl-edge' + (e.rev ? ' r-fl-back' : ''), 'marker-end': 'url(#' + mid + ')' });
+    });
+    var gN = svgNode(svg, 'g', { 'class': 'r-fl-nodes' });
+    nodes.forEach(function (n) {
+      var cx = px(n), cy = py(n);
+      var g = svgNode(gN, 'g', {});
+      svgNode(g, 'rect', { 'class': 'r-fl-box', x: (cx - n.w / 2).toFixed(1), y: (cy - n.h / 2).toFixed(1), width: n.w, height: n.h, rx: 8 });
+      var ty = cy - (n.lines.length * LH) / 2 + LH * 0.74;
+      n.lines.forEach(function (s, k) { var t = svgNode(g, 'text', { 'class': 'r-fl-text', x: cx.toFixed(1), y: (ty + k * LH).toFixed(1), 'text-anchor': 'middle', 'font-size': FS }); t.textContent = s; });
+    });
+    return { svg: svg, w: Math.ceil(W), h: Math.ceil(H) };
+  }
+  // The words-only version of a flow ("A, then B, then C. Another path: ..."): the labels are course data, the two connecting words are interface words
+  // (the English build gives exactly the text that the data builder also writes into b.textVersion, which is the fallback when a block has no chains).
+  function flowTextVersion(b, ctx) {
+    if (!b.chains || !b.chains.length) return b.textVersion || '';
+    var parts = b.chains.map(function (ch, i) {
+      var s = ch.join(', ' + ctx.t('then') + ' ') + '.';
+      return i > 0 ? ctx.t('Another path:') + ' ' + s : s;
+    });
+    return parts.join(' ');
+  }
+  function flow(b, ctx) {
+    var id = 'rfl' + (++uid), kind = flowKind(b), fig = h('figure', 'r-flow r-flow-' + kind + ' r-flow-' + (b.dir === 'TD' ? 'td' : 'lr'));
+    var titlePlain = b.title ? plain(b.title) : '';
+    if (b.title) { var cap = h('figcaption', 'r-flow-title'); inl(ctx, b.title, cap); fig.appendChild(cap); }
+    var tv = null, tvText = flowTextVersion(b, ctx);
+    if (tvText) { tv = h('p', 'r-flow-tv', tvText); tv.id = id + 'tv'; }
+    if (kind === 'graph') {
+      var rem = remFactor(), availUnits = Math.min(window.innerWidth - 48, 46 * rem) / rem * 16, horiz = b.dir !== 'TD', res = graphLayout(b, horiz, availUnits, ctx);
+      if (horiz && res.w > availUnits) { horiz = false; res = graphLayout(b, false, availUnits, ctx); }      // a left-to-right flow that does not fit is drawn top down
+      var wrap = h('div', 'r-fl-wrap');
+      res.svg.setAttribute('role', 'img');
+      res.svg.setAttribute('aria-label', titlePlain ? ctx.t('Flow diagram: {title}', { title: titlePlain }) : ctx.t('Flow diagram'));
+      if (tv) res.svg.setAttribute('aria-describedby', tv.id);
+      res.svg.style.maxWidth = (res.w / 16).toFixed(2) + 'rem';
+      wrap.appendChild(res.svg); fig.appendChild(wrap);
+    } else {
+      var ol = h('ol', 'r-flow-chain'), labels = b.chains[0].slice(0, b.nodes.length);
+      ol.setAttribute('aria-label', titlePlain ? ctx.t('Flow diagram: {title}', { title: titlePlain }) : ctx.t('Flow diagram'));
+      labels.forEach(function (lb) { var li = h('li'); li.appendChild(h('span', 'r-flow-node', lb)); ol.appendChild(li); });
+      if (kind === 'cycle') { var rt = h('li', 'r-flow-return'); rt.appendChild(h('span', 'r-flow-back', ctx.t('then back to: {name}', { name: b.chains[0][0] }))); ol.appendChild(rt); }
+      fig.appendChild(ol);
+    }
+    if (tv) {
+      var det = h('details', 'r-flow-text'), sum = h('summary', '', ctx.t('Text version'));
+      det.appendChild(sum); det.appendChild(tv); fig.appendChild(det);
+    }
+    return fig;
+  }
+
+  // ---------- chart ----------
+  function chart(b, ctx) {
+    if (!window.Charts) throw new Error('charts.js is not loaded');
+    return window.Charts.render(b, ctx);
+  }
+
+  // ---------- the page ----------
+  function block(b, ctx, st) {
+    switch (b.type) {
+      case 'heading': return heading(b, st);
+      case 'para': return para(b, ctx, st);
+      case 'list': return list(b, ctx, st);
+      case 'table': return table(b, ctx);
+      case 'callout': return callout(b, ctx);
+      case 'chart': return chart(b, ctx);
+      case 'flow': return flow(b, ctx);
+      case 'text': return textBlock(b, ctx);
+      case 'lines': return linesBlock(b, ctx, st);
+      case 'people': return people(b, ctx);
+    }
+    throw new Error('unknown block type ' + b.type);
+  }
+  function page(pageObj, ctx) {
+    ctx = fill(ctx);
+    var frag = document.createDocumentFragment(), st = { lastQuestion: false, linesTotal: 0 };
+    pageObj.blocks.forEach(function (b) { if (b.type === 'lines') st.linesTotal++; });
+    pageObj.blocks.forEach(function (b, i) {
+      var e;
+      try { e = block(b, ctx, st); }
+      catch (err) { throw new Error('block ' + i + ' (' + b.type + '): ' + (err && err.message ? err.message : err)); }
+      if (b.type !== 'para') st.lastQuestion = false;
+      frag.appendChild(e);
+    });
+    return frag;
+  }
+
+  // ---------- after the nodes are in the document ----------
+  var globalsDone = false, rzTimer = null, lastT = fillT;
+  function scrollables(root, t) {         // a scroll area is focusable (and named) only when it really scrolls: keyboard users can then pan it
+    var list = root.querySelectorAll('.r-scroll');
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i], over = el.scrollWidth > el.clientWidth + 1, hint = el.nextSibling && el.nextSibling.className === 'r-hint' ? el.nextSibling : null;
+      if (over) {
+        el.tabIndex = 0; el.setAttribute('role', 'region');
+        el.setAttribute('aria-label', el.getAttribute('data-label') || t('Table'));
+        if (!hint && el.classList.contains('r-table-wrap')) {
+          hint = h('div', 'r-hint', t('Swipe or scroll sideways to see all columns')); hint.setAttribute('aria-hidden', 'true');
+          el.parentNode.insertBefore(hint, el.nextSibling);
+        }
+      } else {
+        el.removeAttribute('tabindex'); el.removeAttribute('role'); el.removeAttribute('aria-label');
+        if (hint) hint.parentNode.removeChild(hint);
+      }
+      el.classList.toggle('is-scroll', over);
+    }
+  }
+  function afterInsert(container, ctx) {
+    lastT = ctx && ctx.t ? ctx.t : fillT;
+    scrollables(container, lastT);
+    if (!globalsDone) {
+      globalsDone = true;
+      window.addEventListener('resize', function () { clearTimeout(rzTimer); rzTimer = setTimeout(function () { var r = document.querySelector('.rbody'); if (r) scrollables(r, lastT); }, 200); });
+      var opened = [];                    // print: every collapsed block (chart data, text versions) is opened, then restored
+      window.addEventListener('beforeprint', function () { opened = []; document.querySelectorAll('.rbody details:not([open])').forEach(function (d) { d.open = true; opened.push(d); }); });
+      window.addEventListener('afterprint', function () { opened.forEach(function (d) { d.open = false; }); opened = []; });
+    }
+  }
+
+  // ---------- highlight search terms (the search view opens a page and asks for its terms to be marked) ----------
+  function highlight(root, terms) {
+    clearHighlight(root);
+    terms = (terms || []).filter(function (s) { return s && s.length > 1; });
+    if (!terms.length) return 0;
+    var rx = new RegExp('(' + terms.map(function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'ig');
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: function (n) { return n.parentNode && /^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName) || (n.parentNode.closest && n.parentNode.closest('.r-sr, svg')) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; } });
+    var hits = [], n, count = 0;
+    while ((n = w.nextNode())) { rx.lastIndex = 0; if (rx.test(n.nodeValue)) hits.push(n); }
+    hits.forEach(function (tn) {
+      var frag = document.createDocumentFragment(), s = tn.nodeValue, last = 0, m;
+      rx.lastIndex = 0;
+      while ((m = rx.exec(s))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(s.slice(last, m.index)));
+        frag.appendChild(h('mark', 'r-hit', m[0])); last = m.index + m[0].length; count++;
+        if (m[0].length === 0) rx.lastIndex++;
+      }
+      if (last < s.length) frag.appendChild(document.createTextNode(s.slice(last)));
+      tn.parentNode.replaceChild(frag, tn);
+    });
+    return count;
+  }
+  function clearHighlight(root) {
+    var ms = root.querySelectorAll('mark.r-hit');
+    for (var i = 0; i < ms.length; i++) { var m = ms[i], p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize(); }
+  }
+
+  window.Render = {
+    version: 1,
+    page: page,
+    afterInsert: afterInsert,
+    inline: function (value, parent, ctx) { var c = fill(ctx); return inline(value, parent || document.createDocumentFragment(), c); },
+    highlight: highlight,
+    clearHighlight: clearHighlight
+  };
+})();
+</script>
+<script>
+/* ===== app.js ===== */
+// ================= app.js: views, router, events, boot (see docs/ENGINE-API.md) =================
+const IC = {
+  menu: '<path d="M4 6h16M4 12h16M4 18h16"/>', search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+  more: '<circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  moon: '<path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/>',
+  star: '<path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/>',
+  check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>', left: '<path d="M15 5l-7 7 7 7"/>', right: '<path d="M9 5l7 7-7 7"/>'
+};
+const ic = n => '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + IC[n] + '</svg>';
+const icFill = n => ic(n).replace('<svg ', '<svg style="fill:currentColor" ');
+const KINDS = () => ({ home: t('Course home'), intro: t('Introduction'), lesson: t('Lesson'), chapter: t('Chapter'), practical: t('Practical'), quiz: t('Quiz'), key: t('Answer key'), summary: t('Summary'), 'case': t('Case study'), assessment: t('Assessment'), workbook: t('Workbook'), support: t('Support'), admin: t('Guide') });
+const kindLabel = k => KINDS()[k] || k;
+const badge = k => '<span class="badge k-' + esc(k) + '">' + esc(kindLabel(k)) + '</span>';
+const modLabel = n => t('Module {n}', { n });
+const minLabel = p => t('{n} min read', { n: p.readMinutes });
+const hoursLabel = h => h === 1 ? t('1 hour') : t('{n} hours', { n: h });
+const totalMin = slugs => slugs.reduce((s, id) => s + ((C.by[id] && C.by[id].readMinutes) || 0), 0);
+const durLabel = m => m >= 60 ? t('{h} h {m} min', { h: Math.floor(m / 60), m: m % 60 }) : t('{m} min', { m });
+const isMobile = () => window.innerWidth <= 760;
+// a plain bar: the same figures are always written in the text next to it, so it is hidden from screen readers (a progressbar without a name is an accessibility error)
+const bar = (pct) => '<div class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></div>';
+
+let ROUTE = { name: 'home' }, RT = 0, FIRST = true, RESUME = '', HLQ = '', CUR = null, curPct = 0, deferredPrompt = null, toastTimer = 0;
+
+function toast(msg) { const e = $('toast'); e.textContent = msg; e.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => e.classList.remove('on'), 2400); }
+function go(h) { if (location.hash === h) route({ keep: true }); else location.hash = h; }
+function beforeLeave() {
+  if (ROUTE.name === 'page' && S.last && S.last.slug === ROUTE.slug && S.last.p !== curPct) { S.last.p = curPct; save(); }
+}
+
+// ---------- shell text and header ----------
+function shellText() {
+  const set = (id, name, v) => { const e = $(id); if (e) e.setAttribute(name, v); };
+  $('brand1').textContent = (C.course.brand || 'ASTROSUTRAS');
+  $('brand2').textContent = (C.course.short || C.course.title);
+  $('skipLink').textContent = t('Skip to content');
+  $('side').setAttribute('aria-label', t('Course navigation'));
+  $('menuBtn').innerHTML = ic('menu'); $('srchBtn').innerHTML = ic('search'); $('moreBtn').innerHTML = ic('more');
+  set('menuBtn', 'aria-label', t('Menu')); set('srchBtn', 'aria-label', t('Search the course')); set('moreBtn', 'aria-label', t('More: settings, backup, about'));
+  set('brand', 'aria-label', t('{title}: go to Home', { title: C.course.short || C.course.title }));
+  updateHeader();
+}
+function updateHeader() {
+  const ov = overall();
+  $('pill').textContent = ov.pct + '%'; $('pill').title = t('{pct}% of the course complete', { pct: ov.pct }); $('pill').setAttribute('aria-label', t('{pct}% of the course complete', { pct: ov.pct }));
+  const th = effTheme();
+  $('themeBtn').innerHTML = ic(th === 'dark' ? 'sun' : 'moon');
+  $('themeBtn').setAttribute('aria-label', th === 'dark' ? t('Switch to light mode') : t('Switch to dark mode')); $('themeBtn').title = $('themeBtn').getAttribute('aria-label');
+  // language button: hidden while only one language has data
+  const w = $('langWrap'), b = $('langBtn');
+  if (LANG_LIST.length < 2) { w.hidden = true; return; }
+  w.hidden = false;
+  if (LANG_LIST.length === 2) {
+    const other = LANG_LIST.find(l => l !== LANG) || 'en';
+    b.textContent = LANG_LABELS[other] || other; b.lang = other; b.setAttribute('aria-label', t('Switch to {name}', { name: LANG_LABELS[other] || other })); b.title = b.getAttribute('aria-label');
+    b.setAttribute('aria-haspopup', 'false'); b.removeAttribute('aria-expanded');
+  } else {
+    b.textContent = LANG_LABELS[LANG] || LANG; b.lang = LANG; b.setAttribute('aria-label', t('Language: {name}. Change language', { name: LANG_LABELS[LANG] || LANG })); b.setAttribute('aria-haspopup', 'true'); b.setAttribute('aria-expanded', String(!$('langMenu').hidden));
+    $('langMenu').innerHTML = LANG_LIST.map(l => '<button type="button" role="menuitemradio" aria-checked="' + (l === LANG) + '" data-act="lang" data-l="' + esc(l) + '" lang="' + esc(l) + '">' + esc(LANG_LABELS[l] || l) + '</button>').join('');
+  }
+}
+
+// ---------- navigation drawer / sidebar ----------
+function drawNav() {
+  const r = ROUTE, curMod = r.name === 'module' ? r.n : (r.name === 'page' && C.by[r.slug] ? C.by[r.slug].module : null);
+  const it = (href, label, o) => {
+    o = o || {};
+    const isCur = !!o.cur;
+    return '<a class="nav-it' + (isCur ? ' cur' : '') + '" href="' + href + '"' + (o.page ? ' aria-current="page"' : '') + '>' + (o.tick !== undefined ? '<span class="tk" aria-hidden="true">' + (o.tick ? '✓' : '') + '</span>' : '') + '<span class="nm">' + label + '</span>' + (o.pc ? '<span class="pc">' + o.pc + '</span>' : '') + '</a>';
+  };
+  const tkSr = d => d ? '<span class="sr"> ' + esc(t('(complete)')) + '</span>' : '';
+  let h = it('#/', esc(t('Home')), { page: r.name === 'home', cur: r.name === 'home' }) + it('#/search', esc(t('Search')), { page: r.name === 'search', cur: r.name === 'search' });
+  const partIt = id => { const p = C.partBy[id]; if (!p) return ''; const pr = partProgress(p); return it('#/part/' + id, esc(p.title), { page: r.name === 'part' && r.id === id, cur: (r.name === 'part' && r.id === id) || (r.name === 'page' && C.partOf[r.slug] && C.partOf[r.slug].id === id && id !== 'modules'), pc: pr.done + '/' + pr.total }); };
+  h += '<div class="nav-grp">' + esc(t('Course')) + '</div>' + partIt('home');
+  h += '<div class="nav-grp">' + esc(t('Modules')) + '</div>';
+  C.modules.forEach(m => {
+    const pr = moduleProgress(m.n), open = curMod === m.n;
+    h += it('#/module/' + m.n, esc(m.n + '. ' + m.title) + tkSr(pr.done === pr.total), { page: r.name === 'module' && r.n === m.n, cur: open, tick: pr.total > 0 && pr.done === pr.total, pc: pr.done + '/' + pr.total });
+    if (open) h += '<div class="nav-sub">' + m.pages.map(s => { const p = C.by[s]; return '<a class="nav-it" href="#/page/' + s + '"' + (r.name === 'page' && r.slug === s ? ' aria-current="page"' : '') + '><span class="dot' + (S.done[s] ? ' on' : '') + '" aria-hidden="true"></span><span class="nm">' + esc(p.title) + tkSr(!!S.done[s]) + '</span></a>'; }).join('') + '</div>';
+  });
+  h += '<div class="nav-grp">' + esc(t('Assess and practise')) + '</div>' + partIt('assessment') + partIt('workbook') + partIt('support');
+  h += '<div class="nav-grp">' + esc(t('Study tools')) + '</div>' + it('#/flash', esc(t('Flashcards')), { page: r.name === 'flash', cur: r.name === 'flash' }) + it('#/bookmarks', esc(t('Bookmarks and notes')), { page: r.name === 'bookmarks', cur: r.name === 'bookmarks', pc: String(Object.keys(S.marks).filter(k => C.by[k]).length || '') }) + it('#/more', esc(t('More')), { page: r.name === 'more', cur: r.name === 'more' });
+  $('side').innerHTML = h;
+  const act = $('side').querySelector('.nav-sub [aria-current="page"]') || $('side').querySelector('[aria-current="page"]');
+  if (act && act.scrollIntoView && !FIRST) { const sb = $('side'); const top = act.offsetTop - sb.clientHeight / 3; if (Math.abs(sb.scrollTop - top) > sb.clientHeight / 2) sb.scrollTop = Math.max(0, top); }
+}
+function openNav(open) {
+  const s = $('side'), sc = $('scrim'), b = $('menuBtn');
+  s.classList.toggle('open', open); sc.classList.toggle('open', open); b.setAttribute('aria-expanded', String(open));
+  if (open) { const f = s.querySelector('.nav-it'); if (f) f.focus({ preventScroll: true }); }
+}
+function closeMenus() { openNav(false); $('langMenu').hidden = true; if (LANG_LIST.length > 2) $('langBtn').setAttribute('aria-expanded', 'false'); }
+
+// ---------- list helpers ----------
+function pageRow(p, i) {
+  const d = !!S.done[p.id];
+  return '<li><a class="' + (d ? 'done' : '') + '" href="#/page/' + esc(p.id) + '"><span class="n">' + (d ? '✓' : i) + '</span><span class="t">' + esc(p.title) + '<small>' + esc(minLabel(p)) + (d ? ' · ' + esc(t('Completed')) : '') + '</small></span>' + (S.marks[p.id] ? '<span class="mk" aria-label="' + esc(t('Bookmarked')) + '">★</span>' : '') + badge(p.kind) + '</a></li>';
+}
+const pageList = slugs => '<ol class="plist">' + slugs.filter(s => C.by[s]).map((s, i) => pageRow(C.by[s], i + 1)).join('') + '</ol>';
+function firstUndone(slugs) { return slugs.find(s => !S.done[s] && C.by[s]) || null; }
+function continueTarget() {
+  const l = S.last; if (!l || !C.by[l.slug]) return null;
+  let m = C.by[l.slug], resume = true;
+  if (S.done[m.id] && m.next && C.by[m.next]) { m = C.by[m.next]; resume = false; }
+  return { m, resume: resume && l.slug === m.id, anchor: resume ? l.anchor : '' };
+}
+const resumeHref = c => '#/page/' + c.m.id + (c.anchor ? '/' + c.anchor : '');
+
+// ---------- home ----------
+function personHtml(name, photos) {
+  const src = photos && photos[name], ini = name.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+  return '<div class="person">' + (src ? '<img src="' + esc(src) + '" alt="' + esc(t('Photograph of {name}', { name })) + '" width="52" height="65" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;ini&quot; aria-hidden=&quot;true&quot;>' + esc(ini) + '</span>\'">' : '<span class="ini" aria-hidden="true">' + esc(ini) + '</span>') + '<b>' + esc(name) + '</b></div>';
+}
+function homeView() {
+  const c = C.course, ov = overall(), ct = continueTarget(), first = C.seq[0];
+  let h = '<section class="hero" aria-labelledby="pageTitle"><div class="kick">' + esc(c.presented || c.brand) + '</div><h1 id="pageTitle" tabindex="-1">' + esc(c.title) + '</h1>' + (c.tagline ? '<p class="tag">' + esc(c.tagline) + '</p>' : '') + (c.edition ? '<p class="note" style="color:#fff;opacity:.85">' + esc(c.edition) + '</p>' : '');
+  h += '<div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + ov.pct + '" aria-label="' + esc(t('Course progress')) + '"><i style="width:' + ov.pct + '%"></i></div><p style="font-size:.9rem">' + esc(t('{done} of {total} pages complete ({pct}%)', ov)) + '</p><div class="bar">';
+  if (ct) h += '<a class="btn saffron" href="' + esc(resumeHref(ct)) + '" data-resume="' + esc(ct.resume ? ct.m.id : '') + '">' + esc(t('Continue where you left off')) + ': ' + esc(ct.m.title.length > 44 ? ct.m.title.slice(0, 43) + '…' : ct.m.title) + '</a>';
+  h += '<a class="btn' + (ct ? '' : ' saffron') + '" href="#/page/' + esc(first.id) + '">' + esc(ct ? t('Start from the beginning') : t('Start the course')) + '</a></div></section>';
+  h += '<section class="panel" aria-labelledby="teamH"><h2 id="teamH">' + esc(t('Your course team')) + '</h2><div class="team">' + (c.team || []).map(r => '<div><p class="role">' + esc(r.role) + '</p>' + r.names.map(n => personHtml(n, c.photos)).join('') + '</div>').join('') + '</div>' + (c.lineage ? '<p class="note" style="margin-top:12px">' + esc(t('Lineage')) + ': <b>' + esc(c.lineage) + '</b></p>' : '') + '</section>';
+  C.parts.filter(p => !p.more).forEach(p => {
+    const pr = partProgress(p);
+    if (p.id === 'modules') {
+      h += '<section aria-labelledby="h_' + p.id + '"><h2 id="h_' + p.id + '">' + esc(p.title) + '</h2><p class="note">' + esc(t('{n} modules, about {time} of reading, {done} of {total} pages complete', { n: C.modules.length, time: durLabel(totalMin(C.seqIds.filter(s => C.by[s].module))), done: pr.done, total: pr.total })) + '</p><div class="grid">' + C.modules.map(m => { const mp = moduleProgress(m.n), dn = mp.total > 0 && mp.done === mp.total; return '<a class="card' + (dn ? ' done' : '') + '" href="#/module/' + m.n + '">' + (dn ? '<span class="tick" aria-hidden="true">✓</span>' : '') + '<span class="kc">' + esc(modLabel(m.n)) + ' · ' + esc(hoursLabel(m.hours)) + '</span><h3>' + esc(m.title) + '</h3>' + bar(mp.pct) + '<span class="meta"><span>' + esc(t('{done} of {total} pages', mp)) + '</span>' + (dn ? '<span class="donechip">' + esc(t('Completed')) + '</span>' : '') + '</span></a>'; }).join('') + '</div></section>';
+    } else {
+      h += '<section aria-labelledby="h_' + p.id + '"><h2 id="h_' + p.id + '">' + esc(p.title) + '</h2><p class="note">' + esc(t('{done} of {total} pages complete', pr)) + '</p>' + pageList(p.pages) + '</section>';
+    }
+  });
+  h += '<section class="panel"><h2>' + esc(t('Study tools')) + '</h2><div class="bar"><a class="btn" href="#/search">' + ic('search') + esc(t('Search the course')) + '</a><a class="btn" href="#/flash">' + esc(t('Flashcards')) + '</a><a class="btn" href="#/bookmarks">' + ic('star') + esc(t('Bookmarks and notes')) + '</a><a class="btn" href="#/more">' + esc(t('More')) + '</a></div></section>';
+  h += '<div class="app-notice"><strong>' + esc(t('Responsible use')) + '</strong>' + esc(t('Jyotish is a traditional system of knowledge, taught here for learning and reflection. It is not scientifically validated prediction, and it is not medical, legal, financial or counselling advice. A chart describes tendencies, never certainties.')) + '</div>';
+  return { html: h, title: c.title };
+}
+
+// ---------- module and part pages ----------
+function moduleView(n) {
+  const m = C.modBy[n]; if (!m) return notFound();
+  const pr = moduleProgress(n), nxt = firstUndone(m.pages), prevM = C.modBy[n - 1], nextM = C.modBy[n + 1];
+  let h = '<div class="page"><nav class="crumb" aria-label="' + esc(t('Breadcrumb')) + '"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(modLabel(n)) + '</nav>';
+  h += '<div class="ptop"><span class="badge">' + esc(modLabel(n)) + '</span><span>' + esc(hoursLabel(m.hours)) + '</span><span>· ' + esc(t('{n} pages', { n: m.pages.length })) + '</span><span>· ' + esc(durLabel(totalMin(m.pages))) + '</span></div>';
+  h += '<h1 id="pageTitle" tabindex="-1">' + esc(m.title) + '</h1>' + (m.subtitle ? '<p class="muted" style="margin-top:0">' + esc(m.subtitle) + '</p>' : '');
+  h += bar(pr.pct) + '<p class="note">' + esc(t('{done} of {total} pages complete', pr)) + (pr.done === pr.total ? ' · <span class="donechip">' + esc(t('Module complete')) + ' ✓</span>' : '') + '</p>';
+  h += '<div class="bar">' + (nxt ? '<a class="btn primary" href="#/page/' + esc(nxt) + '">' + esc(pr.done ? t('Continue this module') : t('Start this module')) + '</a>' : '<a class="btn" href="#/page/' + esc(m.pages[0]) + '">' + esc(t('Review from the start')) + '</a>') + '</div>';
+  h += '<h2>' + esc(t('Pages in this module')) + '</h2>' + pageList(m.pages);
+  h += '<div class="pnav">' + (prevM ? '<a class="btn" href="#/module/' + (n - 1) + '">' + ic('left') + '<span><small>' + esc(t('Previous module')) + '</small>' + esc(prevM.title) + '</span></a>' : '') + (nextM ? '<a class="btn" href="#/module/' + (n + 1) + '"><span><small>' + esc(t('Next module')) + '</small>' + esc(nextM.title) + '</span>' + ic('right') + '</a>' : '') + '</div></div>';
+  return { html: h, title: modLabel(n) + ': ' + m.title };
+}
+function partView(id) {
+  const p = C.partBy[id]; if (!p || id === 'modules') return notFound();
+  const pr = partProgress(p), nxt = firstUndone(p.pages);
+  let h = '<div class="page"><nav class="crumb" aria-label="' + esc(t('Breadcrumb')) + '"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(p.title) + '</nav><h1 id="pageTitle" tabindex="-1">' + esc(p.title) + '</h1>';
+  if (!p.more) h += bar(pr.pct) + '<p class="note">' + esc(t('{done} of {total} pages complete', pr)) + '</p>';
+  if (nxt) h += '<div class="bar"><a class="btn primary" href="#/page/' + esc(nxt) + '">' + esc(pr.done ? t('Continue') : t('Start')) + '</a></div>';
+  h += pageList(p.pages) + '</div>';
+  return { html: h, title: p.title };
+}
+function notFound() {
+  return { html: '<div class="page"><h1 id="pageTitle" tabindex="-1">' + esc(t('Page not found')) + '</h1><p>' + esc(t('That address does not match a page of this course.')) + '</p><div class="bar"><a class="btn primary" href="#/">' + esc(t('Back to Home')) + '</a></div></div>', title: t('Page not found') };
+}
+function errorView(e, retry) {
+  const offline = (typeof navigator !== 'undefined' && navigator.onLine === false);
+  return { html: '<div class="page"><h1 id="pageTitle" tabindex="-1">' + esc(t('This could not be loaded')) + '</h1><div class="app-notice bad"><strong>' + esc(t('Problem')) + '</strong>' + esc(offline ? t('You appear to be offline, and this part of the course has not been saved on this device yet. Connect once and open it, or use Download everything for offline use under More.') : t('The course data could not be read. Check the connection and try again.')) + '<br><span class="note">' + esc(e && e.message ? e.message : String(e)) + '</span></div><div class="bar"><button class="btn primary" type="button" data-act="retry">' + esc(t('Try again')) + '</button><a class="btn" href="#/">' + esc(t('Back to Home')) + '</a></div></div>', title: t('This could not be loaded') };
+}
+
+// ---------- reading view ----------
+function makeCtx(meta, dl) {
+  const slug = meta.id;
+  const ctx = {
+    slug, meta: Object.assign({}, meta), kind: meta.kind, lang: LANG, dataLang: dl, t,
+    href: (s, a) => '#/page/' + s + (a ? '/' + a : ''),
+    pageTitle: s => (C.by[s] ? C.by[s].title : ''),
+    onLinkClick: (s, a, ev) => { if (ev && ev.preventDefault) ev.preventDefault(); go(ctx.href(s, a)); },
+    inline: (v, parent) => parent ? inlineTo(v, parent) : inlineTo(v, document.createDocumentFragment()),
+    plain: plainOf,
+    getCheck: id => { const m = S.ck[slug]; return m && typeof m[id] === 'boolean' ? m[id] : undefined; },
+    setCheck: (id, v) => { if (!ID_RE.test(id)) return; (S.ck[slug] || (S.ck[slug] = {}))[id] = !!v; save(); },
+    getAnswer: id => { const m = S.ans[slug]; return m && typeof m[id] === 'string' ? m[id] : ''; },
+    setAnswer: (id, text) => { if (!ID_RE.test(id)) return; text = String(text == null ? '' : text).slice(0, MAX_TEXT); if (text) (S.ans[slug] || (S.ans[slug] = {}))[id] = text; else if (S.ans[slug]) { delete S.ans[slug][id]; if (!Object.keys(S.ans[slug]).length) delete S.ans[slug]; } save(); },
+    getExtra: k => { const m = S.x[slug]; return m && ID_RE.test(k) && k in m ? m[k] : undefined; },
+    setExtra: (k, v) => { if (!ID_RE.test(k)) return; if (v === null || v === undefined) { if (S.x[slug]) { delete S.x[slug][k]; if (!Object.keys(S.x[slug]).length) delete S.x[slug]; } } else if (typeof v === 'number' || typeof v === 'boolean' || (typeof v === 'string' && v.length <= 400)) (S.x[slug] || (S.x[slug] = {}))[k] = v; save(); },
+    theme: effTheme(), mobile: isMobile(), course: C.course, assetUrl: p => p
+  };
+  return ctx;
+}
+// plain-text rendering used when render.js is absent or throws (testing and safety net)
+function fallbackRender(page, ctx) {
+  const root = document.createDocumentFragment(), mk = (tag, cls) => { const e = document.createElement(tag); if (cls) e.className = cls; return e; };
+  page.blocks.forEach(b => {
+    let e;
+    switch (b.type) {
+      case 'heading': e = mk('h' + Math.min(4, Math.max(2, b.level || 2))); e.id = b.id; e.textContent = b.text; break;
+      case 'para': e = mk('p'); ctx.inline(b.text, e); break;
+      case 'list': {
+        e = mk(b.ordered ? 'ol' : 'ul'); if (b.id) e.id = b.id;
+        b.items.forEach(it => { const li = mk('li'); if (it.n) li.value = it.n; if (it.id) { const lab = mk('label'), cb = mk('input'); cb.type = 'checkbox'; cb.setAttribute('data-ck', it.id); const v = ctx.getCheck(it.id); cb.checked = v === undefined ? !!it.checked : v; lab.appendChild(cb); lab.appendChild(document.createTextNode(' ')); ctx.inline(it.text, lab); li.appendChild(lab); } else ctx.inline(it.text, li); e.appendChild(li); });
+        break;
+      }
+      case 'callout': e = mk('blockquote'); e.appendChild(Object.assign(mk('strong'), { textContent: b.variant + ': ' })); b.lines.forEach(l => { const p = mk('p'); ctx.inline(l.text, p); e.appendChild(p); }); break;
+      case 'table': { e = mk('table'); e.style.cssText = 'border-collapse:collapse'; const wrap = mk('div'); wrap.style.overflowX = 'auto'; if (b.caption) { const c = mk('caption'); ctx.inline(b.caption, c); e.appendChild(c); } const row = (cells, tag) => { const tr = mk('tr'); cells.forEach(c => { const td = mk(tag); td.style.cssText = 'border:1px solid #999;padding:3px 6px;vertical-align:top'; ctx.inline(c, td); tr.appendChild(td); }); e.appendChild(tr); }; row(b.header, 'th'); b.rows.forEach(r => row(r, 'td')); wrap.appendChild(e); e = wrap; break; }
+      case 'lines': { e = mk('div'); e.id = b.id; const ta = mk('textarea'); ta.setAttribute('data-ans', b.id); ta.rows = Math.min(12, b.count || 3); ta.setAttribute('aria-label', ctx.t('Your answer')); ta.value = ctx.getAnswer(b.id); ta.style.cssText = 'width:100%'; e.appendChild(ta); break; }
+      default: e = mk('p', 'note'); e.textContent = '[' + b.type + (b.title ? ': ' + ctx.plain(b.title) : '') + ']';
+    }
+    root.appendChild(e);
+  });
+  return root;
+}
+function buildToc(blocks, slug) {
+  const hs = blocks.filter(b => b.type === 'heading' && b.level <= 3);
+  if (hs.length < 4) return '';
+  return '<details class="toc"><summary>' + esc(t('On this page ({n})', { n: hs.length })) + '</summary><ol>' + hs.map(b => '<li class="l' + b.level + '"><a href="#/page/' + esc(slug) + '/' + esc(b.id) + '">' + esc(b.text) + '</a></li>').join('') + '</ol></details>';
+}
+function highlightDom(root, toks) {
+  if (!toks.length) return;
+  const re = new RegExp('(' + toks.slice().sort((a, b) => b.length - a.length).map(x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+  // text inside a drawing (svg text, tspan, title) and the hidden text alternatives are never marked: an HTML <mark> inside an svg <text> is not drawn, so the label would vanish
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => (n.parentNode && (/^(SCRIPT|STYLE|TEXTAREA|MARK|SVG|TITLE)$/i.test(n.parentNode.nodeName) || (n.parentNode.closest && n.parentNode.closest('svg, .r-sr')))) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT });
+  const nodes = []; let n; while ((n = w.nextNode())) { re.lastIndex = 0; if (re.test(n.nodeValue)) nodes.push(n); if (nodes.length > 150) break; }
+  nodes.forEach(nd => {
+    const frag = document.createDocumentFragment();
+    nd.nodeValue.split(re).forEach((s, i) => { if (!s) return; if (i % 2) { const m = document.createElement('mark'); m.className = 'hit'; m.textContent = s; frag.appendChild(m); } else frag.appendChild(document.createTextNode(s)); });
+    nd.parentNode.replaceChild(frag, nd);
+  });
+}
+function scrollToAnchor(id) {
+  const rb = $('rbody'); if (!rb || !id || !/^[A-Za-z0-9._-]+$/.test(id)) return false;
+  const el = rb.querySelector('[id="' + id + '"]'); if (!el) return false;
+  el.scrollIntoView({ block: 'start' }); if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1'); el.focus({ preventScroll: true }); return true;
+}
+function insertBody(host, pg, ctx) {
+  const R = window.Render;
+  try {
+    const out = (R && typeof R.page === 'function') ? R.page(pg.page, ctx) : fallbackRender(pg.page, ctx);
+    if (typeof out === 'string') host.innerHTML = out; else if (out && out.nodeType) host.appendChild(out); else throw new Error('Render.page returned neither a node nor a string.');
+  } catch (e) {
+    console.error('Render.page failed for ' + ctx.slug, e);
+    host.textContent = '';
+    const box = document.createElement('div'); box.className = 'app-notice bad';
+    box.innerHTML = '<strong></strong><span></span>'; box.firstChild.textContent = ctx.t('Display problem'); box.lastChild.textContent = ctx.t('This page could not be drawn in full. A plain text version follows.') + ' (' + (e && e.message ? e.message : e) + ')';
+    host.appendChild(box); host.appendChild(fallbackRender(pg.page, ctx));
+  }
+  host.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener noreferrer'; });
+  if (R && typeof R.afterInsert === 'function') { try { R.afterInsert(host, ctx); } catch (e) { console.error('Render.afterInsert failed', e); } }
+}
+async function pageView(r, my) {
+  const m = C.by[r.slug]; if (!m) return notFound();
+  if (!partLoaded(m.dl, m.chunk)) $('view').innerHTML = '<p class="app-loading" role="status">' + esc(t('Loading the page...')) + '</p>';
+  let pg;
+  try { pg = await getPage(r.slug); } catch (e) { return errorView(e); }
+  if (my !== RT) return null;
+  const slug = m.id, d = !!S.done[slug], star = !!S.marks[slug], mod = m.module ? C.modBy[m.module] : null, part = C.partOf[slug];
+  const prev = m.prev ? C.by[m.prev] : null, next = m.next ? C.by[m.next] : null;
+  const oldP = (S.last && S.last.slug === slug) ? S.last.p : 0, resume = RESUME === slug && !r.anchor && oldP > 0;
+  S.seen[slug] = Date.now(); S.last = { slug, anchor: r.anchor || '', ts: Date.now(), p: resume ? oldP : 0 }; curPct = S.last.p; save();
+  const th = effTheme();
+  let h = '<article class="page" aria-labelledby="pageTitle"><nav class="crumb" aria-label="' + esc(t('Breadcrumb')) + '"><a href="#/">' + esc(t('Home')) + '</a> › ' + (mod ? '<a href="#/module/' + mod.n + '">' + esc(modLabel(mod.n)) + '</a>' : (part && part.id !== 'modules' ? '<a href="#/part/' + esc(part.id) + '">' + esc(part.title) + '</a>' : '')) + ' › <span>' + esc(m.title) + '</span></nav>';
+  h += '<div class="ptop">' + badge(m.kind) + '<span>' + esc(minLabel(m)) + '</span>' + (mod ? '<span>· ' + esc(modLabel(mod.n)) + '</span>' : '') + '<span class="donechip" id="doneChip"' + (d ? '' : ' hidden') + '>· ' + esc(t('Completed')) + ' ✓</span></div>';
+  h += '<h1 id="pageTitle" tabindex="-1">' + esc(m.title) + '</h1>';
+  if (pg.dl !== LANG) h += '<div class="app-notice"><strong>' + esc(t('Language')) + '</strong>' + esc(t('This page has not been translated yet. The English text is shown.')) + '</div>';
+  h += '<div class="tools" role="group" aria-label="' + esc(t('Reading tools')) + '"><button class="btn small" type="button" data-act="fs" data-d="-1" aria-label="' + esc(t('Smaller text')) + '">A−</button><button class="btn small" type="button" data-act="fs" data-d="1" aria-label="' + esc(t('Larger text')) + '">A+</button><button class="btn small" type="button" data-act="theme" id="thBtn2" aria-label="' + esc(th === 'dark' ? t('Switch to light mode') : t('Switch to dark mode')) + '">' + ic(th === 'dark' ? 'sun' : 'moon') + '</button><span class="sp"></span><button class="btn small" type="button" data-act="bm" id="bmBtn" aria-pressed="' + star + '">' + (star ? icFill('star') : ic('star')) + '<span>' + esc(star ? t('Bookmarked') : t('Bookmark')) + '</span></button></div>';
+  h += buildToc(pg.page.blocks, slug);
+  h += '<div id="rbody" class="rbody" lang="' + esc(pg.dl) + '"></div>';
+  if (m.answerKey && C.by[m.answerKey]) h += '<div class="app-notice good"><strong>' + esc(t('Check your work')) + '</strong>' + esc(t('When you have finished, check your answers in')) + ' <a href="#/page/' + esc(m.answerKey) + '">' + esc(C.by[m.answerKey].title) + '</a>.</div>';
+  if (m.quizPage && C.by[m.quizPage]) h += '<div class="app-notice"><strong>' + esc(t('The questions')) + '</strong><a href="#/page/' + esc(m.quizPage) + '">' + esc(C.by[m.quizPage].title) + '</a></div>';
+  h += '<div class="pnav" role="navigation" aria-label="' + esc(t('Previous and next page')) + '">';
+  h += prev ? '<a class="btn" rel="prev" href="#/page/' + esc(prev.id) + '">' + ic('left') + '<span><small>' + esc(t('Previous')) + '</small>' + esc(prev.title) + '</span></a>' : '';
+  if (m.kind === 'admin') h += '<a class="btn" href="#/more">' + esc(t('Back to More')) + '</a>';
+  else h += '<button class="btn saffron" type="button" id="doneBtn" data-act="done" aria-pressed="' + d + '">' + (d ? '✓ ' + esc(t('Completed. Tap to undo')) : esc(t('Mark complete'))) + '</button>';
+  h += next ? '<a class="btn' + (d ? ' primary' : '') + '" rel="next" href="#/page/' + esc(next.id) + '"><span><small>' + esc(t('Next')) + '</small>' + esc(next.title) + '</span>' + ic('right') + '</a>' : (m.kind !== 'admin' ? '<a class="btn" href="#/">' + esc(t('Back to Home')) + '</a>' : '');
+  h += '</div><details class="notes"' + (S.notes[slug] ? ' open' : '') + '><summary>' + esc(t('My notes for this page')) + '</summary><div><textarea class="app-ta" data-note="1" maxlength="' + MAX_TEXT + '" aria-label="' + esc(t('My notes for this page')) + '" placeholder="' + esc(t('Write your own notes. They stay on this device.')) + '">' + esc(S.notes[slug] || '') + '</textarea></div></details></article>';
+  CUR = { slug, ctx: null };
+  return {
+    html: h, title: m.title, noScrollTop: resume, kindPage: true,
+    after: () => {
+      const ctx = makeCtx(m, pg.dl); CUR.ctx = ctx;
+      const host = $('rbody'); insertBody(host, pg, ctx);
+      if (HLQ) { highlightDom(host, tokenize(HLQ)); HLQ = ''; }
+      if (r.anchor) { if (!scrollToAnchor(r.anchor)) window.scrollTo(0, 0); }
+      else if (resume) { const mx = document.documentElement.scrollHeight - window.innerHeight; window.scrollTo(0, Math.max(0, mx * oldP / 100)); }
+      RESUME = '';
+    }
+  };
+}
+
+// ---------- search ----------
+let SQ = { q: '', shown: 30, hits: [], toks: [] };
+function searchView(q) {
+  SQ.q = q || '';
+  const h = '<div class="page"><nav class="crumb"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(t('Search')) + '</nav><h1 id="pageTitle" tabindex="-1">' + esc(t('Search the course')) + '</h1><form role="search" id="sform"><label class="sr" for="sq">' + esc(t('Search words')) + '</label><input id="sq" class="app-in" type="search" autocomplete="off" enterkeyhint="search" placeholder="' + esc(t('Search the whole course...')) + '" value="' + esc(SQ.q) + '"></form><div id="sres" aria-live="polite"></div></div>';
+  return { html: h, title: t('Search'), after: () => { const i = $('sq'); if (SQ.q) doSearch(SQ.q, true); if (!isMobile() || !SQ.q) i.focus({ preventScroll: true }); } };
+}
+let sTimer = 0, sBusy = 0;
+async function doSearch(q, first) {
+  const out = $('sres'); if (!out) return;
+  const toks = tokenize(q), my = ++sBusy;
+  if (!first) { try { history.replaceState(null, '', '#/search' + (q.trim() ? '/' + encodeURIComponent(q.trim()) : '')); ROUTE = { name: 'search', q: q.trim() }; } catch (e) { /* keep going */ } }
+  if (!toks.length) { out.innerHTML = '<p class="note">' + esc(t('Type at least two letters. All the words you type must appear on the page.')) + '</p>'; return; }
+  let sets;
+  try { if (!partLoaded(LANG, 'search') || (LANG !== 'en' && !partLoaded('en', 'search'))) out.innerHTML = '<p class="app-loading" role="status">' + esc(t('Loading the search index (once)...')) + '</p>'; sets = await ensureSearch(); } catch (e) { out.innerHTML = '<div class="app-notice bad"><strong>' + esc(t('Problem')) + '</strong>' + esc(t('The search index could not be loaded. If you are offline, use Download everything for offline use under More once while online.')) + '</div>'; return; }
+  if (my !== sBusy || !$('sres')) return;
+  const res = runSearch(sets, q); SQ.hits = res.hits; SQ.toks = res.toks; SQ.shown = 30;
+  drawResults();
+}
+function drawResults() {
+  const out = $('sres'); if (!out) return;
+  const hits = SQ.hits, n = hits.length;
+  let h = '<p class="note" role="status">' + esc(n === 0 ? t('No page contains all of those words.') : n === 1 ? t('1 page matches') : t('{n} pages match', { n })) + '</p>';
+  hits.slice(0, SQ.shown).forEach(x => {
+    const m = C.by[x.s], mod = m.module ? modLabel(m.module) : (C.partOf[x.s] ? C.partOf[x.s].title : '');
+    h += '<a class="res" href="#/page/' + esc(x.s) + (x.hid ? '/' + esc(x.hid) : '') + '" data-q="' + esc(SQ.q) + '"><b class="t">' + esc(m.title) + '</b><div class="where">' + esc(kindLabel(m.kind)) + (mod ? ' · ' + esc(mod) : '') + (x.dl !== LANG ? ' · ' + esc(LANG_LABELS[x.dl] || x.dl) : '') + '</div><div class="snip">' + highlightHtml(x.snip, SQ.toks) + '</div></a>';
+  });
+  if (n > SQ.shown) h += '<div class="bar"><button class="btn" type="button" data-act="moreres">' + esc(t('Show more results')) + '</button></div>';
+  out.innerHTML = h;
+}
+
+// ---------- flashcards ----------
+const FL = { lang: '', cards: [], mods: [], deck: [], i: 0, flip: false, done: false, scope: 'all' };
+function flBuild(scope) {
+  const kn = S.known[FL.lang] || {};
+  let idx = FL.cards.map((c, i) => i);
+  if (scope === 'unknown') idx = idx.filter(i => !kn[FL.cards[i].id]);
+  else if (/^m\d{1,2}$/.test(scope)) { const n = +scope.slice(1); idx = idx.filter(i => FL.mods[i].has(n)); }
+  else scope = 'all';
+  FL.deck = idx; FL.i = 0; FL.flip = false; FL.done = idx.length === 0; FL.scope = scope; S.flash.scope = scope; save();
+}
+async function flashLoad() {
+  const tries = LANG === 'en' ? ['en'] : [LANG, 'en'];
+  let last = null;
+  for (const l of tries) { try { const d = await loadPart(l, 'flashcards'); if (l !== 'en' && !(d.cards && d.cards.length)) continue;   /* glossary not translated yet: use the English deck */ if (FL.lang !== l || !FL.cards.length) { FL.lang = l; FL.cards = d.cards; FL.mods = d.cards.map(c => new Set((c.used || []).map(u => C.by[u.s] && C.by[u.s].module).filter(Boolean))); } return; } catch (e) { last = e; } }
+  throw last;
+}
+async function flashView() {
+  const r0 = RT;
+  try { await flashLoad(); } catch (e) { return errorView(e); }
+  if (r0 !== RT) return null;
+  flBuild(S.flash.scope || 'all');
+  return { html: '<div class="page" id="flpage"></div>', title: t('Flashcards'), after: flDraw };
+}
+function flDraw() {
+  const host = $('flpage'); if (!host) return;
+  const kn = S.known[FL.lang] || {}, total = FL.cards.length, knownN = FL.cards.filter(c => kn[c.id]).length;
+  const modsWith = {}; FL.mods.forEach(s => s.forEach(n => { modsWith[n] = (modsWith[n] || 0) + 1; }));
+  const opts = [['all', t('All cards ({n})', { n: total })], ['unknown', t('Cards I do not know yet ({n})', { n: total - knownN })]].concat(C.modules.filter(m => modsWith[m.n]).map(m => ['m' + m.n, t('Used in Module {n} ({c})', { n: m.n, c: modsWith[m.n] })]));
+  let h = '<nav class="crumb"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(t('Flashcards')) + '</nav><h1 id="pageTitle" tabindex="-1">' + esc(t('Flashcards')) + '</h1><p class="note">' + esc(t('Key terms from the glossary. {known} of {total} marked as known.', { known: knownN, total })) + (FL.lang !== LANG ? ' ' + esc(t('The cards are in English.')) : '') + '</p>';
+  h += '<div class="bar"><label for="flScope" class="note">' + esc(t('Deck')) + '</label><select id="flScope" class="app-in" style="width:auto;max-width:100%">' + opts.map(o => '<option value="' + esc(o[0]) + '"' + (o[0] === FL.scope ? ' selected' : '') + '>' + esc(o[1]) + '</option>').join('') + '</select><button class="btn small" type="button" data-act="flshuf">' + esc(t('Shuffle')) + '</button></div>';
+  if (!FL.deck.length) h += '<div class="app-notice"><strong>' + esc(t('Empty deck')) + '</strong>' + esc(t('There are no cards in this deck.')) + '</div>';
+  else if (FL.done) h += '<div class="fc"><div class="term">' + esc(t('Deck finished')) + '</div><p>' + esc(t('You went through all {n} cards of this deck.', { n: FL.deck.length })) + '</p></div><div class="fcbar"><button class="btn primary" type="button" data-act="flrestart">' + esc(t('Go through it again')) + '</button></div>';
+  else {
+    const c = FL.cards[FL.deck[FL.i]], isK = !!kn[c.id];
+    h += '<p class="note" style="text-align:center">' + esc(t('Card {i} of {n}', { i: FL.i + 1, n: FL.deck.length })) + '</p><div class="fc' + (isK ? ' known' : '') + '" id="fcard" role="group" aria-label="' + esc(t('Flashcard')) + '"><div class="term" lang="en">' + esc(c.term) + '</div>';
+    if (!FL.flip) h += '<div class="note">' + esc(t('Think of the meaning, then show the answer.')) + (isK ? ' · ' + esc(t('Known')) + ' ✓' : '') + '</div>';
+    else {
+      h += (c.en ? '<div class="en">' + esc(c.en) + '</div>' : '') + '<div class="def" id="fcdef"></div>';
+      h += '<div class="where">' + (c.used && c.used.length ? esc(t('Used in')) + ': <span class="chips">' + c.used.map(u => '<a href="#/page/' + esc(u.s) + '">' + esc(u.t) + '</a>').join('') + '</span>' : (c.usedText ? esc(t('Used in')) + ': ' + esc(c.usedText) : '')) + '</div>';
+      if (c.page && C.by[c.page]) h += '<div class="where"><a href="#/page/' + esc(c.page) + (c.h ? '/' + esc(c.h) : '') + '">' + esc(t('Open in the glossary')) + '</a></div>';
+    }
+    h += '</div><div class="fcbar"><button class="btn" type="button" data-act="flprev"' + (FL.i === 0 ? ' disabled' : '') + '>' + ic('left') + esc(t('Back')) + '</button><button class="btn primary" type="button" data-act="flflip" aria-pressed="' + FL.flip + '">' + esc(FL.flip ? t('Hide the answer') : t('Show the answer')) + '</button><button class="btn" type="button" data-act="flnext">' + esc(t('Skip')) + ic('right') + '</button></div>';
+    if (FL.flip) h += '<div class="fcbar"><button class="btn" type="button" data-act="flagain">' + esc(t('Again, later')) + '</button><button class="btn saffron" type="button" data-act="flgot">' + ic('check') + esc(t('I know it')) + '</button></div>';
+    h += '<p class="note" style="text-align:center">' + esc(t('Keys: Space shows the answer, arrow keys move between cards.')) + '</p>';
+  }
+  host.innerHTML = h;
+  const dd = $('fcdef'); if (dd) { const c = FL.cards[FL.deck[FL.i]]; inlineTo(c.def, dd); }
+}
+function flAct(a) {
+  if (!FL.deck.length) return;
+  const c = FL.cards[FL.deck[FL.i]];
+  if (a === 'flflip') FL.flip = !FL.flip;
+  else if (a === 'flnext') { FL.i = FL.i >= FL.deck.length - 1 ? 0 : FL.i + 1; FL.flip = false; }
+  else if (a === 'flprev') { FL.i = Math.max(0, FL.i - 1); FL.flip = false; FL.done = false; }
+  else if (a === 'flgot') { (S.known[FL.lang] || (S.known[FL.lang] = {}))[c.id] = 1; save(); if (FL.i >= FL.deck.length - 1) FL.done = true; else FL.i++; FL.flip = false; }
+  else if (a === 'flagain') { if (S.known[FL.lang]) delete S.known[FL.lang][c.id]; save(); const last = FL.i === FL.deck.length - 1, x = FL.deck.splice(FL.i, 1)[0]; FL.deck.push(x); if (last) FL.i = 0; FL.flip = false; }
+  else if (a === 'flrestart') { flBuild(FL.scope); }
+  else if (a === 'flshuf') { for (let i = FL.deck.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [FL.deck[i], FL.deck[j]] = [FL.deck[j], FL.deck[i]]; } FL.i = 0; FL.flip = false; FL.done = false; }
+  flDraw();
+  const f = document.querySelector('#flpage [data-act="flflip"]') || document.querySelector('#flpage [data-act="flrestart"]'); if (f) f.focus({ preventScroll: true });
+}
+
+// ---------- bookmarks and notes ----------
+function bookmarksView() {
+  const marks = Object.keys(S.marks).filter(k => C.by[k]).sort((a, b) => C.by[a].n - C.by[b].n);
+  const noted = Object.keys(S.notes).filter(k => C.by[k] && S.notes[k]).sort((a, b) => C.by[a].n - C.by[b].n);
+  const wrote = Object.keys(S.ans).filter(k => C.by[k]).sort((a, b) => C.by[a].n - C.by[b].n);
+  const row = (k, extra) => '<li><a href="#/page/' + esc(k) + '"><span class="n">' + (S.marks[k] ? '★' : '✎') + '</span><span class="t">' + esc(C.by[k].title) + '<small>' + esc(kindLabel(C.by[k].kind)) + (C.by[k].module ? ' · ' + esc(modLabel(C.by[k].module)) : '') + '</small>' + (extra ? '<small>' + esc(extra) + '</small>' : '') + '</span>' + badge(C.by[k].kind) + '</a></li>';
+  let h = '<div class="page"><nav class="crumb"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(t('Bookmarks and notes')) + '</nav><h1 id="pageTitle" tabindex="-1">' + esc(t('Bookmarks and notes')) + '</h1>';
+  h += '<h2>' + esc(t('Bookmarked pages')) + '</h2>' + (marks.length ? '<ol class="plist">' + marks.map(k => row(k, S.notes[k] ? S.notes[k].replace(/\s+/g, ' ').slice(0, 110) : '')).join('') + '</ol>' : '<p class="note">' + esc(t('No bookmarks yet. Use the Bookmark button at the top of any page.')) + '</p>');
+  h += '<h2>' + esc(t('Pages with your notes')) + '</h2>' + (noted.length ? '<ol class="plist">' + noted.map(k => row(k, S.notes[k].replace(/\s+/g, ' ').slice(0, 110))).join('') + '</ol>' : '<p class="note">' + esc(t('No notes yet. Open "My notes for this page" at the bottom of any page.')) + '</p>');
+  h += '<h2>' + esc(t('Pages where you wrote answers')) + '</h2>' + (wrote.length ? '<ol class="plist">' + wrote.map(k => row(k, t('{n} answer boxes filled', { n: Object.keys(S.ans[k]).length }))).join('') + '</ol>' : '<p class="note">' + esc(t('No written answers yet.')) + '</p>');
+  return { html: h + '</div>', title: t('Bookmarks and notes') };
+}
+
+// ---------- more: settings, install, offline, backup, about ----------
+function platform() { const ua = navigator.userAgent || ''; return { ios: /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), android: /Android/.test(ua), standalone: (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true }; }
+function installText() {
+  const p = platform();
+  if (location.protocol === 'file:') return t('You are running the course from a file on this computer. It works as it is, with no internet. To install it as an app on a phone, put the files on a web host (for example GitHub Pages), then open that address on the phone.');
+  if (p.standalone) return t('The course is installed on this device and opens like an app.');
+  if (p.ios) return t('iPhone or iPad: open this page in Safari, tap the Share button, then choose Add to Home Screen.');
+  if (p.android) return t('Android: open this page in Chrome, tap the three-dot menu, then choose Install app (or Add to Home screen).');
+  return t('Computer: in Chrome or Edge, click the install icon at the right end of the address bar, or open the browser menu and choose Install.');
+}
+function moreView() {
+  const adm = C.partBy.admin && C.by[C.partBy.admin.pages[0]];
+  let h = '<div class="page set"><nav class="crumb"><a href="#/">' + esc(t('Home')) + '</a> › ' + esc(t('More')) + '</nav><h1 id="pageTitle" tabindex="-1">' + esc(t('More')) + '</h1>';
+  if (SAVE_FAILED) h += '<div class="app-notice bad"><strong>' + esc(t('Not saving')) + '</strong>' + esc(t('This browser is blocking storage (private window, or the storage is full), so your progress is lost when you close the app. Use a normal window, or export a backup below.')) + '</div>';
+  if (LANG_LIST.length > 1) h += '<h2>' + esc(t('Language')) + '</h2><div class="seg" role="group" aria-label="' + esc(t('Language')) + '">' + LANG_LIST.map(l => '<button type="button" data-act="lang" data-l="' + esc(l) + '" lang="' + esc(l) + '" aria-pressed="' + (l === LANG) + '">' + esc(LANG_LABELS[l] || l) + '</button>').join('') + '</div><p class="note">' + esc(t('Your progress, notes and bookmarks stay the same when you change the language. A page that is not translated yet is shown in English.')) + '</p>';
+  h += '<h2>' + esc(t('Appearance')) + '</h2><div class="bar"><div class="seg" role="group" aria-label="' + esc(t('Colour theme')) + '">' + [['auto', t('Automatic')], ['light', t('Light')], ['dark', t('Dark')]].map(o => '<button type="button" data-act="themeset" data-v="' + o[0] + '" aria-pressed="' + (S.theme === o[0]) + '">' + esc(o[1]) + '</button>').join('') + '</div></div>';
+  h += '<div class="bar"><button class="btn" type="button" data-act="fs" data-d="-1" aria-label="' + esc(t('Smaller text')) + '">A−</button><button class="btn" type="button" data-act="fs" data-d="1" aria-label="' + esc(t('Larger text')) + '">A+</button><span class="note" id="fsNow">' + esc(t('Text size {n}px', { n: S.fs })) + '</span></div>';
+  h += '<h2>' + esc(t('Install on your phone or computer')) + '</h2><p>' + esc(installText()) + '</p><div class="bar"><button class="btn primary" type="button" data-act="install" id="installBtn" hidden>' + esc(t('Install the app')) + '</button></div>';
+  h += '<h2>' + esc(t('Use without internet')) + '</h2><p>' + esc(t('After the first visit the pages you opened work without internet. To keep the whole course on this device, download everything once while you are online (about {size}).', { size: sizeLabel() })) + '</p><div class="bar"><button class="btn primary" type="button" data-act="dlall" id="dlBtn">' + esc(t('Download everything for offline use')) + '</button></div><div class="dlprog" id="dlProg" hidden><i id="dlFill"></i></div><p class="note" id="dlStat" role="status"></p><p class="note" id="offStat"></p>';
+  h += '<h2>' + esc(t('Your progress and backup')) + '</h2><p>' + esc(t('Progress, notes, bookmarks and written answers are saved on this device only. Export a backup to keep a copy or to move it to another device.')) + '</p><div class="bar"><button class="btn" type="button" data-act="export">' + esc(t('Export backup')) + '</button><button class="btn" type="button" data-act="import">' + esc(t('Import backup')) + '</button><button class="btn danger" type="button" data-act="reset">' + esc(t('Reset all progress')) + '</button></div>';
+  h += '<h2>' + esc(t('About this course')) + '</h2><p><b>' + esc(C.course.title) + '</b><br>' + esc(C.course.presented || '') + (C.course.edition ? '<br>' + esc(C.course.edition) : '') + '</p>';
+  h += '<p class="note">' + esc(t('{pages} pages in {mods} modules. Data version {v}.', { pages: C.seq.length, mods: C.modules.length, v: (window['COURSE_INDEX_en'] || {}).dataVersion || '' })) + '</p>';
+  h += '<div class="app-notice"><strong>' + esc(t('Responsible use')) + '</strong>' + esc(t('Jyotish is a traditional system of knowledge, taught here for learning and reflection. It is not scientifically validated prediction, and it is not medical, legal, financial or counselling advice. The worked-example and exam charts are hypothetical, constructed for teaching, not real people; the three case studies of Module 14 use the published birth data of public figures.')) + '</div>';
+  if (adm) h += '<h2>' + esc(t('For course administrators')) + '</h2><p><a class="btn" href="#/page/' + esc(adm.id) + '">' + esc(adm.title) + '</a></p>';
+  return { html: h + '</div>', title: t('More'), after: () => { const b = $('installBtn'); if (b && deferredPrompt) b.hidden = false; refreshOffline(); } };
+}
+function sizeLabel() {
+  let b = 0; LANG_LIST.forEach(l => { const ix = window['COURSE_INDEX_' + gid(l)]; if (ix && ix.files) Object.keys(ix.files).forEach(k => { b += ix.files[k]; }); });
+  if (!b) b = 8.1e6;
+  return (b / 1048576).toFixed(1) + ' MB';
+}
+async function swReady() { if (!('serviceWorker' in navigator) || !location.protocol.startsWith('http')) return null; try { const r = await Promise.race([navigator.serviceWorker.ready, new Promise(res => setTimeout(() => res(null), 4000))]); return r && r.active ? r : null; } catch (e) { return null; } }
+async function offlineUrls() {
+  const urls = ['./', 'index.html', 'manifest.json', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'data/langs.js'];
+  for (const l of LANG_LIST) {
+    let ix = null; try { ix = await loadIndex(l); } catch (e) { continue; }
+    urls.push(dataUrl(l, 'index')); Object.keys(ix.files).forEach(n => urls.push(dataUrl(l, n, ix.dataVersion)));
+    Object.keys((ix.course && ix.course.photos) || {}).forEach(k => urls.push(ix.course.photos[k]));
+  }
+  return Array.from(new Set(urls));
+}
+async function refreshOffline() {
+  const e = $('offStat'); if (!e) return;
+  if (!location.protocol.startsWith('http')) { e.textContent = t('This copy runs from a file, so everything is already on this computer.'); const b = $('dlBtn'); if (b) b.disabled = true; return; }
+  if (!('serviceWorker' in navigator) || !window.caches) { e.textContent = t('This browser cannot keep an offline copy.'); return; }
+  try {
+    const ks = (await caches.keys()).filter(k => k.indexOf('astrosutras-basics-') === 0); if (!ks.length) { e.textContent = t('Offline copy: not started yet.'); return; }
+    const c = await caches.open(ks[ks.length - 1]), have = new Set((await c.keys()).map(r => new URL(r.url).pathname + new URL(r.url).search));
+    const urls = await offlineUrls(), base = new URL('.', location.href).pathname;
+    const n = urls.filter(u => have.has(new URL(u, location.href).pathname + new URL(u, location.href).search)).length;
+    if ($('offStat')) $('offStat').textContent = n >= urls.length ? t('Offline copy: complete. The whole course works without internet.') : t('Offline copy: {n} of {total} files saved on this device.', { n, total: urls.length });
+  } catch (x) { /* status is optional */ }
+}
+async function downloadAll() {
+  const btn = $('dlBtn'), st = $('dlStat'), pg = $('dlProg'), fill = $('dlFill');
+  if (!location.protocol.startsWith('http')) { st.textContent = t('This copy runs from a file, so everything is already on this computer.'); return; }
+  const reg = await swReady();
+  if (!reg) { st.textContent = t('The offline helper is not ready yet. Reload the page once and try again.'); return; }
+  btn.disabled = true; pg.hidden = false; fill.style.width = '2%'; st.textContent = t('Preparing the list of files...');
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* optional */ }
+  const urls = await offlineUrls(), ch = new MessageChannel();
+  ch.port1.onmessage = ev => {
+    const d = ev.data || {}; if (!$('dlStat')) return;
+    if (d.type === 'progress') { $('dlFill').style.width = Math.max(2, Math.round(100 * d.done / d.total)) + '%'; $('dlStat').textContent = t('Saving file {done} of {total}...', { done: d.done, total: d.total }); }
+    if (d.type === 'done') { $('dlFill').style.width = '100%'; $('dlBtn').disabled = false; $('dlStat').textContent = d.failed ? t('Finished, but {n} files could not be saved. Check the connection and try again.', { n: d.failed }) : t('Done. The whole course now works without internet.'); refreshOffline(); }
+  };
+  reg.active.postMessage({ type: 'precache', urls }, [ch.port2]);
+}
+function exportBackup() {
+  flush();
+  const data = { app: 'astrosutras-basics', v: 1, exported: new Date().toISOString(), state: S };
+  const a = document.createElement('a'), url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
+  const dn = new Date(), p2 = n => (n < 10 ? '0' : '') + n;   // the reader's local date, not UTC
+  a.href = url; a.download = 'astrosutras-basics-progress-' + dn.getFullYear() + '-' + p2(dn.getMonth() + 1) + '-' + p2(dn.getDate()) + '.json'; document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000); toast(t('Backup file saved'));
+}
+function importBackup(file) {
+  file.text().then(tx => {
+    const d = parseJson(tx), st = d && isObj(d.state) ? d.state : d;
+    if (isObj(d) && typeof d.app === 'string' && d.app !== 'astrosutras-basics') { alert(t('That file is not a valid backup of this course.')); return; }   // a backup of another course would erase this progress
+    if (!isObj(st) || !(isObj(st.done) || isObj(st.marks) || isObj(st.notes) || isObj(st.ans) || isObj(st.ck))) { alert(t('That file is not a valid backup of this course.')); return; }
+    if (!confirm(t('This replaces the progress, notes and answers on this device with the backup. Continue?'))) return;
+    const keep = { lang: S.lang, theme: S.theme, fs: S.fs }, n = normState(st); n.lang = keep.lang; n.theme = keep.theme; n.fs = keep.fs;
+    S = n; save(); flush(); applyTheme(); updateHeader(); toast(t('Backup restored')); go('#/');
+  }).catch(() => alert(t('That file could not be read.')));
+}
+
+// ---------- router ----------
+function parseRoute() {
+  const raw = (location.hash || '#/').replace(/^#\/?/, ''), seg = raw.split('/');
+  const dec = s => { try { return decodeURIComponent(s); } catch (e) { return s; } };
+  switch (seg[0]) {
+    case '': return { name: 'home' };
+    case 'module': return { name: 'module', n: +seg[1] || 0 };
+    case 'part': return { name: 'part', id: dec(seg[1] || '') };
+    case 'page': return { name: 'page', slug: dec(seg[1] || ''), anchor: dec(seg[2] || '') };
+    case 'search': return { name: 'search', q: dec(seg.slice(1).join('/')) };
+    case 'flash': return { name: 'flash' };
+    case 'bookmarks': return { name: 'bookmarks' };
+    case 'more': return { name: 'more' };
+    default: return { name: 'unknown' };
+  }
+}
+async function route(opt) {
+  opt = opt || {}; const my = ++RT;
+  if (!C) return;
+  beforeLeave();
+  const r = parseRoute(); ROUTE = r; CUR = null; $('readbar').classList.remove('on');
+  let v;
+  try {
+    switch (r.name) {
+      case 'home': v = homeView(); break;
+      case 'module': v = moduleView(r.n); break;
+      case 'part': v = partView(r.id); break;
+      case 'page': v = await pageView(r, my); break;
+      case 'search': v = searchView(r.q); break;
+      case 'flash': v = await flashView(); break;
+      case 'bookmarks': v = bookmarksView(); break;
+      case 'more': v = moreView(); break;
+      default: v = notFound();
+    }
+  } catch (e) { console.error(e); v = errorView(e); }
+  if (my !== RT || !v) return;
+  const view = $('view'), sy = window.scrollY;
+  view.innerHTML = v.html;
+  document.title = v.title ? v.title + ' | ' + (C.course.short || C.course.title) : (C.course.title);
+  closeMenus(); drawNav(); updateHeader();
+  if (v.after) { try { v.after(); } catch (e) { console.error(e); } }
+  if (!v.kindPage || !(r.anchor)) { if (opt.keep) window.scrollTo(0, sy); else if (!v.noScrollTop && !(v.kindPage && r.anchor)) window.scrollTo(0, 0); }
+  if (v.kindPage) { $('readbar').classList.add('on'); updateReadbar(); }
+  const h1 = view.querySelector('h1');
+  if (!FIRST && !opt.keep && h1 && !(r.name === 'page' && r.anchor)) { h1.focus({ preventScroll: true }); }
+  FIRST = false;
+}
+function onExternalState() { if (!C) return; drawNav(); updateHeader(); }
+
+// ---------- reading progress bar ----------
+let rafBusy = false, lastSave = 0;
+function updateReadbar() {
+  if (ROUTE.name !== 'page') return;
+  const mx = document.documentElement.scrollHeight - window.innerHeight, p = mx > 0 ? Math.min(1, Math.max(0, window.scrollY / mx)) : 1;
+  $('readfill').style.width = (p * 100).toFixed(1) + '%'; curPct = Math.round(p * 100);
+  if (S.last && S.last.slug === ROUTE.slug && Date.now() - lastSave > 2500) { lastSave = Date.now(); S.last.p = curPct; save(); }
+}
+window.addEventListener('scroll', () => { if (rafBusy) return; rafBusy = true; requestAnimationFrame(() => { rafBusy = false; updateReadbar(); }); }, { passive: true });
+
+// ---------- events ----------
+function setTheme(v) { S.theme = v; save(); applyTheme(); updateHeader(); if (ROUTE.name === 'more') $('view').querySelectorAll('[data-act="themeset"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === v))); const b2 = $('thBtn2'); if (b2) { const th = effTheme(); b2.innerHTML = ic(th === 'dark' ? 'sun' : 'moon'); b2.setAttribute('aria-label', th === 'dark' ? t('Switch to light mode') : t('Switch to dark mode')); } }
+function setFs(d) { S.fs = Math.max(13, Math.min(24, S.fs + d)); save(); applyTheme(); const e = $('fsNow'); if (e) e.textContent = t('Text size {n}px', { n: S.fs }); toast(t('Text size {n}px', { n: S.fs })); }
+async function switchLang(l) {
+  if (!LANG_LIST.includes(l) || l === LANG) { closeMenus(); return; }
+  const old = LANG; closeMenus(); flush();
+  try { await activateLang(l); S.lang = l; save(); flush(); } catch (e) { console.error(e); try { await activateLang(old); } catch (x) { /* keep */ } toast(t('That language could not be loaded.')); return; }
+  FL.cards = []; FL.lang = '';
+  shellText(); await route({ keep: true });
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href]');
+  if (a) {
+    const href = a.getAttribute('href') || '';
+    if (a.id === 'skipLink') { e.preventDefault(); $('main').focus({ preventScroll: false }); return; }   // a plain #main link would change the route
+    if (a.dataset.q) HLQ = a.dataset.q;
+    if (a.dataset.resume) RESUME = a.dataset.resume;
+    if (href === location.hash && href.indexOf('#/page/') === 0) { e.preventDefault(); route({ keep: true }); }   // same link again: scroll to the anchor again
+    else if (href.indexOf('#/') === 0 || href === '#') closeMenus();
+  }
+  const tg = e.target.closest && e.target.closest('[data-act]'); if (!tg) { if (!e.target.closest('#langWrap')) { $('langMenu').hidden = true; } return; }
+  const act = tg.dataset.act, d = tg.dataset;
+  switch (act) {
+    case 'fs': setFs(+d.d); break;
+    case 'theme': setTheme(effTheme() === 'dark' ? 'light' : 'dark'); break;
+    case 'themeset': setTheme(d.v); break;
+    case 'bm': {
+      if (!CUR) break; const s = CUR.slug; if (S.marks[s]) delete S.marks[s]; else S.marks[s] = Date.now(); save();
+      const on = !!S.marks[s]; tg.setAttribute('aria-pressed', String(on)); tg.innerHTML = (on ? icFill('star') : ic('star')) + '<span>' + esc(on ? t('Bookmarked') : t('Bookmark')) + '</span>'; toast(on ? t('Bookmark added') : t('Bookmark removed')); break;
+    }
+    case 'done': {
+      if (!CUR) break; const s = CUR.slug, m = C.by[s]; let on;
+      if (S.done[s]) { delete S.done[s]; on = false; } else { S.done[s] = Date.now(); on = true; } save();
+      tg.setAttribute('aria-pressed', String(on)); tg.textContent = on ? '✓ ' + t('Completed. Tap to undo') : t('Mark complete');
+      const chip = $('doneChip'); if (chip) chip.hidden = !on;
+      const nx = document.querySelector('.pnav [rel="next"]'); if (nx) nx.classList.toggle('primary', on);
+      drawNav(); updateHeader(); toast(on ? t('Marked complete') : t('Marked as not complete'));
+      if (on && ov100()) toast(t('Course complete. Well done!')); break;   // also on the very last page (it has no next page)
+    }
+    case 'lang': switchLang(d.l); break;
+    case 'install': if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt.userChoice.then(() => { deferredPrompt = null; const b = $('installBtn'); if (b) b.hidden = true; }); } break;
+    case 'dlall': downloadAll(); break;
+    case 'export': exportBackup(); break;
+    case 'import': $('importFile').click(); break;
+    case 'reset': if (confirm(t('This erases your progress, notes, bookmarks and written answers on this device. Continue?'))) { const keep = { lang: S.lang, theme: S.theme, fs: S.fs }; S = normState(keep); save(); flush(); applyTheme(); updateHeader(); toast(t('Progress reset')); go('#/'); } break;
+    case 'retry': route({ keep: true }); break;
+    case 'moreres': SQ.shown += 30; drawResults(); break;
+    case 'flflip': case 'flnext': case 'flprev': case 'flgot': case 'flagain': case 'flrestart': case 'flshuf': flAct(act); break;
+  }
+});
+const ov100 = () => overall().pct === 100;
+document.addEventListener('change', e => {
+  const tg = e.target;
+  if (tg.matches && tg.matches('input[data-ck]') && CUR && CUR.ctx) CUR.ctx.setCheck(tg.getAttribute('data-ck'), tg.checked);
+  else if (tg.id === 'flScope') { flBuild(tg.value); flDraw(); }
+});
+document.addEventListener('input', e => {
+  const tg = e.target;
+  if (tg.matches && tg.matches('textarea[data-ans]') && CUR && CUR.ctx) CUR.ctx.setAnswer(tg.getAttribute('data-ans'), tg.value);
+  else if (tg.matches && tg.matches('textarea[data-note]') && CUR) { const v = tg.value.slice(0, MAX_TEXT); if (v.trim()) S.notes[CUR.slug] = v; else delete S.notes[CUR.slug]; save(); }
+  else if (tg.id === 'sq') { clearTimeout(sTimer); sTimer = setTimeout(() => { SQ.q = tg.value; doSearch(tg.value); }, 220); }
+});
+document.addEventListener('focusout', e => { if (e.target.matches && e.target.matches('textarea[data-ans], textarea[data-note]')) flush(); });
+document.addEventListener('submit', e => { if (e.target.id === 'sform') { e.preventDefault(); clearTimeout(sTimer); SQ.q = $('sq').value; doSearch(SQ.q); } });
+const drawerOpen = () => $('side').classList.contains('open') && getComputedStyle($('scrim')).display !== 'none';   // the phone drawer, which covers the page like a dialog
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const drawer = drawerOpen(), menu = !$('langMenu').hidden;
+    closeMenus();
+    if (drawer) $('menuBtn').focus(); else if (menu) $('langBtn').focus();   // keep the keyboard user's place instead of dropping focus to the page start
+    return;
+  }
+  if (e.key === 'Tab' && drawerOpen()) {   // keep Tab inside the open drawer: it must not walk into the page behind it
+    const items = Array.from($('side').querySelectorAll('a[href]')), act = document.activeElement;
+    if (items.length) {
+      if (e.shiftKey && act === items[0]) { e.preventDefault(); items[items.length - 1].focus(); }
+      else if (!e.shiftKey && act === items[items.length - 1]) { e.preventDefault(); items[0].focus(); }
+    }
+  }
+  const tg = e.target;
+  if (ROUTE.name === 'flash' && FL.deck.length && (tg === document.body || tg.id === 'main' || tg.tagName === 'H1')) {
+    if (e.key === ' ') { e.preventDefault(); flAct('flflip'); } else if (e.key === 'ArrowRight') flAct('flnext'); else if (e.key === 'ArrowLeft') flAct('flprev');
+  }
+});
+$('menuBtn').addEventListener('click', () => openNav(!$('side').classList.contains('open')));
+$('scrim').addEventListener('click', () => { openNav(false); $('menuBtn').focus(); });
+$('srchBtn').addEventListener('click', () => go('#/search'));
+$('moreBtn').addEventListener('click', () => go('#/more'));
+$('themeBtn').addEventListener('click', () => setTheme(effTheme() === 'dark' ? 'light' : 'dark'));
+$('langBtn').addEventListener('click', e => {
+  e.stopPropagation();
+  if (LANG_LIST.length === 2) { switchLang(LANG_LIST.find(l => l !== LANG)); return; }
+  const m = $('langMenu'); m.hidden = !m.hidden; $('langBtn').setAttribute('aria-expanded', String(!m.hidden)); if (!m.hidden) { const f = m.querySelector('[aria-checked="true"]') || m.querySelector('button'); if (f) f.focus(); }
+});
+$('importFile').addEventListener('change', e => { const f = e.target.files[0]; if (f) importBackup(f); e.target.value = ''; });
+window.addEventListener('hashchange', () => route());
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; const b = $('installBtn'); if (b) b.hidden = false; });
+window.addEventListener('appinstalled', () => { deferredPrompt = null; toast(t('The app is installed')); });
+window.addEventListener('beforeprint', () => document.querySelectorAll('details').forEach(d => { d.open = true; }));
+window.addEventListener('online', () => { const e = $('offStat'); if (e) refreshOffline(); });
+
+// ---------- boot ----------
+async function boot() {
+  readLangs(); applyTheme();
+  const lang = pickLang();
+  try { await activateLang(lang); }
+  catch (e) {
+    console.error(e);
+    $('view').innerHTML = '<div class="page"><h1>' + esc(t('The course could not be loaded')) + '</h1><p>' + esc(t('The course data files (folder "data") are missing or could not be read. Connect to the internet once and reload, or reinstall the app.')) + '</p><p class="note">' + esc(e.message || String(e)) + '</p><div class="bar"><button class="btn primary" type="button" onclick="location.reload()">' + esc(t('Try again')) + '</button></div></div>';
+    return;
+  }
+  shellText();
+  await route();
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => { /* offline copy is optional */ });
+}
+boot();
+</script>
+</body>
+</html>

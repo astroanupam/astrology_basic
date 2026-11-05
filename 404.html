@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basics of Vedic Astrology | taking you to the course</title>
+<meta name="theme-color" content="#2e2a6e">
+<!-- GitHub Pages shows this page for an address that does not exist. It looks for the folder of the course (the nearest folder above the
+     address that holds this course's manifest.json) and sends the reader to the course home there, so it works at the top of a site
+     (https://name.example/) and in a project folder (https://user.github.io/name/) alike. Nothing is loaded from another site.
+     On purpose there is no robots.txt and no robots meta tag in this package. -->
+<style>
+html { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #fbf8f1; color: #1d1b3f; }
+body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem; box-sizing: border-box; }
+main { max-width: 32rem; }
+.brand { font-size: .8rem; letter-spacing: .14em; font-weight: 700; color: #8a4a05; margin: 0 0 .4rem; }
+h1 { font-size: 1.5rem; line-height: 1.25; margin: 0 0 .8rem; color: #2e2a6e; }
+p { line-height: 1.55; margin: 0 0 1rem; }
+a.btn { display: inline-block; padding: .7rem 1.2rem; border-radius: .5rem; background: #2e2a6e; color: #fff; text-decoration: none; font-weight: 600; }
+a.btn:focus-visible { outline: 3px solid #d9730d; outline-offset: 3px; }
+@media (prefers-color-scheme: dark) {
+  html { background: #15132f; color: #f1ede3; }
+  .brand { color: #ffb866; }
+  h1 { color: #ffffff; }
+  a.btn { background: #ffb866; color: #1d1b3f; }
+  a.btn:focus-visible { outline-color: #ffffff; }
+}
+</style>
+</head>
+<body>
+<main>
+  <p class="brand">ASTROSUTRAS</p>
+  <h1 id="head">Basics of Vedic Astrology</h1>
+  <p id="msg" role="status">This address does not lead to a page of the course. Taking you to the course home...</p>
+  <p><a id="go" class="btn" href="./index.html">Open the course</a></p>
+  <noscript><p>JavaScript is switched off, so this page cannot find the course by itself. Use the button above, or type the address of the course again.</p></noscript>
+</main>
+<script>
+(function () {
+  var segs = location.pathname.split('/');          // "/name/a/b" -> ["", "name", "a", "b"]
+  var cands = [], i, p;
+  for (i = segs.length - 1; i >= 1; i--) { p = segs.slice(0, i).join('/') + '/'; if (cands.indexOf(p) < 0) cands.push(p); }
+  if (cands.indexOf('/') < 0) cands.push('/');
+  var go = document.getElementById('go'), msg = document.getElementById('msg');
+  // the button works even if the search below fails: the first folder under the host (a GitHub project site), else the top
+  var guess = (/\.github\.io$/i.test(location.hostname) && segs.length > 2 && segs[1]) ? '/' + segs[1] + '/' : '/';
+  go.setAttribute('href', guess + 'index.html');
+  function isCourse(j) { return !!j && typeof j.name === 'string' && /Basics of Vedic Astrology/.test(j.name) && /index\.html$/.test(j.start_url || ''); }
+  function go2(base) { location.replace(base + 'index.html' + location.search + location.hash); }
+  function next(k) {
+    if (k >= cands.length) { msg.textContent = 'The course was not found at this address. Please use the button below, or the address you were given.'; return; }
+    var base = cands[k];
+    fetch(base + 'manifest.json', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (isCourse(j)) { go.setAttribute('href', base + 'index.html'); go2(base); } else next(k + 1); })
+      .catch(function () { next(k + 1); });
+  }
+  if (window.fetch) next(0);
+})();
+</script>
+</body>
+</html>
